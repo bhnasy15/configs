@@ -9,6 +9,7 @@
 !.vimrc
 !.xinitrc
 !.Xresources
+!README.md
 
 # include ".vim/" and everything in it.
 !.vim
