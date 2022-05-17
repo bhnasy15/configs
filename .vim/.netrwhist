@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/yarob/.config'
+let g:netrw_dirhist_5='/home/yarob/.config/zsh'
+let g:netrw_dirhist_4='/etc/skel'
+let g:netrw_dirhist_3='/home/yarob/.gnupg'
+let g:netrw_dirhist_2='/home/yarob/play/main'
+let g:netrw_dirhist_1='/home/yarob/.config/fontconfig'
+let g:netrw_dirhist_0='/usr/share/fonts/TTF'
+let g:netrw_dirhist_9='/etc/fonts/conf.d'
+let g:netrw_dirhist_8='/etc/fonts'
+let g:netrw_dirhist_7='/home/yarob/.config/fontconfig/conf.d'

@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+id=$(xdo id)
+bspc node $id -g hidden
+
+$@
+
+bspc node $id -g hidden -f
+

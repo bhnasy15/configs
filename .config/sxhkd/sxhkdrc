@@ -1,0 +1,209 @@
+#
+# wm independent hotkeys
+#
+
+# applications
+alt + Return
+	$TERM
+
+super + Return
+	$TERM
+
+F1
+	rofi -show drun
+
+F2
+	qutebrowser
+
+XF86HomePage
+	qutebrowser
+
+F4
+	pcmanfm
+
+XF86Explorer
+	pcmanfm
+
+alt + d
+	dmenu_run -fn 'monospace'-13
+
+F3
+	dmenu_run -fn 'monospace'-13
+
+alt + s
+	sh-menu
+
+super + Escape
+	xkill
+
+F8
+	pavucontrol
+
+super + p
+	maim -s $(date +"%F_%H:%M:%S.png") 
+
+# media keys
+# backlight control xbacklight
+{XF86MonBrightnessDown,XF86MonBrightnessUp}
+	xbacklight -{dec,inc} 5%
+
+control + {XF86MonBrightnessDown,XF86MonBrightnessUp}
+	xbacklight -{dec,inc} 1%
+
+control + {XF86AudioLowerVolume,XF86AudioRaiseVolume}
+	xbacklight -{dec,inc} 5%
+
+super + {F3,F4}
+	xbacklight -{dec,inc} 5%
+
+super + control + {F3,F4}
+	xbacklight -{dec,inc} 1%
+
+# audio control
+# main keys
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}1%
+
+shift + {XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86AudioMicMute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPrev
+	playerctl previous
+
+XF86AudioStop
+	playerctl stop
+# backup keys
+super + {F1,F2}
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+
+super + control + {F1,F2}
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}1%
+
+super + shift + F1
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+super + shift + F2
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+#
+# bspwm hotkeys
+#
+alt + x
+	bspc node -c
+
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window.local
+
+#
+# state/flags
+#
+
+# set the window state
+{F9,F10,F11,F12}
+	bspc node focused -t {tiled,\~pseudo_tiled,\~fullscreen,\~floating}
+
+# set the node flags
+# alt + control + {m,x,y,z}
+	# bspc node focused -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+# alt + {_,shift + }{h,j,k,l}
+	# bspc node -{f,s} {west,south,north,east}
+alt + {j,k}
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the node for the given path jump
+# alt + {p,b,comma,period}
+	# bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous window in the current desktop
+# alt + {_,shift + }c
+alt + F12
+	bspc node -f next.local.!hidden.window.floating
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {desktop,node} -f last
+
+# focus or send to the given desktop
+alt + {1-9}
+	bspc desktop focused:'^{1-9}' -f
+
+alt + shift + {1-9}
+	bspc node focused -d '^{1-9}' --follow
+
+super + alt + bracket{left,right}
+	bspc monitor -f {next,prev}
+
+super + shift + bracket{left,right}
+	bspc desktop -m {next,prev}
+
+super + g 
+	echo "0" | dmenu -fn monospace-17 | xargs bspc config window_gap
+#
+# preselect
+#
+
+# preselect the direction
+# alt + ctrl + {h,j,k,l}
+	# bspc node -p {west,south,north,east}
+
+# preselect the ratio
+# alt + ctrl + {1-9}
+	# bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+# alt + ctrl + space
+	# bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+# alt + ctrl + shift + space
+	# bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+super + control + {h,j,k,l}
+	bspc node focused -z {\
+	right -10 0 || bspc node focused -z left -10 0,\
+	bottom 0 10 || bspc node focused -z top 0 10,\
+	bottom 0 -10 || bspc node focused -z top 0 -10,\
+	right 10 0 || bspc node focused -z left 10 0}
+
+# move a floating window
+super + shift + {h,j,k,l}
+	bspc node focused -v {\
+	-10 0 || bspc node focused -s west,\
+	0 10 || bspc node focused -s south,\
+	0 -10 || bspc node focused -s north,\
+	10 0 || bspc node focused -s east}
+
+super + h
+	bspc node focused -g hidden
+
+super + alt + h
+	bspc node any.hidden -g hidden -f

@@ -1,0 +1,53 @@
+#!/usr/bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+#
+# initial setup
+#
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9
+
+bspc config border_width         1
+bspc config window_gap          0
+
+bspc config split_ratio          0.60
+# bspc config borderless_monocle   true
+# bspc config gapless_monocle      true
+
+
+#
+# rules
+#
+
+# bspc rule -a Gimp desktop='^8' state=floating follow=on
+# bspc rule -a Kupfer.py focus=on
+
+# bspc rule -a Vivaldi-stable desktop='^2'
+bspc rule -a Screenkey manage=off
+
+# floating
+#
+bspc rule -a mplayer2 state=floating
+bspc rule -a Leafpad state=floating 
+bspc rule -a Xarchiver state=floating 
+bspc rule -a Pavucontrol state=floating 
+bspc rule -a Nm-connectoin-editor state=floating 
+bspc rule -a Pcmanfm state=floating 
+bspc rule -a fontforge state=floating 
+bspc rule -a Block state=floating 
+bspc rule -a *:*:"Picture in Picture" state=floating
+bspc rule -a *:*:SCRIPT state=floating
+bspc rule -a mpv:*:* state=floating
+
+bspc rule -a Copying state=floating 
+bspc rule -a Deleting state=floating 
+bspc rule -a Moving state=floating 
+bspc rule -a pop-up state=floating 
+bspc rule -a ^prefrences$ state=floating 
+bspc rule -a ^settings$ state=floating 
+bspc rule -a setup state=floating 
+bspc rule -a Zathura state=tiled
+
+[ -x $HOME/.config/profile ] && sh $HOME/.config/profile &
+

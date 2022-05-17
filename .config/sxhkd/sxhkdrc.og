@@ -1,0 +1,77 @@
+#
+# wm independent hotkeys
+#
+
+# applications
+super + Return
+	xterm
+
+super + e
+	pcmanfm
+
+super + F1
+	vivaldi-stable
+
+super + shift + F1
+	vivaldi-stable --incognito
+
+super + Tab
+	rofi -show window -theme glue_pro_blue
+
+super + d
+	dmenu_run -fn 'monospace'-13
+
+super + r 
+	rofi -show run -theme glue_pro_blue
+
+super + Escape
+	xkill
+
+super + a 
+	pavucontrol
+
+# backlight control xbacklight
+{XF86MonBrightnessDown,XF86MonBrightnessUp}
+	xbacklight {-dec,-inc} 5%
+
+control + {XF86MonBrightnessDown,XF86MonBrightnessUp}
+	xbacklight {-dec,-inc} 1%
+
+# audio control
+# main keys
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+
+control + {XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}1%
+
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86AudioMicMute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPrev
+	playerctl previous
+
+XF86AudioStop
+	playerctl stop
+# backup keys
+super + shift + {Up,Down}
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+
+super + shift + control + {Up,Down}
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}1%
+
+super + shift + Escape
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+super + shift + grave
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+

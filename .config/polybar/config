@@ -1,0 +1,61 @@
+[global/wm]
+include-file = ~/.config/polybar/modules.ini
+include-file = ~/.config/polybar/colors.ini
+
+margin-bottom = 0
+margin-top = 0
+
+[bar/bar1]
+enable-ipc = true
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 21
+fixed-center = true
+separator = "  "
+
+offset-x = 0%
+offset-y = 0%
+
+background = ${color.alpha}
+foreground = ${color.foreground}
+
+radius-top = 0
+radius-bottom = 0
+
+underline-size = 0
+;underline-color = ${color.foreground}
+
+
+border-top-size = 0
+border-bottom-size = 0
+border-left-size = 0
+border-right-size = 0
+border-color = ${color.alpha}
+padding = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = monospace
+font-1 = "symbols nerd font"
+
+modules-right = pulseaudio xbacklight xkeyboard battery
+modules-center = date bspwm
+modules-left = cpu memory wifi
+
+tray-position = right
+tray-padding = 0
+
+wm-restack = bspwm
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+screenchange-reload = false
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+pseudo-transparency = false
+

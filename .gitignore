@@ -1,0 +1,64 @@
+# exclude every thing.
+*
+
+# include specific files
+!.bash_profile
+!.bashrc
+!.gitignore
+!.ideavimrc
+!.vimrc
+!.xinitrc
+!.Xresources
+
+# include ".vim/" and everything in it.
+!.vim
+!.vim/**
+
+# include ".config/" and everything in it, and ignore specific files.
+!.config
+!.config/**
+.config/pulse
+.config/JetBrains
+.config/Microsoft
+
+# include ".gnupg/", show every thing in it, and include only ".conf" files.
+!.gnupg/
+!.gnupg/**
+.gnupg/*
+!.gnupg/**/*.conf
+
+# include ".local/" show every thing in it but include none.
+!.local
+!.local/**
+.local/*
+
+# include ".local/sh/" and every thing in it.
+!.local/sh/
+!.local/sh/**
+
+# include ".local/src/" show every thing in it but include none.
+!.local/src/
+!.local/src/**
+.local/src/*
+
+# include ".local/share/" show every thing in it but include none.
+!.local/share
+!.local/share/**
+.local/share/*
+
+# include ".local/share/bin" show every thing in it but include none.
+!.local/share/bin
+!.local/share/bin/**
+.local/share/bin/*
+
+# include specific files
+!.local/share/bin/swallow
+!.local/share/bin/sh-menu
+
+**tmp*
+**cache*
+**history*
+**data*
+**.log*
+**.err*
+**.out*

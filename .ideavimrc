@@ -1,0 +1,32 @@
+
+set showcmd
+
+set backspace=indent,eol,start " backspace over everything in insert mode
+
+set cursorline
+
+set shiftwidth=4
+set tabstop=4
+set smartindent
+
+set scrolloff=10
+
+set ignorecase " Ignore capital letters during search.
+set smartcase
+set showmatch
+set relativenumber
+set number
+
+let mapleader = ","
+
+nnoremap <S-j> :tabnext<CR>
+nnoremap <S-k> :tabprev<CR>
+
+nnoremap <C-n> :tabnew 
+
+noremap <leader>p :r! xclip -selection clipboard -o<CR>
+noremap <leader>y "+y
+noremap <leader>q :q!<CR>
+noremap <leader>w :wq!<CR>
+nmap <S-H> <C-W>
+

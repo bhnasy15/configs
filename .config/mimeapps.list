@@ -1,0 +1,19 @@
+[Added Associations]
+text/plain=leafpad.desktop;
+application/pdf=org.pwmt.zathura.desktop;org.qutebrowser.qutebrowser.desktop;
+
+[Default Applications]
+x-scheme-handler/http=qutebrowser.desktop
+x-scheme-handler/https=qutebrowser.desktop
+x-scheme-handler/ftp=qutebrowser.desktop
+x-scheme-handler/chrome=qutebrowser.desktop
+text/html=qutebrowser.desktop
+application/x-extension-htm=qutebrowser.desktop
+application/x-extension-html=qutebrowser.desktop
+application/x-extension-shtml=qutebrowser.desktop
+application/xhtml+xml=qutebrowser.desktop
+application/x-extension-xhtml=qutebrowser.desktop
+application/x-extension-xht=qutebrowser.desktop
+text/plain=leafpad.desktop
+text/x-processing=processing-pde.desktop
+application/pdf=org.pwmt.zathura.desktop

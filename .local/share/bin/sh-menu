@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+
+ls $SCRIPT | dmenu -l 10 | xargs -I {} sh $SCRIPT/{}
+
