@@ -56,10 +56,11 @@
 !.local/share/bin/swallow
 !.local/share/bin/sh-menu
 
-**tmp*
-**cache*
-**history*
-**data*
-**.log*
-**.err*
-**.out*
+**/*.log
+**/*.err
+**/*.out
+**/*tmp*
+**/*cache*
+**/*history*
+**/*data*
+**/*info*
