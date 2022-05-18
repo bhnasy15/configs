@@ -81,9 +81,9 @@ CounterControl:	0
 AntiAlias:	1
 DefaultFVShowHmetrics:	0
 DefaultFVShowVmetrics:	0
-DefaultFVSize:	96
-DefaultFVRowCount:	8
-DefaultFVColCount:	19
+DefaultFVSize:	128
+DefaultFVRowCount:	6
+DefaultFVColCount:	14
 DefaultFVGlyphLabel:	0
 SaveToDir:	0
 OnlyCopyDisplayed:	0
@@ -157,6 +157,7 @@ CV_CB2Tool:	5
 XUID-Base:	1021 206 422395342
 ShowKerningPane:	1
 PluginStartupMode:	Ask
+Recent:	/home/yarob/Untitled1.sfd
 Recent:	/home/yarob/play/temp.sfd
 Recent:	/home/yarob/play/Amiri-Regular.sfd
 Recent:	/home/yarob/play/templ.sdf.sfd
@@ -166,4 +167,3 @@ Recent:	/usr/share/fonts/TTF/ArefRuqaa-Regular.ttf
 Recent:	/home/yarob/.local/share/fonts/ae_AlHor.ttf
 Recent:	/home/yarob/SourceCodePro-Medium.sfd
 Recent:	/home/yarob/sans.sfd
-Recent:	/home/yarob/Untitled1.sfd

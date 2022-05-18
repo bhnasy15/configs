@@ -42,7 +42,7 @@ n warp,click 5
 Shift+n warp,click 5
 ctrl+n warp,click 5
 
-v drag 1
+g drag 1
 
 Return warp,click 1,end
 Escape end
