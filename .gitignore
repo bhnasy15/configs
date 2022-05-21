@@ -21,6 +21,7 @@
 .config/pulse
 .config/JetBrains
 .config/Microsoft
+.config/zsh
 
 # include ".gnupg/", show every thing in it, and include only ".conf" files.
 !.gnupg/

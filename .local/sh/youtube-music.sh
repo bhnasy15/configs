@@ -1,32 +1,41 @@
 #!/usr/bin/sh
 
+exitIfEscaped()
+{
+	if [ $? != 0 ]
+	then
+		exit 1
+	fi
+}
+
 src=$HOME/.local/src
-clip=$(xclip -selection clip -o)
-link=$(echo $clip | dmenu -p "link or list ? ")
+clip=$(xclip -selection clip -o 2> /dev/null)
+
+if [ $? != 0 ]
+then
+	clip="null"
+	link="list"
+else
+	link=$(echo -e "$clip\nlist" | dmenu -p "link or list ? ")
+	exitIfEscaped
+fi
+
+list=""
+
+whichList()
+{
+	list=$(ls $src/*.list | dmenu -p "which list: " -l 10)
+	exitIfEscaped
+}
 
 # play from list
 if [ "$link" == "list" ]
 then
-	list=$(ls $src/*.list | dmenu -p "which list: " -l 10)
-	if [ $? == 0 ]
-	then
-		ls $list 2> /dev/null
-		if [ $? != 0 ]
-		then
-			exit 1
-		fi
-	else
-		exit 1
-	fi
-
-	# add to list ?
-	if [ "$(echo -e "yes\nno" | dmenu -p "add \"$clip\" to list? ")" == "yes" ]
-	then
-		echo -e "\n$clip" >> $list
-	fi
-
+	whichList
 	# final link/list
-	link=$(cat $list | dmenu -p "which one? " -l 10)
+	link=$(echo -e "all\n$(cat $list)" | dmenu -p "which one? " -l 10)
+
+	exitIfEscaped
 
 	# play all
 	if [ "$link" == "all" ]
@@ -38,6 +47,15 @@ then
 
 # fallback
 else
-	st -g 60x10 -t SCRIPT -e mpv --no-video --loop-file=inf --ytdl-format=140 "$link"
+	# add to list ?
+	if [ "$(echo -e "yes\nno" | dmenu -p "add \"$clip\" to a list? ")" == "yes" ]
+	then
+		whichList
+		echo -e "$clip" >> $list
+	fi
+
+	exitIfEscaped
+
+	st -g 60x10 -t SCRIPT -e mpv --no-video --loop-file=inf --ytdl-format=140 "$clip"
 fi
 

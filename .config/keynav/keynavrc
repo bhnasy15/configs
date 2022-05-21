@@ -25,22 +25,27 @@ Shift+2 playback
 u warp,click 1
 Shift+u warp,click 1
 ctrl+u warp,click 1
+super+u warp,click 1
 
 i warp,click 2
 Shift+i warp,click 2
 ctrl+i warp,click 2
+super+i warp,click 2
 
 o warp,click 3
 Shift+o warp,click 3
 ctrl+o warp,click 3
+super+o warp,click 3
 
 m warp,click 4
 Shift+m warp,click 4
 ctrl+m warp,click 4
+super+m warp,click 4
 
 n warp,click 5
 Shift+n warp,click 5
 ctrl+n warp,click 5
+super+n warp,click 5
 
 g drag 1
 

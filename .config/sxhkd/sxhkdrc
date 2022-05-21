@@ -157,11 +157,11 @@ alt + shift + {1-9}
 super + alt + bracket{left,right}
 	bspc monitor -f {next,prev}
 
-super + shift + bracket{left,right}
-	bspc desktop -m {next,prev}
+super + shift + m
+	sh $SCRIPT/move.sh
 
-super + g 
-	echo "0" | dmenu -fn monospace-17 | xargs bspc config window_gap
+super + shift + g 
+	echo "0" | dmenu -p "How big?" | xargs bspc config window_gap
 #
 # preselect
 #
