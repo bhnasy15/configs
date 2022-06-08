@@ -6,7 +6,7 @@
 export PATH=$PATH:$HOME/.local/share/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ZDOTDIR=$HOME/.config/zsh
-export EDITOR=vim
+export EDITOR=nvim
 export TERM=st
 export SCRIPT=$HOME/.local/sh
 export XDG_CONFIG_HOME=$HOME/.config

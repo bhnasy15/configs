@@ -227,6 +227,15 @@ c.downloads.position = 'bottom'
 # Type: Int
 c.downloads.remove_finished = 3000
 
+# Editor (and arguments) to use for the `edit-*` commands. The following
+# placeholders are defined:  * `{file}`: Filename of the file to be
+# edited. * `{line}`: Line in which the caret is found in the text. *
+# `{column}`: Column in which the caret is found in the text. *
+# `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
+# Same as `{column}`, but starting from index 0.
+# Type: ShellCommand
+c.editor.command = ['st', '-t', 'SCRIPT', '-e', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
+
 # Command (and arguments) to use for selecting a single file in forms.
 # The command should write the selected file path to the specified file
 # or stdout. The following placeholders are defined: * `{}`: Filename of
@@ -381,12 +390,13 @@ config.bind('<Ctrl+9>', 'tab-focus -1')
 config.bind('<Ctrl+l>', ':session-load')
 config.bind('<Ctrl+q>', 'close')
 config.bind('<Ctrl+u>', 'undo')
-config.bind('Ctrl-l', 'session-load')
 config.bind('J', 'tab-prev')
 config.bind('K', 'tab-next')
 config.bind('M', 'tab-mute')
 config.bind('X', 'undo')
 config.bind('d', 'scroll-page 0 0.5')
+config.bind('gJ', 'tab-move -')
+config.bind('gK', 'tab-move +')
 config.bind('u', 'scroll-page 0 -0.5')
 config.bind('x', 'tab-close')
 

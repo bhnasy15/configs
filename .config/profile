@@ -10,5 +10,7 @@ pidof keynav || keynav daemonize 2> /dev/null &
 
 pidof picom || picom 2> /dev/null &
 
+xset r rate 200 35
+
 exec $TERM
 

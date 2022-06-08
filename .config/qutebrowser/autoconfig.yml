@@ -28,11 +28,22 @@ settings:
         <Ctrl+l>: :session-load
         <Ctrl+q>: close
         <Ctrl+u>: undo
-        Ctrl-l: session-load
         J: tab-prev
         K: tab-next
         M: tab-mute
         X: undo
         d: scroll-page 0 0.5
+        gJ: tab-move -
+        gK: tab-move +
         u: scroll-page 0 -0.5
         x: tab-close
+  editor.command:
+    global:
+    - st
+    - -t
+    - SCRIPT
+    - -e
+    - nvim
+    - '{file}'
+    - -c
+    - normal {line}G{column0}l
