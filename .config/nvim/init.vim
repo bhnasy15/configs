@@ -41,10 +41,6 @@ set smartcase
 set showmatch
 " set incsearch
 set nohlsearch
-" set hlsearch
-" hi Search cterm=bold ctermfg=214 ctermbg=232
-
-" colorscheme spaceduck
 
 """ numbers
 set relativenumber
@@ -55,7 +51,6 @@ set wildmenu
 set wildmode=longest:full:lastused
 "set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
-
 " Mapping {{{
 
 " Press the space bar to type the : character in command mode.
@@ -63,6 +58,7 @@ set wildmode=longest:full:lastused
 let mapleader = ","
 
 nnoremap <Space> :
+command Vs Vexplore
 
 inoremap {<CR> {<CR>}<ESC>O
 

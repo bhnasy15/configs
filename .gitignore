@@ -11,10 +11,6 @@
 !.Xresources
 !README.md
 
-# include ".vim/" and everything in it.
-!.vim
-!.vim/**
-
 # include ".config/" and everything in it, and ignore specific files.
 !.config
 !.config/**
@@ -22,6 +18,10 @@
 .config/JetBrains
 .config/Microsoft
 .config/zsh
+.config/nvim/**
+!.config/nvim/spell/**
+!.config/nvim/color/**
+!.config/nvim/init.vim
 
 # include ".gnupg/", show every thing in it, and include only ".conf" files.
 !.gnupg/
