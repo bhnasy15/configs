@@ -18,19 +18,18 @@
 .config/JetBrains
 .config/Microsoft
 .config/zsh
+
 .config/nvim/**
 !.config/nvim/spell/**
 !.config/nvim/color/**
 !.config/nvim/init.vim
 
 # include ".gnupg/", show every thing in it, and include only ".conf" files.
-!.gnupg/
 !.gnupg/**
 .gnupg/*
 !.gnupg/**/*.conf
 
 # include ".local/" show every thing in it but include none.
-!.local
 !.local/**
 .local/*
 
@@ -39,17 +38,14 @@
 !.local/sh/**
 
 # include ".local/src/" show every thing in it but include none.
-!.local/src/
 !.local/src/**
 .local/src/*
 
 # include ".local/share/" show every thing in it but include none.
-!.local/share
 !.local/share/**
 .local/share/*
 
 # include ".local/share/bin" show every thing in it but include none.
-!.local/share/bin
 !.local/share/bin/**
 .local/share/bin/*
 
@@ -57,6 +53,7 @@
 !.local/share/bin/swallow
 !.local/share/bin/sh-menu
 
+# privacy
 **/*.log
 **/*.err
 **/*.out
