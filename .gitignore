@@ -12,7 +12,6 @@
 !README.md
 
 # include ".config/" and everything in it, and ignore specific files.
-!.config
 !.config/**
 .config/pulse
 .config/JetBrains
@@ -62,3 +61,5 @@
 **/*history*
 **/*data*
 **/*info*
+**/*cookeis*
+**/*url*
