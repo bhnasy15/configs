@@ -270,7 +270,7 @@ fileviewer <image/*>
 " fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
          " \ viu %f
 " Directory
-fileviewer */ tree %f
+fileviewer */ tree -L 2 %f
 
 " OpenRaster
 filextype *.ora
@@ -507,7 +507,7 @@ nnoremap <a-o> :sync %c<cr>
 " Swap panes
 nnoremap <c-u> <c-w>x
 
-nnoremap qq :quit<cr>
+nnoremap ,q :quit<cr>
 
 " ------------------------------------------------------------------------------
 

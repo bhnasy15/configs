@@ -22,7 +22,7 @@
 .config/nvim/**
 !.config/nvim/spell/**
 !.config/nvim/color/**
-!.config/nvim/init.vim
+!.config/nvim/init.*
 
 # include ".gnupg/", show every thing in it, and include only ".conf" files.
 !.gnupg/**
