@@ -45,6 +45,11 @@ vim.api.nvim_win_set_option( 0, "wrap", true);
 vim.api.nvim_set_option("spelllang", "ar,en");
 vim.api.nvim_buf_set_option(0, "spelllang", "ar,en");
 
+-- file browser/explorer (netrw) settings
+vim.api.nvim_set_var("netrw_banner", 0);
+vim.api.nvim_set_var("netrw_liststyle", 3);
+vim.api.nvim_set_var("netrw_winsize", 45);
+
 -----------------------------------------------------------------------------------
 vim.api.nvim_set_var( "mapleader", ",");
 ----------------------------------------
