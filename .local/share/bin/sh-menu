@@ -1,4 +1,9 @@
 #!/usr/bin/sh
 
-ls $SCRIPT | dmenu -l 10 | xargs -I {} sh $SCRIPT/{}
+menu="$(ls $SCRIPT | dmenu -l 10 )";
+script="$SCRIPT/$(echo $menu | grep -o -e "^[a-zA-Z0-9\-]\+\.\?[a-zA-Z\-]\?\+\?")";
+args="$(echo $menu | grep -o -e " .\+")";
+
+echo $script$args
+[ -x $script ] && . $script$args
 
