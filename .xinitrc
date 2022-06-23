@@ -13,6 +13,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 # polkit manager
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec xss-lock slock &
 
 # merge in defaults and keymaps
 

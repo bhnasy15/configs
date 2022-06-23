@@ -129,7 +129,7 @@ mark h ~/
 " %m run the command in a menu window
 
 command! df df -h %m 2> /dev/null
-command! du du -h %a %f %m 2> /dev/null
+command! du du -h -d 1 --time %a %f %m 2> /dev/null
 command! diff nvim -d %f %F
 command! zip zip -r %c.zip %f
 command! run !! ./%f
@@ -256,13 +256,12 @@ filetype {*.[1-8]},<text/troff> nvim ./%c
 fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
 
 " Images
-" filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-        " \ {View in sxiv}
-        " \ vimiv %f,
-        " \ {View in gpicview}
-        " \ gpicview %c,
-        " \ {View in shotwell}
-        " \ shotwell,
+ filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
+         \ feh %f,
+         \ {View in gpicview}
+         \ gpicview %c,
+         \ {View in shotwell}
+         \ shotwell,
 fileviewer <image/*>
         \ vifmimg draw %px %py %pw %ph %c
         \ %pc
@@ -271,6 +270,7 @@ fileviewer <image/*>
          " \ viu %f
 " Directory
 fileviewer */ tree -L 2 %f
+fileviewer .*/ tree -L 2 %f
 
 " OpenRaster
 filextype *.ora
@@ -436,6 +436,10 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 " ------------------------------------------------------------------------------
 
 " Sample mappings
+
+" jumping history
+nnoremap H :histprev<cr>
+nnoremap L :histnext<cr>
 
 " Start shell in current directory
 nnoremap s :shell<cr>

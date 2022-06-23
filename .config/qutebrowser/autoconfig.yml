@@ -6,44 +6,5 @@
 
 config_version: 2
 settings:
-  bindings.commands:
-    global:
-      caret:
-        J: scroll down
-        K: scroll up
-      normal:
-        ;H: hint all hover
-        ;h: hint images hover
-        ;p: hint links run :open -p {hint-url}
-        <Backspace>: back
-        <Ctrl+1>: tab-focus 1
-        <Ctrl+2>: tab-focus 2
-        <Ctrl+3>: tab-focus 3
-        <Ctrl+4>: tab-focus 4
-        <Ctrl+5>: tab-focus 5
-        <Ctrl+6>: tab-focus 6
-        <Ctrl+7>: tab-focus 7
-        <Ctrl+8>: tab-focus 8
-        <Ctrl+9>: tab-focus -1
-        <Ctrl+l>: :session-load
-        <Ctrl+q>: close
-        <Ctrl+u>: undo
-        J: tab-prev
-        K: tab-next
-        M: tab-mute
-        X: undo
-        d: scroll-page 0 0.5
-        gJ: tab-move -
-        gK: tab-move +
-        u: scroll-page 0 -0.5
-        x: tab-close
-  editor.command:
-    global:
-    - st
-    - -t
-    - SCRIPT
-    - -e
-    - nvim
-    - '{file}'
-    - -c
-    - normal {line}G{column0}l
+  content.media.video_capture:
+    http://127.0.0.1:9090: true

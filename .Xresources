@@ -7,7 +7,7 @@ Xft.autohint: true
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcdfilter
 
-st.alpha:0.5
+st.alpha:0.6
 st.font: monospace-13
 st.shell:zsh
 XTerm*renderFont: true

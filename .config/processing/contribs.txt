@@ -192,6 +192,21 @@ type=library
 download=http://maxlfarrell.gitlab.io/extruder/extruder.zip
 
 library
+name=Everything Will Be IK
+authors=[Eron Gjoni](https://github.com/EGjoni/)
+url=https://github.com/EGjoni/Everything-Will-Be-IK-Processing
+categories=3D,Animation,Simulation
+sentence=A robust Inverse Kinematics Library for Processing.
+paragraph=Features: Highly Stable, Orientation AND position based targets (6-DOF), Multiple end-effector support, Intermediary effector support, Dampening (stiffness control), Highly versatile 3-DOF constraints with arbitrarily shaped orientation regions.
+version=7
+prettyVersion=3.0.4
+minRevision=0
+maxRevision=0
+id=244
+type=library
+download=http://giftedapprentice.com/ewbIK/ewbIK.zip
+
+library
 name=nub
 authors=[Jean Pierre Charalambos](https://visualcomputing.github.io/)
 url=https://github.com/VisualComputing/nub
@@ -439,8 +454,8 @@ url=http://iddi.github.io/oocsi-processing/
 categories=Data,I/O,Utilities
 sentence=Processing client library for the OOCSI design middleware and Data Foundry access.
 paragraph=This library provides easy ways to connect a Processing sketch to an OOCSI server and communicate through this connection with other clients on many different platforms, such as Processing, Java, Android, Python, OSC, and HTML/JavaScript and Node.js via web sockets. Processing sketches can not only send and receive messages between specific clients, but also broadcast and subscribe to channels, which makes coordinating a large number of sketches or devices surprisingly simple and robust.
-version=142
-prettyVersion=1.4.2
+version=143
+prettyVersion=1.4.3
 minRevision=0
 maxRevision=0
 id=084
@@ -733,6 +748,22 @@ type=library
 download=https://github.com/cansik/deep-vision-processing/releases/download/contribution/deepvision.zip
 
 library
+name=SerialRecord
+categories=Data,I/O
+authors=[Oliver Steele](steele@osteele.com)
+url=https://osteele.github.io/Processing_SerialRecord/
+sentence=The SerialRecord library for Processing sends and receive records, containing multiple integers, over the serial port.
+paragraph=It is intended for novice programmers: it is designed to be easy to use, to detect when it is used incorrectly, and to detect and report when it receives invalid data. It also has an option to display the data sent to the and received from the serial port on the canvas.
+version=1
+prettyVersion=0.2.2
+lastUpdated=0
+minRevision=0264
+maxRevision=0
+id=278
+type=library
+download=http://assets.osteele.com.s3.amazonaws.com/processing/SerialRecord.zip
+
+library
 name=Geomerative
 authors=[Ricard Marxer](http://www.ricardmarxer.com/)
 url=http://www.ricardmarxer.com/geomerative
@@ -807,6 +838,20 @@ maxRevision=0
 id=237
 type=library
 download=http://gicentre.org/handy/handy.zip
+
+library
+name=Nurbs
+authors=[Arnoud van der Leer](https://github.com/arnoudvanderleer)
+url=https://arnoudvanderleer.github.io/processing-nurbs/
+categories=Geometry
+sentence=An implementation of Non-uniform Rational B-Splines for Processing
+version=1
+prettyVersion=1.0.0
+minRevision=0
+maxRevision=0
+id=277
+type=library
+download=https://arnoudvanderleer.github.io/processing-nurbs/download/Nurbs.zip
 
 library
 name=G4P
@@ -890,13 +935,28 @@ url=http://github.com/milchreis/uibooster-for-processing
 categories=GUI
 sentence=Creates fast and easy GUI components for your sketch.
 paragraph=With UiBooster you creates in a few lines of code dialog boxes, custom forms, alerts or notification which interact with your sketch. It's made for easy use and fast results.
-version=1140
-prettyVersion=1.14.0
+version=1143
+prettyVersion=1.14.3
 minRevision=263
 maxRevision=0
 id=256
 type=library
 download=https://github.com/Milchreis/uibooster-for-processing/releases/latest/download/UiBooster.zip
+
+library
+name=Swing Helper
+categories=GUI
+authors=Michael Lukas
+url=https://github.com/NumericPrime/SwingHelperProcessing
+sentence=Allows using swing GUI components in Processing windows and includes utility for swing in general
+paragraph=Adding swing components to processing is hard this library makes this process easier by adding a few classes and annotations that allow to merge a processing content with swing components. The library adds 3 classes to do that in various ways and allow including custom ways with just a few lines of code. The library also includes utility to format buttons by e.g. edit their color or strap methods onto them along with a few other QOL functions.
+version=8
+prettyVersion=1.1.1
+id=281
+type=library
+minRevision=0
+maxRevision=0
+download=https://github.com/NumericPrime/SwingHelperProcessing/releases/latest/download/SwingHelperLib.zip
 
 library
 name=Sudden Motion Sensor
@@ -1175,8 +1235,8 @@ url=https://github.com/jaysonh/Dmx4Artists/
 categories=Hardware
 sentence=Easy to use library for controlling dmx lights with an FTDI USB controller.
 paragraph=Easy to use library for controlling dmx lights with an FTDI USB controller.
-version=3
-prettyVersion=1.3.0
+version=106
+prettyVersion=1.6
 minRevision=0
 maxRevision=0
 id=268
@@ -1483,34 +1543,19 @@ type=library
 download=https://github.com/gohai/processing-simplereceiptprinter/releases/download/latest/processing-simplereceiptprinter.zip
 
 library
-name=Tramontana
-authors=[Pierluigi Dalla Rosa](http://www.pierdr.com)
-url=https://pierdr.github.io/Tramontana-for-Processing/
-categories=I/O,Utilities
-sentence=Tramontana - prototyping and creative kit for multi-device interactions and experiences.
-paragraph=With Tramontana will be simple to architect coreographies and interactive spaces. Connected multiple devices to create mesmerizing multidevice and immersive experiences just from a sketch. You can download Tramontana for iOS at this link: https://itunes.apple.com/US/app/id1121069555?mt=8
-version=11
-prettyVersion=1.0.3
-minRevision=0250
-maxRevision=0
-id=217
-type=library
-download=https://pierdr.github.io/Tramontana-for-Processing/tramontana.zip
-
-library
-name=Novation Launch Controller client
-authors=[Half Scheidl](https://github.com/haschdl)
+name=Novation Launch Control client
+authors=[Half Scheidl](https://github.com/haschdl), [Jonathan Newman](https://github.com/poetoflight)
 url=https://github.com/haschdl/pLaunchController
 categories=I/O
-sentence=Control your sketches using the knobs and pads from Novation &reg; Launch Control&reg;.
-paragraph=Once connected to your computer, use the MIDI controller to control your sketch by\
-version=4
-prettyVersion=1.2
+sentence=Control your sketches using the knobs, pads and slider from MIDI controllers such as Novation &reg; Launch Control&reg;.
+paragraph=Once connected to your computer, use the MIDI controller to control your sketch by \
+version=5
+prettyVersion=2.0.0-alpha
 minRevision=228
 maxRevision=0
 id=232
 type=library
-download=https://github.com/haschdl/pLaunchController/releases/download/latest/pLaunchController.zip
+download=https://github.com/haschdl/pLaunchController/releases/download/latest/pLaunchControl.zip
 
 library
 name=Image Sequence Player
@@ -1828,21 +1873,6 @@ type=library
 download=https://github.com/processing/processing-sound/releases/download/latest/sound.zip
 
 library
-name=The MidiBus
-authors=[Severin Smith](http://www.smallbutdigital.com/)
-url=http://www.smallbutdigital.com/themidibus.php
-categories=Sound
-sentence=The MidiBus is a minimal MIDI library for Processing, no frills, no limitations.
-paragraph=The MidiBus is a MIDI library for Processing. It provides a quick and simple way to access and interact with installed MIDI system resources. The MidiBus is aimed primarily at real time MIDI applications. The focus is on strong MIDI I/O capabilities and keeping frills to a minimum (e.g. no built in sequencer, file read/write, MIDI recording/playback).
-version=9
-prettyVersion=9
-minRevision=0
-maxRevision=0
-id=019
-type=library
-download=http://www.smallbutdigital.com/releases/themidibus/themidibus-latest.zip
-
-library
 name=SuperCollider client for Processing
 authors=[Daniel Jones](http://www.erase.net/)
 url=http://www.erase.net/projects/processing-sc/
@@ -1969,8 +1999,8 @@ url=https://github.com/dennisppaul/wellen
 categories=Sound
 sentence=wellen is a framework for exploring and teaching generative music making and algorithmic compositions.
 paragraph=it facilitates simple ways of playing musical notes, facilitates easy access to low-level digital signal processing (DSP) and supplies rhythm and timing as well as some *standard* muscial mechanics. the library acts as an adapter to various sound in- and outputs like MIDI, OSC, or digital/analog audio. the library is hosted on github [wellen](https://github.com/dennisppaul/wellen).
-version=7
-prettyVersion=0.7
+version=8
+prettyVersion=0.8
 minRevision=246
 maxRevision=0
 id=264
@@ -2195,8 +2225,8 @@ url=https://ixora.io/projects/colorblindness/
 categories=Utilities
 sentence=Fast and easy to use utility for simulating color blindness or performing daltonization.
 paragraph=Transforms colors so you can see what a color blind person would see when they look at your sketch.
-version=2
-prettyVersion=1.0.1
+version=3
+prettyVersion=1.0.2
 minRevision=227
 maxRevision=0
 id=202
@@ -2250,15 +2280,30 @@ type=library
 download=https://github.com/AlexPoupakis/mouse2DTransformations/releases/download/latest/Mouse2DTransformations.zip
 
 library
+name=Tramontana Processing Library
+authors=[Pierluigi Dalla Rosa, Enrico Gueli](http://www.pierdr.com, https://www.instagram.com/ris8_allo_zen0/)
+url=https://tramontana.xyz
+categories=Utilities
+sentence=Tramontana - prototyping and creative kit for multi-device interactions and experiences.
+paragraph=With Tramontana you can access the inputs and outputs of one or more smartphones (or other devices) to easily and quickly prototype interactive spaces, connected products or whatever you can think of. What used to involve complex tasks like networking, native app development, etc. can now be created with a single sketch on your computer.
+version=13
+prettyVersion=1.0.5
+minRevision=0250
+maxRevision=0
+id=217
+type=library
+download=https://tramontanaixd.github.io/processing-library/Tramontana.zip
+
+library
 name=Scratch
-authors=[Mike Barkmin](http://barkmin.eu)
+authors=[Mike Barkmin](https://barkmin.eu)
 url=https://github.com/mikebarkmin/processing-library-scratch
 categories=Utilities
 sentence=Provides classes to match the functionality of scratch
 paragraph=
-version=14
-prettyVersion=1.12.0
-minRevision=228
+version=19
+prettyVersion=1.14.2
+minRevision=270
 maxRevision=0
 id=235
 type=library
@@ -2310,19 +2355,34 @@ type=library
 download=https://bdhont.net/LiveBrush.zip
 
 library
-name=GR Infinidecimal Canvas
-authors=[C. Sina Cetin](http://rect.dev)
-url=http://rect.dev/infinidecimal
+name=Oklab for Processing
+authors=[Yash Gupta](https://refuse.ink/)
+url=https://github.com/yashbutno/Oklab-for-Processing
 categories=Utilities
-sentence=A numeric canvas that stores the image as a number array to create visuals with arbitrary ranges.
-paragraph=Infinidecimal maintains an array of numbers to represent the canvas. It uses "intensity" to represent color. This way, the color resolution and range is as high as the resolution and range of a floating-point number.
+sentence=Perceptually-accurate and human-friendly color picking using the Oklab color space.
+paragraph=This library includes a small collection of functions to help you pick colors with perceptual accuracy using Bjorn Ottosson's Oklab color space. This works in contrast to generating colors using RGB or HSB values, in which similar difference in input values don't represent similar difference in color output.
+version=1
+prettyVersion=1.0.0
+minRevision=0
+maxRevision=0
+id=275
+type=library
+download=https://github.com/yashbutno/Oklab-for-Processing/releases/download/latest/OklabForProcessing.zip
+
+library
+name=Timer
+authors=[Guilherme Silveira](https://guilhermesilveira.org/)
+url=https://github.com/guilhermesilveira/timer
+categories=Utilities
+sentence=A library to invoke your functions in fixed time intervals.
+paragraph=Created for Processing 4.
 version=2
 prettyVersion=1.0.1
-minRevision=269
-maxRevision=270
-id=257
+minRevision=1283
+maxRevision=0
+id=280
 type=library
-download=https://rect.dev/processing/infinidecimal/GRInfinidecimalCanvas.zip
+download=https://github.com/guilhermesilveira/timer/releases/download/latest/Timer.zip
 
 library
 name=Fontastic
@@ -2340,7 +2400,7 @@ maxRevision=0
 download=https://raw.github.com/andreaskoller/Fontastic/master/download/Fontastic.zip
 
 library
-name=Video
+name=Video Library for Processing 3
 authors=The Processing Foundation
 url=http://processing.org/reference/libraries/video/index.html
 categories=Video & Vision
@@ -2349,10 +2409,10 @@ paragraph=
 version=8
 prettyVersion=2.0
 minRevision=228
-maxRevision=0
+maxRevision=270
 id=150
 type=library
-download=https://github.com/processing/processing-video/releases/download/latest/video.zip
+download=https://github.com/processing/processing-video/releases/download/latest-processing3/video.zip
 
 library
 name=Open Kinect for Processing
@@ -2383,6 +2443,21 @@ type=library
 minRevision=0
 maxRevision=0
 download=http://www.v3ga.net/processing/BlobDetection/blobDetection.zip
+
+library
+name=Syphon
+authors=[Andres Colubri](http://andrescolubri.net/), [Tom Butterworth](http://kriss.cx/tom), [Anton Marini](http://vade.info/)
+url=https://github.com/Syphon/Processing
+categories=Video & Vision
+sentence=This library allows the sharing of video and images between applications in macOS using the Syphon framework.
+paragraph=Syphon is an open source macOS technology that allows applications to share frames - full frame rate video or stills - with one another in realtime. This library wraps Syphon using Java and provides a simple interface for frame sharing in Processing.
+version=9
+prettyVersion=4.0
+minRevision=249
+maxRevision=0
+id=041
+type=library
+download=https://github.com/Syphon/Processing/releases/download/latest/Syphon.zip
 
 library
 name=OpenCV for Processing
@@ -2534,6 +2609,21 @@ maxRevision=0
 id=236
 type=library
 download=http://softlab.pt/VLCJVideo/VLCJVideo.zip
+
+library
+name=Video Library for Processing 4
+authors=The Processing Foundation
+url=http://processing.org/reference/libraries/video/index.html
+categories=Video & Vision
+sentence=GStreamer-based video library for Processing.
+paragraph=
+version=9
+prettyVersion=2.1
+minRevision=1281
+maxRevision=0
+id=276
+type=library
+download=https://github.com/processing/processing-video/releases/download/latest/video.zip
 
 examples
 name=The Nature of Code
@@ -2908,20 +2998,20 @@ maxRevision=228
 download=http://bezier.de/processing/modes/JavaScriptMode.zip
 
 mode
-name=Android Mode
+name=Android Mode for Processing 3
 authors=[The Processing Foundation](https://processingfoundation.org/)
 url=http://android.processing.org
-sentence=Create projects with Processing for Android devices
-paragraph=This version of the Android Mode is for Processing 3.1+
+sentence=This mode lets you use Processing to create Android apps
+paragraph=
 imports=processing.mode.java.JavaMode
-version=279
-prettyVersion=4.2.1
+version=280
+prettyVersion=4.3.0
 minRevision=249
-maxRevision=1269
+maxRevision=270
 id=101
 type=mode
 categories=
-download=https://github.com/processing/processing-android/releases/download/latest/AndroidMode.zip
+download=https://github.com/processing/processing-android/releases/download/latest-processing3/AndroidMode.zip
 
 mode
 name=REPL Mode
@@ -2962,9 +3052,9 @@ authors=[Fathom Information Design](http://fathom.info/)
 url=https://github.com/fathominfo/processing-p5js-mode
 sentence=Adds a simple editor for p5.js code
 paragraph=p5jsMode is a simple editor for p5.js
-version=13
-prettyVersion=1.4.1
-minRevision=252
+version=15
+prettyVersion=1.5
+minRevision=1280
 maxRevision=0
 imports=processing.mode.java.JavaMode
 id=199
@@ -3018,4 +3108,20 @@ id=274
 type=mode
 categories=
 download=https://py.processing.org/4/PythonMode.zip
+
+mode
+name=Android Mode for Processing 4
+authors=[The Processing Foundation](https://processingfoundation.org/)
+url=http://android.processing.org
+sentence=This mode lets you use Processing to create Android apps
+paragraph=
+imports=processing.mode.java.JavaMode
+version=404
+prettyVersion=4.5.0a5
+minRevision=1283
+maxRevision=0
+id=279
+type=mode
+categories=
+download=https://github.com/processing/processing-android/releases/download/latest/AndroidMode.zip
 
