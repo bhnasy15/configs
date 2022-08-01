@@ -7,9 +7,18 @@ Xft.autohint: true
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcdfilter
 
-st.alpha:0.6
+*font: semimono
+
+st.alpha: 0.6
 st.font: monospace-13
-st.shell:zsh
+
+emacs.title: "Emacs"
+emacs.background: #000000
+emacs.bitmapIcon: on
+emacs.font: monospace
+emacs.borderColor: #333333
+emacs.menuBar: off
+
 XTerm*renderFont: true
 xterm*faceName: monospace
 XTerm*faceSize: 13

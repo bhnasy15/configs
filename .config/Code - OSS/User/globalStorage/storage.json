@@ -32,7 +32,7 @@
                         "label": "Open Wor&&kspace from File..."
                     },
                     {
-                        "id": "submenuitem.35",
+                        "id": "submenuitem.37",
                         "label": "Open &&Recent",
                         "submenu": {
                             "items": [
@@ -40,6 +40,19 @@
                                     "id": "workbench.action.reopenClosedEditor",
                                     "label": "&&Reopen Closed Editor",
                                     "enabled": false
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/home/yarob/Desktop",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Desktop"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -94,10 +107,11 @@
                     },
                     {
                         "id": "workbench.action.toggleAutoSave",
-                        "label": "A&&uto Save"
+                        "label": "A&&uto Save",
+                        "checked": true
                     },
                     {
-                        "id": "submenuitem.34",
+                        "id": "submenuitem.36",
                         "label": "&&Preferences",
                         "submenu": {
                             "items": [
@@ -133,7 +147,7 @@
                                 },
                                 {
                                     "id": "workbench.action.openSnippets",
-                                    "label": "User &&Snippets"
+                                    "label": "Configure User Snippets"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -332,7 +346,7 @@
                         "id": "vscode.menubar.separator"
                     },
                     {
-                        "id": "submenuitem.23",
+                        "id": "submenuitem.25",
                         "label": "&&Appearance",
                         "submenu": {
                             "items": [
@@ -358,7 +372,8 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Primary Side Bar"
+                                    "label": "Show &&Primary Side Bar",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleAuxiliaryBar",
@@ -386,7 +401,7 @@
                                     "label": "&&Move Primary Side Bar Right"
                                 },
                                 {
-                                    "id": "submenuitem.33",
+                                    "id": "submenuitem.35",
                                     "label": "Panel Position",
                                     "submenu": {
                                         "items": [
@@ -407,7 +422,7 @@
                                     }
                                 },
                                 {
-                                    "id": "submenuitem.32",
+                                    "id": "submenuitem.34",
                                     "label": "Align Panel",
                                     "submenu": {
                                         "items": [
@@ -450,7 +465,7 @@
                         }
                     },
                     {
-                        "id": "submenuitem.30",
+                        "id": "submenuitem.32",
                         "label": "Editor &&Layout",
                         "submenu": {
                             "items": [
@@ -567,8 +582,7 @@
                     },
                     {
                         "id": "editor.action.toggleMinimap",
-                        "label": "Show &&Minimap",
-                        "checked": true
+                        "label": "Show &&Minimap"
                     },
                     {
                         "id": "breadcrumbs.toggle",
@@ -608,7 +622,7 @@
                         "id": "vscode.menubar.separator"
                     },
                     {
-                        "id": "submenuitem.37",
+                        "id": "submenuitem.40",
                         "label": "Switch &&Editor",
                         "submenu": {
                             "items": [
@@ -657,7 +671,7 @@
                         }
                     },
                     {
-                        "id": "submenuitem.38",
+                        "id": "submenuitem.41",
                         "label": "Switch &&Group",
                         "submenu": {
                             "items": [
@@ -859,7 +873,7 @@
                         "label": "Toggle &&Breakpoint"
                     },
                     {
-                        "id": "submenuitem.31",
+                        "id": "submenuitem.33",
                         "label": "&&New Breakpoint",
                         "submenu": {
                             "items": [
@@ -1479,20 +1493,20 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 0,
             "activityBarWidth": 48,
-            "sideBarWidth": 0,
+            "sideBarWidth": 170,
             "statusBarHeight": 22,
             "windowBorder": false
         }
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/yarob/.config/Code - OSS/Backups/1655113374671",
+            "backupPath": "/home/yarob/.config/Code - OSS/Backups/1658252219862",
             "uiState": {
                 "mode": 1,
-                "x": 1153,
-                "y": 657,
-                "width": 766,
-                "height": 422
+                "x": 1,
+                "y": 22,
+                "width": 1918,
+                "height": 1057
             }
         },
         "openedWindows": []

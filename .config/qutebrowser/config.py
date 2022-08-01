@@ -18,6 +18,28 @@ config.load_autoconfig(False)
 # Type: Dict
 c.aliases = {'w': 'session-save', 'l': 'session-load', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save'}
 
+# Backend to use to display websites. qutebrowser supports two different
+# web rendering engines / backends, QtWebEngine and QtWebKit (not
+# recommended). QtWebEngine is Qt's official successor to QtWebKit, and
+# both the default/recommended backend. It's based on a stripped-down
+# Chromium and regularly updated with security fixes and new features by
+# the Qt project: https://wiki.qt.io/QtWebEngine QtWebKit was
+# qutebrowser's original backend when the project was started. However,
+# support for QtWebKit was discontinued by the Qt project with Qt 5.6 in
+# 2016. The development of QtWebKit was picked up in an official fork:
+# https://github.com/qtwebkit/qtwebkit - however, the project seems to
+# have stalled again. The latest release (5.212.0 Alpha 4) from March
+# 2020 is based on a WebKit version from 2016, with many known security
+# vulnerabilities. Additionally, there is no process isolation and
+# sandboxing. Due to all those issues, while support for QtWebKit is
+# still available in qutebrowser for now, using it is strongly
+# discouraged.
+# Type: String
+# Valid values:
+#   - webengine: Use QtWebEngine (based on Chromium - recommended).
+#   - webkit: Use QtWebKit (based on WebKit, similar to Safari - many known security issues!).
+c.backend = 'webengine'
+
 # Which cookies to accept. With QtWebEngine, this setting also controls
 # other features with tracking capabilities similar to those of cookies;
 # including IndexedDB, DOM storage, filesystem API, service workers, and
@@ -322,56 +344,88 @@ c.url.start_pages = 'file:///home/yarob/.config/qutebrowser/home.html'
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
 # Type: List of Font, or Font
-c.fonts.default_family = ['serif']
+c.fonts.default_family = ['FiraMono', 'Amiri', 'FreeMono']
 
 # Font used in the completion widget.
 # Type: Font
-c.fonts.completion.entry = 'default_size default_family'
+c.fonts.completion.entry = 'default_size FiraMono'
+
+# Font used in the completion categories.
+# Type: Font
+c.fonts.completion.category = 'bold default_size FiraMono'
 
 # Font used for the context menu. If set to null, the Qt default is
 # used.
 # Type: Font
-c.fonts.contextmenu = 'default_size default_family'
+c.fonts.contextmenu = 'default_size FiraMono'
+
+# Font used for the debugging console.
+# Type: Font
+c.fonts.debug_console = 'default_size FiraMono'
+
+# Font used for the downloadbar.
+# Type: Font
+c.fonts.downloads = 'default_size FiraMono'
+
+# Font used for the hints.
+# Type: Font
+c.fonts.hints = 'bold default_size FiraMono'
+
+# Font used in the keyhint widget.
+# Type: Font
+c.fonts.keyhint = 'default_size FiraMono'
+
+# Font used for error messages.
+# Type: Font
+c.fonts.messages.error = 'default_size FiraMono'
+
+# Font used for info messages.
+# Type: Font
+c.fonts.messages.info = 'default_size FiraMono'
+
+# Font used for warning messages.
+# Type: Font
+c.fonts.messages.warning = 'default_size FiraMono'
 
 # Font used for prompts.
 # Type: Font
-c.fonts.prompts = 'default_size default_family'
+c.fonts.prompts = 'default_size FiraMono'
 
 # Font used in the statusbar.
 # Type: Font
-c.fonts.statusbar = 'default_size default_family'
+c.fonts.statusbar = 'default_size FiraMono'
 
 # Font used for selected tabs.
 # Type: Font
-c.fonts.tabs.selected = 'default_size default_family'
+c.fonts.tabs.selected = 'default_size FiraMono'
 
 # Font used for unselected tabs.
 # Type: Font
-c.fonts.tabs.unselected = 'default_size default_family'
+c.fonts.tabs.unselected = 'default_size FiraMono'
 
 # Font family for standard fonts.
 # Type: FontFamily
-c.fonts.web.family.standard = 'serif'
+c.fonts.web.family.standard = 'default_family'
 
 # Font family for fixed fonts.
 # Type: FontFamily
-c.fonts.web.family.fixed = 'serif'
+c.fonts.web.family.fixed = 'default_family'
 
 # Font family for serif fonts.
 # Type: FontFamily
-c.fonts.web.family.serif = 'serif'
+c.fonts.web.family.serif = 'default_family'
 
 # Font family for sans-serif fonts.
 # Type: FontFamily
-c.fonts.web.family.sans_serif = 'serif'
+c.fonts.web.family.sans_serif = 'default_family'
 
 # Font family for cursive fonts.
 # Type: FontFamily
-c.fonts.web.family.cursive = 'serif'
+c.fonts.web.family.cursive = 'default_family'
 
 # Font family for fantasy fonts.
 # Type: FontFamily
-c.fonts.web.family.fantasy = 'serif'
+c.fonts.web.family.fantasy = 'default_family'
 
 # Bindings for normal mode
 config.bind(';H', 'hint all hover')
@@ -392,11 +446,12 @@ config.bind('<Ctrl+q>', 'close')
 config.bind('<Ctrl+u>', 'undo')
 config.bind('J', 'tab-prev')
 config.bind('K', 'tab-next')
-config.bind('M', 'tab-mute')
+config.bind('M', 'quickmark-save')
 config.bind('X', 'undo')
 config.bind('d', 'scroll-page 0 0.5')
 config.bind('gJ', 'tab-move -')
 config.bind('gK', 'tab-move +')
+config.unbind('q')
 config.bind('u', 'scroll-page 0 -0.5')
 config.bind('x', 'tab-close')
 

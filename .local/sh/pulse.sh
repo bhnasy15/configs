@@ -1,5 +1,5 @@
-
-output="  "
+#!/usr/bin/sh
+output=" "
 
 sinkV="$(pactl get-sink-volume @DEFAULT_SINK@ | grep -o -e " [0-9]\+%" | head -1)";
 pactl get-sink-mute @DEFAULT_SINK@ | grep -q -e "yes" || output="$sinkV";

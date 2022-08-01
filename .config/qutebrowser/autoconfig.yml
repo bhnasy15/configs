@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.media.video_capture:
-    http://127.0.0.1:9090: true
+  content.notifications.enabled:
+    https://www.facebook.com: false

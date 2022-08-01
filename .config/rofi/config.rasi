@@ -1,7 +1,7 @@
 configuration{
     modi: "run,drun,window";
     lines: 5;
-    font: "mono 14";
+    font: "serif 14";
     show-icons: true;
     icon-theme: "Flat-Remix-Blue-Light";
     terminal: "alacritty";

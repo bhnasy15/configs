@@ -1,0 +1,1 @@
+<engine><name>Ocrad</name><engine_path>/usr/bin/ocrad</engine_path><arguments>-F utf8 $IMAGE</arguments><image_format>PPM</image_format></engine>

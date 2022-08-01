@@ -8,21 +8,20 @@ exitIfEscaped()
 	fi
 }
 
-if [ $@ == "d" ]
+if [ $1 == "d" ]
 then
 	clip=$(xclip -selection clip -o 2> /dev/null)
 	link=$(echo -e "$clip" | dmenu -p "this link? ")
 	exitIfEscaped
-	st -g 60x10 -t SCRIPT -e youtube-dl -f 140 -o '$HOME/Downloads/%(title).%(ext)' $link
+	st -g 60x10 -t SCRIPT -e youtube-dl -f 140 -o '$HOME/Downloads/%(title)s.%(ext)s' $link
 	exit 0
 fi
-
 src=$HOME/.local/src
 clip=$(xclip -selection clip -o 2> /dev/null)
 
 if [ $? != 0 ]
 then
-	clip="null"
+	clip=""
 	link="list"
 else
 	link=$(echo -e "$clip\nlist" | dmenu -p "link or list ? ")
@@ -48,7 +47,7 @@ then
 
 	# play all
 	if [ "$link" == "all" ]
-   	then
+	then
 		st -g 60x10 -t SCRIPT -e mpv --no-video --loop-playlist=inf --ytdl-format=140 --playlist="$list"
 	else
 		st -g 60x10 -t SCRIPT -e mpv --no-video --loop-file=inf --ytdl-format=140 "$link"

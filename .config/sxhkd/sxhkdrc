@@ -4,10 +4,10 @@
 
 # applications
 alt + Return
-	$TERM
+	prime-run $TERM
 
 super + Return
-	$TERM
+	prime-run $TERM
 
 F1
 	rofi -show drun
@@ -101,7 +101,7 @@ super + shift + F2
 #
 # bspwm hotkeys
 #
-alt + x
+alt + shift + q
 	bspc node -c
 
 # swap the current node and the biggest window
@@ -115,6 +115,9 @@ super + g
 # set the window state
 {F9,F10,F11,F12}
 	bspc node focused -t {tiled,\~pseudo_tiled,\~fullscreen,\~floating}
+
+alt + F9
+	bspc desktop focused -l next
 
 # set the node flags
 # alt + control + {m,x,y,z}
@@ -140,6 +143,9 @@ alt + F12
 	bspc node -f next.local.!hidden.window.floating
 
 # focus the next/previous desktop in the current monitor
+super + {j,k}
+	bspc desktop -f {prev,next}.local
+
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 

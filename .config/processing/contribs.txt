@@ -288,8 +288,8 @@ url=https://ztdp.ca/projects/school/Green
 categories=Animation,Other
 sentence=Easy, simple 2D game creation within Processing.
 paragraph=Developed with a focus on ease-of-use and learning. Originally made to aid in teaching high school students, emulating and expanding upon the functionality of the [Greenfoot](https://www.greenfoot.org/) project.
-version=8
-prettyVersion=1.1.2
+version=9
+prettyVersion=1.1.3
 minRevision=0
 maxRevision=0
 id=253
@@ -739,8 +739,8 @@ authors=[Florian Bruggisser](https://broox.ch)
 url=https://github.com/cansik/deep-vision-processing
 sentence=Deep computer-vision algorithms for Processing
 paragraph=Run deep neural networks on images in Processing.
-version=007000
-prettyVersion=0.7.0
+version=008020
+prettyVersion=0.8.2
 minRevision=0
 maxRevision=0
 id=267
@@ -1707,6 +1707,21 @@ maxRevision=0
 download=https://github.com/pallav12/matrixMath-for-processing/releases/download/latest/MatrixMath.zip
 
 library
+name=Complex Numbers
+authors=[Math Machine](https://discourse.processing.org/u/math_machine/)
+url=https://github.com/vmathmachine/Complex-Numbers/tree/latest
+categories=Math
+sentence=A class and collection of utilities for complex numbers.
+paragraph=A complex number is a linear combination of 1 and i (the square root of -1), such as 2+3i, 8+7i, -1-i, 2-2.8i, or -1.863+4.211i.  The term with the i is called the imaginary part, while the term without the i is called the real part.  Complex numbers allow for many things that wouldn't otherwise be possible using only real numbers (numbers without an imaginary part).  By allowing you to square root negative numbers, complex numbers open up a whole new world of possibilities, while still conserving most fundamental math rules we've come to accept with real numbers.
+version=3
+prettyVersion=1.0.2
+minRevision=0
+maxRevision=0
+id=282
+type=library
+download=https://github.com/vmathmachine/Complex-Numbers/releases/download/latest/ComplexNumbers.zip
+
+library
 name=Path Finder
 authors=[Peter Lager](http://www.lagers.org.uk)
 url=http://www.lagers.org.uk/pfind/index.html
@@ -1871,6 +1886,21 @@ maxRevision=0
 id=153
 type=library
 download=https://github.com/processing/processing-sound/releases/download/latest/sound.zip
+
+library
+name=The MidiBus
+authors=[Severin Smith](http://www.smallbutdigital.com/)
+url=http://www.smallbutdigital.com/themidibus.php
+categories=Sound
+sentence=The MidiBus is a minimal MIDI library for Processing, no frills, no limitations.
+paragraph=The MidiBus is a MIDI library for Processing. It provides a quick and simple way to access and interact with installed MIDI system resources. The MidiBus is aimed primarily at real time MIDI applications. The focus is on strong MIDI I/O capabilities and keeping frills to a minimum (e.g. no built in sequencer, file read/write, MIDI recording/playback).
+version=9
+prettyVersion=9
+minRevision=0
+maxRevision=0
+id=019
+type=library
+download=http://www.smallbutdigital.com/releases/themidibus/themidibus-latest.zip
 
 library
 name=SuperCollider client for Processing
@@ -2097,6 +2127,21 @@ maxRevision=0
 id=069
 type=library
 download=https://raw.githubusercontent.com/nok/onedollar-unistroke-recognizer/master/download/OneDollarUnistrokeRecognizer.zip
+
+library
+name=Dawesome Toolkit
+authors=[Brendan Dawes](http://www.brendandawes.com/)
+url=http://cloud.brendandawes.com/dawesometoolkit/
+categories=Utilities
+sentence=Convenient utilities for some everyday tasks including simple layout using grids, lat lon distance calculation, creating patterns with a Vogel spiral, color pallete generation, displaying guides, simple debug panel as well as useful PVector list manipulation.
+paragraph=
+version=10
+prettyVersion=0.9
+minRevision=227
+id=080
+type=library
+maxRevision=0
+download=http://cloud.brendandawes.com/dawesometoolkit/dawesometoolkit.zip
 
 library
 name=TimedEvents

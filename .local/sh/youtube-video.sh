@@ -8,6 +8,14 @@ exitIfEscaped()
 	fi
 }
 
+if [ $1 == "d" ]
+then
+	clip=$(xclip -selection clip -o 2> /dev/null)
+	link=$(echo -e "$clip" | dmenu -p "this link? ")
+	exitIfEscaped
+	st -g 60x10 -t SCRIPT -e youtube-dl -f 18 -o '$HOME/Downloads/%(title)s.%(ext)s' $link
+	exit 0
+fi
 src=$HOME/.local/src
 clip=$(xclip -selection clip -o 2> /dev/null)
 

@@ -1,2 +1,3 @@
-2022/06/13-11:42:56.593 1ed1 Creating DB /home/yarob/.config/Code - OSS/Service Worker/Database since it was missing.
-2022/06/13-11:42:56.838 1ed1 Reusing MANIFEST /home/yarob/.config/Code - OSS/Service Worker/Database/MANIFEST-000001
+2022/07/25-21:21:53.839 111e3 Reusing MANIFEST /home/yarob/.config/Code - OSS/Service Worker/Database/MANIFEST-000001
+2022/07/25-21:21:53.839 111e3 Recovering log #3
+2022/07/25-21:21:53.883 111e3 Reusing old log /home/yarob/.config/Code - OSS/Service Worker/Database/000003.log 

@@ -4,7 +4,7 @@ sh $HOME/.fehbg
 
 pidof xbanish || xbanish 2> /dev/null &
 
-pidof picom || picom 2> /dev/null &
+#pidof picom || picom 2> /dev/null &
 
 pidof polybar || polybar bar1 2> /dev/null &
 
@@ -12,5 +12,5 @@ pidof keynav || keynav daemonize 2> /dev/null &
 
 xset r rate 200 35
 
-exec $TERM
+exec prime-run alacritty
 

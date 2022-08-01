@@ -1,0 +1,7 @@
+
+style "menufont"
+{
+  font_name = "monospace 13"
+}
+widget "*emacs-menuitem*" style "menufont"
+
