@@ -2,7 +2,7 @@
 (set-frame-parameter (selected-frame) 'alpha '(100 . 50))
 (add-to-list 'default-frame-alist '(alpha . (100 . 50)))
 
-(set-face-attribute 'default t :font "FiraMono")
+(set-face-attribute 'default t :font "sans-serif")
 
 (defun arabic-input-font ()
   (interactive)

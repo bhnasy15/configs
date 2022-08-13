@@ -12,6 +12,7 @@ export SCRIPT=$HOME/.local/sh
 export XDG_CONFIG_HOME=$HOME/.config
 
 # polkit manager
+#exec dbus-update-activation-environment --all
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #exec xss-lock slock &
 

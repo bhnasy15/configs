@@ -80,25 +80,23 @@ end
 
 -- mappings
 ----------------------------------------
-vim.api.nvim_set_keymap( "n", "<S-H>", "<C-W>", {});
+vim.keymap.set( "n", "<S-H>", "<C-W>", {});
 -- explorer
-vim.api.nvim_set_keymap( "n", "<leader>vo", ":Vexplore<CR>", {});
-vim.api.nvim_set_keymap( "n", "<leader>ho", ":Hexplore<CR>", {});
-vim.api.nvim_set_keymap( "n", "<leader>to", ":Texplore<CR>", {});
-vim.api.nvim_set_keymap( "n", "<leader>o", ":e .<CR>", {});
+vim.keymap.set( "n", "<leader>vo", ":Vexplore<CR>", {});
+vim.keymap.set( "n", "<leader>ho", ":Hexplore<CR>", {});
+vim.keymap.set( "n", "<leader>to", ":Texplore<CR>", {});
+vim.keymap.set( "n", "<leader>o", ":e .<CR>", {});
 -- write and/or quit
-vim.api.nvim_set_keymap( "n", "<leader>wq", ":wq!<CR>", {});
-vim.api.nvim_set_keymap( "n", "<leader>r", ":w!<CR>", {});
-vim.api.nvim_set_keymap( "n", "<leader>q", ":q!<CR>", {});
+vim.keymap.set( "n", "<leader>x", ":wq!<CR>", {});
+vim.keymap.set( "n", "<leader>w", ":w!<CR>", {});
+vim.keymap.set( "n", "<leader>q", ":q!<CR>", {});
 -- language
-vim.api.nvim_set_keymap( "n", "<leader>a", ":set arabic!<CR>", {});
-vim.api.nvim_set_keymap( "n", "<leader>sp", ":set spell!<CR>", {});
+vim.keymap.set( "n", "<leader>a", ":set arabic!<CR>", {});
+vim.keymap.set( "n", "<leader>sp", ":set spell!<CR>", {});
 -- clipboard
-vim.api.nvim_set_keymap( "n", "<leader>y", "\"+y", {});
-vim.api.nvim_set_keymap( "n", "<leader>p", "\"+p", {});
-vim.api.nvim_set_keymap( "n", "<leader>P", ":r! xclip -selection clipboard -o<CR>", {});
--- complete braces
-vim.api.nvim_set_keymap( "i", "{<CR>", "{<CR>}<ESC>O", {});
+vim.keymap.set( "n", "<leader>y", "\"+y", {});
+vim.keymap.set( "n", "<leader>p", "\"+p", {});
+vim.keymap.set( "n", "<leader>P", ":r! xclip -selection clipboard -o<CR>", {});
 	
 local opts = { noremap=true, silent=false }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
@@ -125,9 +123,9 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
-  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+  --vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', '<space>c', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
@@ -142,53 +140,69 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities);
 
 local lspconfig = require('lspconfig');
 
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-lspconfig['omnisharp'].setup{
-	on_attach = on_attach,
-	flags = lsp_flags,
-	cmd = {"dotnet", "/home/yarob/.opt/omnisharp-roslyn/stdio.driver/linux-x64/net6.0/OmniSharp.dll"}
-}
-
 -- luasnip setup
 local luasnip = require('luasnip');
 
 -- nvim-cmp setup
-local cmp = require('cmp');
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-  }),
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
+local cmp = require'cmp'
+
+cmp.setup({
+snippet = {
+  -- REQUIRED - you must specify a snippet engine
+  expand = function(args)
+	--vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+	require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+	-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+	-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+  end,
+},
+window = {
+  -- completion = cmp.config.window.bordered(),
+  -- documentation = cmp.config.window.bordered(),
+},
+mapping = cmp.mapping.preset.insert({
+	['<C-b>'] = cmp.mapping.scroll_docs(-4),
+	['<C-f>'] = cmp.mapping.scroll_docs(4),
+	['<C-Space>'] = cmp.mapping.complete(),
+	['<C-e>'] = cmp.mapping.abort(),
+	['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+	['<Tab>'] = cmp.mapping(function(fallback)
+	  if cmp.visible() then
+		cmp.select_next_item()
+	  elseif luasnip.expand_or_jumpable() then
+		luasnip.expand_or_jump()
+	  else
+		fallback()
+	  end
+	end, { 'i', 's' }),
+	['<S-Tab>'] = cmp.mapping(function(fallback)
+	  if cmp.visible() then
+		cmp.select_prev_item()
+	  elseif luasnip.jumpable(-1) then
+		luasnip.jump(-1)
+	  else
+		fallback()
+	  end
+	end, { 'i', 's' }),
+}),
+sources = cmp.config.sources({
+  { name = 'nvim_lsp' },
+  --{ name = 'vsnip' }, -- For vsnip users.
+  { name = 'luasnip' }, -- For luasnip users.
+  -- { name = 'ultisnips' }, -- For ultisnips users.
+  -- { name = 'snippy' }, -- For snippy users.
+}, {
+  { name = 'buffer' },
+})
+})
+-- Setup lspconfig.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- Enable some language servers with the additional completion capabilities offered by nvim-cmp
+lspconfig['omnisharp'].setup{
+	on_attach = on_attach,
+	flags = lsp_flags,
+	cmd = {"dotnet", "/home/yarob/.opt/omnisharp-roslyn/stdio.driver/linux-x64/net6.0/OmniSharp.dll"},
+    capabilities = capabilities
 }
+
+require("luasnip.loaders.from_vscode").lazy_load()

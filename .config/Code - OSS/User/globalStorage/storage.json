@@ -58,6 +58,20 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///run/media/yarob/Ventoy/Riot%20Games/Riot%20Client/system.yaml",
+                                        "path": "/run/media/yarob/Ventoy/Riot Games/Riot Client/system.yaml",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/run/media/yarob/Ventoy/Riot Games/Riot Client/system.yaml"
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
                                     "id": "workbench.action.openRecent",
                                     "label": "&&More..."
                                 },
@@ -372,8 +386,7 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Primary Side Bar",
-                                    "checked": true
+                                    "label": "Show &&Primary Side Bar"
                                 },
                                 {
                                     "id": "workbench.action.toggleAuxiliaryBar",
@@ -489,6 +502,13 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
+                                    "id": "workbench.action.splitEditorInGroup",
+                                    "label": "Split in &&Group"
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
                                     "id": "workbench.action.editorLayoutSingle",
                                     "label": "&&Single"
                                 },
@@ -577,8 +597,7 @@
                     },
                     {
                         "id": "editor.action.toggleWordWrap",
-                        "label": "&&Word Wrap",
-                        "enabled": false
+                        "label": "&&Word Wrap"
                     },
                     {
                         "id": "editor.action.toggleMinimap",
@@ -1251,6 +1270,11 @@
                 "isNative": false,
                 "userSettingsLabel": "ctrl+numpad0"
             },
+            "workbench.action.splitEditorInGroup": {
+                "label": "Ctrl+K Ctrl+Shift+\\",
+                "isNative": false,
+                "userSettingsLabel": "ctrl+k ctrl+shift+\\"
+            },
             "workbench.action.toggleEditorGroupLayout": {
                 "label": "Shift+Alt+0",
                 "userSettingsLabel": "shift+alt+0"
@@ -1493,19 +1517,19 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 0,
             "activityBarWidth": 48,
-            "sideBarWidth": 170,
+            "sideBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
         }
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/yarob/.config/Code - OSS/Backups/1658252219862",
+            "backupPath": "/home/yarob/.config/Code - OSS/Backups/1659514965937",
             "uiState": {
                 "mode": 1,
-                "x": 1,
+                "x": 1153,
                 "y": 22,
-                "width": 1918,
+                "width": 766,
                 "height": 1057
             }
         },

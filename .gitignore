@@ -23,15 +23,7 @@ Documents/*
 .config/JetBrains
 .config/Microsoft
 .config/zsh
-
-.config/nvim/*
-!.config/nvim/snippets/
-!.config/nvim/snippets/**
-!.config/nvim/spell/
-!.config/nvim/spell/**
-!.config/nvim/color/
-!.config/nvim/color/**
-!.config/nvim/init.*
+.config/Code*
 
 !.gnupg/
 !.gnupg/**
@@ -61,11 +53,12 @@ Documents/*
 !.local/share/bin/sh-menu
 
 # privacy
-**/*log
-**/*LOG
-**/*recent
-**/*err
-**/*out
+**/*log*
+**/*LOG*
+**/LOG*
+**/*recent*
+**/*err*
+**/*out*
 **/*tmp*
 **/*cache*
 **/*Cache*

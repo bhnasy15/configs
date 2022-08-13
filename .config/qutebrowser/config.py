@@ -344,60 +344,60 @@ c.url.start_pages = 'file:///home/yarob/.config/qutebrowser/home.html'
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
 # Type: List of Font, or Font
-c.fonts.default_family = ['FiraMono', 'Amiri', 'FreeMono']
+c.fonts.default_family = ['serif', 'sans-serif']
 
 # Font used in the completion widget.
 # Type: Font
-c.fonts.completion.entry = 'default_size FiraMono'
+c.fonts.completion.entry = 'default_size default_family'
 
 # Font used in the completion categories.
 # Type: Font
-c.fonts.completion.category = 'bold default_size FiraMono'
+c.fonts.completion.category = 'bold default_size default_family'
 
 # Font used for the context menu. If set to null, the Qt default is
 # used.
 # Type: Font
-c.fonts.contextmenu = 'default_size FiraMono'
+c.fonts.contextmenu = 'default_size default_family'
 
 # Font used for the debugging console.
 # Type: Font
-c.fonts.debug_console = 'default_size FiraMono'
+c.fonts.debug_console = 'default_size default_family'
 
 # Font used for the downloadbar.
 # Type: Font
-c.fonts.downloads = 'default_size FiraMono'
+c.fonts.downloads = 'default_size default_family'
 
 # Font used for the hints.
 # Type: Font
-c.fonts.hints = 'bold default_size FiraMono'
+c.fonts.hints = 'bold default_size default_family'
 
 # Font used in the keyhint widget.
 # Type: Font
-c.fonts.keyhint = 'default_size FiraMono'
+c.fonts.keyhint = 'default_size default_family'
 
 # Font used for error messages.
 # Type: Font
-c.fonts.messages.error = 'default_size FiraMono'
+c.fonts.messages.error = 'default_size default_family'
 
 # Font used for info messages.
 # Type: Font
-c.fonts.messages.info = 'default_size FiraMono'
+c.fonts.messages.info = 'default_size default_family'
 
 # Font used for warning messages.
 # Type: Font
-c.fonts.messages.warning = 'default_size FiraMono'
+c.fonts.messages.warning = 'default_size default_family'
 
 # Font used for prompts.
 # Type: Font
-c.fonts.prompts = 'default_size FiraMono'
+c.fonts.prompts = 'default_size default_family'
 
 # Font used in the statusbar.
 # Type: Font
-c.fonts.statusbar = 'default_size FiraMono'
+c.fonts.statusbar = 'default_size default_family'
 
 # Font used for selected tabs.
 # Type: Font
-c.fonts.tabs.selected = 'default_size FiraMono'
+c.fonts.tabs.selected = 'default_size default_family'
 
 # Font used for unselected tabs.
 # Type: Font
