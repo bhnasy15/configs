@@ -82,10 +82,9 @@ end
 ----------------------------------------
 vim.keymap.set( "n", "<S-H>", "<C-W>", {});
 -- explorer
-vim.keymap.set( "n", "<leader>vo", ":Vexplore<CR>", {});
-vim.keymap.set( "n", "<leader>ho", ":Hexplore<CR>", {});
-vim.keymap.set( "n", "<leader>to", ":Texplore<CR>", {});
-vim.keymap.set( "n", "<leader>o", ":e .<CR>", {});
+vim.keymap.set( "n", "<leader>vo", ":VsplitVifm<CR>", {});
+vim.keymap.set( "n", "<leader>ho", ":SplitVifm<CR>", {});
+vim.keymap.set( "n", "<leader>to", ":TabVifm<CR>", {});
 -- write and/or quit
 vim.keymap.set( "n", "<leader>x", ":wq!<CR>", {});
 vim.keymap.set( "n", "<leader>w", ":w!<CR>", {});

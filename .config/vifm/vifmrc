@@ -508,6 +508,9 @@ nnoremap <c-u> <c-w>x
 
 nnoremap ,q :quit<cr>
 
+nnoremap ,g :grep<space>
+nnoremap ,f :find<space>
+
 " ------------------------------------------------------------------------------
 
 " Various customization examples
