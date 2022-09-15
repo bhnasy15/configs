@@ -82,8 +82,8 @@ AntiAlias:	1
 DefaultFVShowHmetrics:	0
 DefaultFVShowVmetrics:	0
 DefaultFVSize:	128
-DefaultFVRowCount:	6
-DefaultFVColCount:	14
+DefaultFVRowCount:	2
+DefaultFVColCount:	8
 DefaultFVGlyphLabel:	0
 SaveToDir:	0
 OnlyCopyDisplayed:	0
@@ -113,7 +113,7 @@ AlmostHVBound:	3
 CheckSelfIntersects:	1
 ShowDebugChanges:	1
 DefaultScreenDpiSystem:	0
-DefaultOutputFormat:	28
+DefaultOutputFormat:	13
 DefaultBitmapFormat:	10
 SaveValidate:	0
 SaveFontLogAsk:	0

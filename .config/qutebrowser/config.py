@@ -256,7 +256,7 @@ c.downloads.remove_finished = 3000
 # `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 # Same as `{column}`, but starting from index 0.
 # Type: ShellCommand
-c.editor.command = ['st', '-t', 'SCRIPT', '-e', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
+c.editor.command = ['alacritty', '-t', 'SCRIPT', '-e', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
 
 # Command (and arguments) to use for selecting a single file in forms.
 # The command should write the selected file path to the specified file
@@ -264,7 +264,7 @@ c.editor.command = ['st', '-t', 'SCRIPT', '-e', 'nvim', '{file}', '-c', 'normal 
 # the file to be written to. If not contained in any argument, the
 # standard output of the command is read instead.
 # Type: ShellCommand
-c.fileselect.single_file.command = ['st', '-e', 'vfm', '--choosefile={}']
+c.fileselect.single_file.command = ['alacritty', '-e', 'vfm', '--choosefile={}']
 
 # Command (and arguments) to use for selecting multiple files in forms.
 # The command should write the selected file paths to the specified file
@@ -273,7 +273,15 @@ c.fileselect.single_file.command = ['st', '-e', 'vfm', '--choosefile={}']
 # contained in any argument, the   standard output of the command is
 # read instead.
 # Type: ShellCommand
-c.fileselect.multiple_files.command = ['st', '-e', 'vfm', '--choosefiles={}']
+c.fileselect.multiple_files.command = ['alacritty', '-e', 'vfm', '--choosefiles={}']
+
+# Command (and arguments) to use for selecting a single folder in forms.
+# The command should write the selected folder path to the specified
+# file or stdout. The following placeholders are defined: * `{}`:
+# Filename of the file to be written to. If not contained in any
+# argument, the   standard output of the command is read instead.
+# Type: ShellCommand
+c.fileselect.folder.command = ['alacritty', '-e', 'vfm', '--choosedir={}']
 
 # Duration (in milliseconds) to show messages in the statusbar for. Set
 # to 0 to never clear messages.
@@ -344,7 +352,7 @@ c.url.start_pages = 'file:///home/yarob/.config/qutebrowser/home.html'
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
 # Type: List of Font, or Font
-c.fonts.default_family = ['serif', 'sans-serif']
+c.fonts.default_family = ['sans-serif', 'serif']
 
 # Font used in the completion widget.
 # Type: Font

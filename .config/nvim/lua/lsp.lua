@@ -1,107 +1,8 @@
 
-local vim_settings = {
-
-	["t_Co"] = "265",
-
-	["mouse"] = "a",
-
-	["showcmd"] = true,
-	["wildmenu"] = true,
-	["wildmode"] = "longest:full:lastused",
-	-- ["wildignore"] = "*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx",
-
-	["scrolloff"] = 10,
-	["backspace"] = "indent,eol,start",
-
-	["encoding"] = "UTF-8",
-	["backup"] = false,
-	["swapfile"] = false,
-
-	["foldenable"] = false,
-	["foldmethod"] = "manual",
-
-	["shiftwidth"] = 4,
-	["tabstop"] = 4,
-	["smartindent"] = true,
-
-	["hlsearch"] = false,
-	["showmatch"] = true,
-	["incsearch"] = true,
-	["ignorecase"] = true,
-	["smartcase"] = true,
-
-	["statusline"] = "",
-	["statusline"] = " %F %M %Y %R%= (%l,%c) %p%%",
-	["laststatus"] = 2,
-
-	["number"] = true,
-	["relativenumber"] = true,
-
-	["cursorline"] = true,
-
-	["wrap"] = true,
-
-	["spelllang"] = "ar,en",
-
-	["netrw_banner"] = 0,
-	["netrw_liststyle"] = 0,
-	["netrw_keepdir"] = 0,
-	["netrw_winsize"] = 45,
-
-	["mapleader"] = ","
-
-};
-
-local vim_commands = {
-	--"filetype on",
-	--"filetype indent on",
-	--"filetype plugin on",
-	--"syntax on",
-	"colorscheme y"
-};
-
--- read vim_settings
-for i, v in pairs(vim_settings) do
-	local g = pcall(function () vim.api.nvim_set_option( i, v); end);
-	local b = pcall(function () vim.api.nvim_buf_set_option( 0, i, v); end);
-	if not(b) then
-		local w = pcall(function () vim.api.nvim_win_set_option( 0, i, v); end);
-		if not(w or b or g) then
-			local v = function () vim.api.nvim_set_var( i, v); end ;
-			xpcall( v, function () print("failed to set", i, "to", v) end);
-		end
-	end
-end
--- run vim_commands
-for i, v in pairs(vim_commands) do
-	local c = function () vim.api.nvim_command(v); end;
-	xpcall( c, function () print("failed excute command", v) end);
-end
-
--- mappings
-----------------------------------------
-vim.keymap.set( "n", "<S-H>", "<C-W>", {});
--- explorer
-vim.keymap.set( "n", "<leader>vo", ":VsplitVifm<CR>", {});
-vim.keymap.set( "n", "<leader>ho", ":SplitVifm<CR>", {});
-vim.keymap.set( "n", "<leader>to", ":TabVifm<CR>", {});
--- write and/or quit
-vim.keymap.set( "n", "<leader>x", ":wq!<CR>", {});
-vim.keymap.set( "n", "<leader>w", ":w!<CR>", {});
-vim.keymap.set( "n", "<leader>q", ":q!<CR>", {});
--- language
-vim.keymap.set( "n", "<leader>a", ":set arabic!<CR>", {});
-vim.keymap.set( "n", "<leader>sp", ":set spell!<CR>", {});
--- clipboard
-vim.keymap.set( "n", "<leader>y", "\"+y", {});
-vim.keymap.set( "n", "<leader>p", "\"+p", {});
-vim.keymap.set( "n", "<leader>P", ":r! xclip -selection clipboard -o<CR>", {});
-	
-local opts = { noremap=true, silent=false }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, { noremap=true, silent=true })
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { noremap=true, silent=true })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { noremap=true, silent=true })
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, { noremap=true, silent=true })
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -150,7 +51,7 @@ snippet = {
   -- REQUIRED - you must specify a snippet engine
   expand = function(args)
 	--vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-	require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+	luasnip.lsp_expand(args.body) -- For `luasnip` users.
 	-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
 	-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
   end,
@@ -204,4 +105,3 @@ lspconfig['omnisharp'].setup{
     capabilities = capabilities
 }
 
-require("luasnip.loaders.from_vscode").lazy_load()

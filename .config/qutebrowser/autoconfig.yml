@@ -6,33 +6,37 @@
 
 config_version: 2
 settings:
+  editor.command:
+    global:
+    - alacritty
+    - -t
+    - SCRIPT
+    - -e
+    - nvim
+    - '{file}'
+    - -c
+    - normal {line}G{column0}l
+  fileselect.folder.command:
+    global:
+    - alacritty
+    - -e
+    - vfm
+    - --choosedir={}
+  fileselect.multiple_files.command:
+    global:
+    - alacritty
+    - -e
+    - vfm
+    - --choosefiles={}
+  fileselect.single_file.command:
+    global:
+    - alacritty
+    - -e
+    - vfm
+    - --choosefile={}
   fonts.completion.category:
     global: bold default_size default_family
-  fonts.completion.entry:
-    global: default_size default_family
-  fonts.contextmenu:
-    global: default_size default_family
-  fonts.debug_console:
-    global: default_size default_family
   fonts.default_family:
     global:
-    - serif
     - sans-serif
-  fonts.downloads:
-    global: default_size default_family
-  fonts.hints:
-    global: bold default_size default_family
-  fonts.keyhint:
-    global: default_size default_family
-  fonts.messages.error:
-    global: default_size default_family
-  fonts.messages.info:
-    global: default_size default_family
-  fonts.messages.warning:
-    global: default_size default_family
-  fonts.prompts:
-    global: default_size default_family
-  fonts.statusbar:
-    global: default_size default_family
-  fonts.tabs.selected:
-    global: default_size default_family
+    - serif

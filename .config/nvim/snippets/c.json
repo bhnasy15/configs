@@ -49,7 +49,7 @@
   },
   "#ifndef": {
     "prefix": "#ifndef",
-    "body": ["#ifndef ${1:DEBUG}", "$0", "#endif /* !$1 */"],
+    "body": ["#ifndef ${1:DEBUG}", "#define $1", "$0", "#endif"],
     "description": "Code snippet for #ifndef"
   },
   "#if": {

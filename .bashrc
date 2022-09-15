@@ -30,17 +30,6 @@ alias bats='cat /sys/class/power_supply/BAT0/status'
 # binding
 bind -x '"\C-l": clear'
 
-# color
-case ${TERM} in
-  xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
-    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
-
-    ;;
-  screen*)
-    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
-    ;;
-esac
-
 # prompt
 function nonzero_return() {
 	RETVAL=$?
@@ -51,7 +40,7 @@ export PS1="\[\e[91m\]\`nonzero_return\`\[\e[m\] \W \[\e[1;32m\]>>\[\e[m\] "
 
 
 # completion
-[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+[ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 # color code
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
