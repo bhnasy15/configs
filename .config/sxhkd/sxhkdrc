@@ -6,6 +6,9 @@
 alt + Return
 	prime-run $TERM
 
+F5
+	prime-run neovide --geometry 90x40
+
 super + Return
 	prime-run $TERM
 
