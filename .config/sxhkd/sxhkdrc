@@ -4,13 +4,13 @@
 
 # applications
 alt + Return
-	prime-run $TERM
+	prime-run $env.TERM
 
 F5
-	prime-run neovide --geometry 90x40
+	prime-run neovide
 
 super + Return
-	prime-run $TERM
+	prime-run $env.TERM
 
 F1
 	rofi -show drun
@@ -161,7 +161,7 @@ super + {grave,Tab}
 
 # focus or send to the given desktop
 alt + {1-9}
-	bspc desktop focused:'^{1-9}' -f
+	bspc desktop focused -f '^{1-9}'
 
 alt + shift + {1-9}
 	bspc node focused -d '^{1-9}' --follow
@@ -170,7 +170,7 @@ super + alt + bracket{left,right}
 	bspc monitor -f {next,prev}
 
 super + shift + m
-	sh $SCRIPT/move.sh
+	sh $env.SCRIPT/move.sh
 
 super + shift + g 
 	echo "0" | dmenu -p "How big?" | xargs bspc config window_gap

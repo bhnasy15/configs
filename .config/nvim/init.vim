@@ -1,10 +1,7 @@
 set t_Co=265
 
-set guifont=Fira\ Mono,Kawkab\ Mono
-
 set mouse=a
 
-set autowrite
 set showcmd
 set wildmenu
 set wildmode=longest:full:lastused
@@ -40,11 +37,10 @@ set relativenumber
 set cursorline
 
 set wrap
-set linebreak
 
-set spelllang=ar,en
+set spelllang="ar,en"
 
-colorscheme tender
+colorscheme y
 
 runtime autoload/map.vim
 

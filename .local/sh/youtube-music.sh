@@ -13,7 +13,7 @@ then
 	clip=$(xclip -selection clip -o 2> /dev/null)
 	link=$(echo -e "$clip" | dmenu -p "this link? ")
 	exitIfEscaped
-	st -g 60x10 -t SCRIPT -e youtube-dl -f 140 -o '$HOME/Downloads/%(title)s.%(ext)s' $link
+	$TERM -t SCRIPT -e youtube-dl -f 140 -o '$HOME/Downloads/%(title)s.%(ext)s' $link
 	exit 0
 fi
 src=$HOME/.local/src
@@ -48,9 +48,9 @@ then
 	# play all
 	if [ "$link" == "all" ]
 	then
-		st -g 60x10 -t SCRIPT -e mpv --no-video --loop-playlist=inf --ytdl-format=140 --playlist="$list"
+		$TERM -t SCRIPT -e mpv --no-video --loop-playlist=inf --ytdl-format=140 --playlist="$list"
 	else
-		st -g 60x10 -t SCRIPT -e mpv --no-video --loop-file=inf --ytdl-format=140 "$link"
+		$TERM -t SCRIPT -e mpv --no-video --loop-file=inf --ytdl-format=140 "$link"
 	fi
 
 # fallback
@@ -64,6 +64,6 @@ else
 
 	exitIfEscaped
 
-	st -g 60x10 -t SCRIPT -e mpv --no-video --loop-file=inf --ytdl-format=140 "$clip"
+	$TERM -t SCRIPT -e mpv --no-video --loop-file=inf --ytdl-format=140 "$clip"
 fi
 

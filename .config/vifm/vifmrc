@@ -223,7 +223,7 @@ filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
           \*.as[fx]},
          \<video/*>
         \ {View using ffplay}
-        \ swallow mpv %f,
+        \ mpv %f,
         \ {View using Dragon}
         \ dragon %f:p,
         \ {View using mplayer}
@@ -508,8 +508,8 @@ nnoremap <c-u> <c-w>x
 
 nnoremap ,q :quit<cr>
 
-nnoremap ,g :grep<space>
-nnoremap ,f :find<space>
+nnoremap ,g :grep -i -e<space>
+nnoremap ,f :find ./ -iname<space>
 
 " ------------------------------------------------------------------------------
 

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/sh
 
 #xrandr --setprovideroutputsource NVIDIA-G0
 #xrandr --auto
@@ -7,14 +7,14 @@ export PATH=$PATH:$HOME/.local/share/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ZDOTDIR=$HOME/.config/zsh
 export EDITOR=nvim
-export TERM=alacitty
+export TERM=alacritty
 export SCRIPT=$HOME/.local/sh
 export XDG_CONFIG_HOME=$HOME/.config
 
 # polkit manager
 #exec dbus-update-activation-environment --all
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-#exec xss-lock slock &
+exec /usr/bin/lxqt-policykit-agent &
+exec xss-lock slock &
 
 # merge in defaults and keymaps
 

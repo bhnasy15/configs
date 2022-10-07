@@ -1,0 +1,13 @@
+
+[lapce]
+modal = true
+custom-titlebar = false
+
+[ui]
+font-family = "Fira Mono"
+
+[editor]
+font-family = "Fira Mono"
+
+[terminal]
+font-family = "Fira Mono"
