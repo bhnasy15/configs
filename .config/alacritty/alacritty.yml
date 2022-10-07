@@ -20,8 +20,8 @@ font:
 
 colors:
   primary:
-    background: '#222232'
-    foreground: '#e4e4e9'
+    background: '#2B2B35'
+    foreground: '#C4C4C9'
   normal:
     black:   '#000000'
     red:     '#FF1744'
