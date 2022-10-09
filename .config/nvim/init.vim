@@ -2,6 +2,8 @@ set t_Co=265
 
 set mouse=a
 
+set guifont=Fira\ Mono,Kawkab\ Mono:h13
+
 set showcmd
 set wildmenu
 set wildmode=longest:full:lastused
@@ -38,7 +40,7 @@ set cursorline
 
 set wrap
 
-set spelllang="ar,en"
+set spelllang=ar,en
 
 colorscheme y
 

@@ -19,6 +19,7 @@ Documents/*
 
 !.config/
 !.config/**
+.config/libreoffice
 .config/pulse
 .config/JetBrains
 .config/Microsoft
