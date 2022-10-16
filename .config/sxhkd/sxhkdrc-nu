@@ -4,13 +4,13 @@
 
 # applications
 alt + Return
-	prime-run $TERM
+	prime-run $env.TERM
 
 F5
 	prime-run neovide
 
 super + Return
-	prime-run $TERM
+	prime-run $env.TERM
 
 F1
 	rofi -show drun
@@ -171,7 +171,7 @@ super + alt + bracket{left,right}
 	bspc monitor -f {next,prev}
 
 super + shift + m
-	sh $SCRIPT/move.sh
+	sh $env.SCRIPT/move.sh
 
 super + shift + g 
 	echo "0" | dmenu -p "How big?" | xargs bspc config window_gap
