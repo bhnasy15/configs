@@ -167,6 +167,9 @@ alt + {1-9}
 alt + shift + {1-9}
 	bspc node focused -d '^{1-9}' --follow
 
+super + shift + bracket{left,right}
+	bspc node focused -m {prev,next}
+
 super + alt + bracket{left,right}
 	bspc monitor -f {next,prev}
 
@@ -207,7 +210,13 @@ super + control + {h,j,k,l}
 	bspc node focused -z right 10 0 || bspc node focused -z left 10 0}
 
 # move window
-super + shift + {h,j,k,l}
+super + shift + {h,j,k,l} 
+	{bspc node focused -n west,\
+	bspc node focused -n south,\
+	bspc node focused -n north,\
+	bspc node focused -n east}
+
+alt + shift + {h,j,k,l} 
 	{bspc node focused -v -10 0 || bspc node focused -s west,\
 	bspc node focused -v 0 10 || bspc node focused -s south,\
 	bspc node focused -v 0 -10 || bspc node focused -s north,\
