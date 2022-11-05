@@ -4,33 +4,33 @@
 
 # applications
 alt + Return
-	prime-run $TERM
+	prime-run $TERM &
 
-F5
+alt + F5
 	prime-run neovide
 
 super + Return
-	prime-run $TERM
+	prime-run $TERM &
 
-F1
-	rofi -show drun
+alt + F1
+	rofi -show drun &
 
-F2
-	qutebrowser
+alt + F2
+	qutebrowser &
 
 XF86HomePage
-	qutebrowser
+	qutebrowser &
 
-F4
-	pcmanfm
+alt + F4
+	pcmanfm &
 
 XF86Explorer
-	pcmanfm
+	pcmanfm &
 
 alt + d
 	dmenu_run -fn 'monospace'-13
 
-F3
+alt + F3
 	dmenu_run -fn 'monospace'-13
 
 alt + s
@@ -39,11 +39,11 @@ alt + s
 super + Escape
 	xkill
 
-F8
-	pavucontrol
+alt + F8
+	pavucontrol &
 
 super + p
-	maim -s res
+	maim -s "$(date +%y-%m-%d_%H:%M:%S).png"
 
 # media keys
 # backlight control xbacklight
@@ -117,13 +117,13 @@ super + g
 
 # set the window state
 
-{F9,F11,F12}
+alt + {F9,F11,F12}
 	bspc node focused -t {tiled,!fullscreen,!floating}
 
-alt + F9
+alt + shift + F9
 	bspc node focused -t !pseudo_tiled
 
-F10
+alt + F10
 	bspc desktop focused -l next
 
 # set the node flags

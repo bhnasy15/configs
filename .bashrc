@@ -16,6 +16,7 @@ alias la='ls -A'
 
 alias vim='nvim'
 alias vi='nvim'
+alias nv='prime-run neovide'
 alias vfm='vifmrun'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'

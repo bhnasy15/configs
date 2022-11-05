@@ -54,7 +54,6 @@ dotnet-ef https://docs.microsoft.com/en-us/ef/core/cli/dotnet
 ttrl https://www.entityframeworktutorial.net/code-first/configure-property-mappings-using-fluent-api.aspx
 imwheel https://wiki.archlinux.org/title/IMWheel
 fwdeg https://egfwd.com/new-catlog/
-quran-tanzil https://tanzil.net/#19:2
 avr https://tldp.org/HOWTO/Avr-Microcontrollers-in-Linux-Howto/x207.html
 alt https://alternativeto.net/
 proteus alts https://alternativeto.net/software/proteus-vsm/
@@ -71,3 +70,13 @@ nushell https://www.nushell.sh/book/types_of_data.html#tables
 c text editor https://viewsourcecode.org/snaptoken/kilo/01.setup.html
 rust text editor https://www.philippflenker.com/hecto/
 rust https://doc.rust-lang.org/std/index.html
+figma https://www.figma.com/
+bracket https://docs.rs/bracket/latest/bracket/
+egui https://docs.rs/egui/latest/egui/
+eframe https://docs.rs/eframe/latest/eframe/
+bevy https://bevyengine.org/
+freecad https://wiki.freecadweb.org/Manual:Introduction
+freecad plugin https://github.com/FreeCAD/FreeCAD-addons
+cpp https://cplusplus.com/doc/tutorial/
+rust ttrl https://doc.rust-lang.org/stable/rust-by-example/
+quran tanzil https://tanzil.net/#1:1

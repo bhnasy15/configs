@@ -6,36 +6,6 @@
 
 config_version: 2
 settings:
-  editor.command:
-    global:
-    - alacritty
-    - -t
-    - SCRIPT
-    - -e
-    - nvim
-    - '{file}'
-    - -c
-    - normal {line}G{column0}l
-  fileselect.folder.command:
-    global:
-    - alacritty
-    - -e
-    - vfm
-    - --choosedir={}
-  fileselect.multiple_files.command:
-    global:
-    - alacritty
-    - -e
-    - vfm
-    - --choosefiles={}
-  fileselect.single_file.command:
-    global:
-    - alacritty
-    - -e
-    - vfm
-    - --choosefile={}
-  fonts.completion.category:
-    global: bold default_size default_family
   fonts.default_family:
     global:
     - sans-serif

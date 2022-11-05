@@ -7,7 +7,7 @@ window:
     lines: 40
   decorations: none
   opacity: 0.6
-  gtk_theme_variant: dark
+  decorations_theme_variant: dark
 
 scrolling:
   history: 1000
@@ -33,8 +33,8 @@ colors:
     white:   '#E5E1D8'
 
 key_bindings:
-   - { key: N,         mods: Control,                                action: CreateNewWindow    }
-   - { key: N,         mods: Control | Shift,                        action: SpawnNewInstance   }
+   - { key: N,         mods: Control | shift,                        action: CreateNewWindow    }
+   - { key: N,         mods: Control | Alt,                          action: SpawnNewInstance   }
    - { key: V,         mods: Control | Shift,                        action: Paste              }
    - { key: C,         mods: Control | Shift,                        action: Copy               }
    - { key: K,         mods: Control,           mode: ~Alt|~vi,      action: ScrollLineUp       }

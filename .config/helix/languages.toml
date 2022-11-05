@@ -1,0 +1,8 @@
+[[language]]
+name = "c-sharp"
+scope = "source.cs"
+file-types = ["cs"]
+language-server = { command = "/home/yarob/.opt/omnisharp-roslyn/stdio.driver/linux-x64/net6.0/OmniSharp", args = ["-lsp"]}
+roots = ["csproj", "Program.cs"]
+auto-format = true
+

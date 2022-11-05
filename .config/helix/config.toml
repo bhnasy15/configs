@@ -1,0 +1,51 @@
+theme = "catppuccin_mocha"
+
+[editor]
+auto-info = true
+cursorline = true
+auto-format = false
+true-color = true
+line-number = "relative"
+color-modes = true
+mouse = false
+scrolloff = 10
+shell = ["sh", "-c"]
+auto-completion = false
+completion-trigger-len = 3
+idle-timeout = 500
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+[editor.indent-guides]
+render = true
+character = "╎"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+center = ["diagnostics"]
+right = [ "file-encoding", "file-type", "position", "position-percentage"]
+separator = "│"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.file-picker]
+hidden = true
+parents = false
+ignore = false
+git-ignore = false
+git-global = false
+git-exclude = false
+max-depth = 3
+
+[keys.normal]
+',' = { "," = "keep_primary_selection", w = ":write", W = ":write-all", q = ":quit", Q = ":quit!", b = { d = ":buffer-close", D = ":buffer-close-others" , n = ":buffer-next" , p = ":buffer-previous" }, y = ":primary-clipboard-yank", p = ":primary-clipboard-paste-after", P = ":primary-clipboard-paste-before"} 
+

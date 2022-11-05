@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
-#xrandr --setprovideroutputsource NVIDIA-G0
-#xrandr --auto
+# xrandr --setprovideroutputsource NVIDIA-G0
+# xrandr --auto
 
 export PATH=$PATH:$HOME/.local/share/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
