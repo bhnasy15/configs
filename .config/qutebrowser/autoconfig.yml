@@ -6,7 +6,5 @@
 
 config_version: 2
 settings:
-  fonts.default_family:
-    global:
-    - sans-serif
-    - serif
+  colors.webpage.darkmode.algorithm:
+    global: lightness-hsl

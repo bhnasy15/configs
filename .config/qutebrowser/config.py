@@ -348,6 +348,66 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'g': 'https://
 # Type: List of FuzzyUrl, or FuzzyUrl
 c.url.start_pages = 'file:///home/yarob/.config/qutebrowser/home.html'
 
+# Value to use for `prefers-color-scheme:` for websites. The "light"
+# value is only available with QtWebEngine 5.15.2+. On older versions,
+# it is the same as "auto". The "auto" value is broken on QtWebEngine
+# 5.15.2 due to a Qt bug. There, it will fall back to "light"
+# unconditionally.
+# Type: String
+# Valid values:
+#   - auto: Use the system-wide color scheme setting.
+#   - light: Force a light theme.
+#   - dark: Force a dark theme.
+c.colors.webpage.preferred_color_scheme = 'auto'
+
+# Render all web contents using a dark theme. Example configurations
+# from Chromium's `chrome://flags`:  - "With simple HSL/CIELAB/RGB-based
+# inversion": Set   `colors.webpage.darkmode.algorithm` accordingly.  -
+# "With selective image inversion": Set
+# `colors.webpage.darkmode.policy.images` to `smart`.  - "With selective
+# inversion of non-image elements": Set
+# `colors.webpage.darkmode.threshold.text` to 150 and
+# `colors.webpage.darkmode.threshold.background` to 205.  - "With
+# selective inversion of everything": Combines the two variants   above.
+# Type: Bool
+c.colors.webpage.darkmode.enabled = True
+
+# Which algorithm to use for modifying how colors are rendered with
+# darkmode. The `lightness-cielab` value was added with QtWebEngine 5.14
+# and is treated like `lightness-hsl` with older QtWebEngine versions.
+# Type: String
+# Valid values:
+#   - lightness-cielab: Modify colors by converting them to CIELAB color space and inverting the L value. Not available with Qt < 5.14.
+#   - lightness-hsl: Modify colors by converting them to the HSL color space and inverting the lightness (i.e. the "L" in HSL).
+#   - brightness-rgb: Modify colors by subtracting each of r, g, and b from their maximum value.
+c.colors.webpage.darkmode.algorithm = 'lightness-hsl'
+
+# Which images to apply dark mode to. With QtWebEngine 5.15.0, this
+# setting can cause frequent renderer process crashes due to a
+# https://codereview.qt-project.org/c/qt/qtwebengine-
+# chromium/+/304211[bug in Qt].
+# Type: String
+# Valid values:
+#   - always: Apply dark mode filter to all images.
+#   - never: Never apply dark mode filter to any images.
+#   - smart: Apply dark mode based on image content. Not available with Qt 5.15.0.
+c.colors.webpage.darkmode.policy.images = 'never'
+
+# Which pages to apply dark mode to. The underlying Chromium setting has
+# been removed in QtWebEngine 5.15.3, thus this setting is ignored
+# there. Instead, every element is now classified individually.
+# Type: String
+# Valid values:
+#   - always: Apply dark mode filter to all frames, regardless of content.
+#   - smart: Apply dark mode filter to frames based on background color.
+c.colors.webpage.darkmode.policy.page = 'smart'
+
+# Render all colors as grayscale. This only has an effect when
+# `colors.webpage.darkmode.algorithm` is set to `lightness-hsl` or
+# `brightness-rgb`.
+# Type: Bool
+c.colors.webpage.darkmode.grayscale.all = True
+
 # Default font families to use. Whenever "default_family" is used in a
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.

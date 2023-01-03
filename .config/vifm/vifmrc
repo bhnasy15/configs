@@ -153,7 +153,7 @@ command! reload :write | restart full
 " :filetype extensions FUSE_MOUNT|some_mount_command using %SOURCE_FILE and %DESTINATION_DIR variables
 " %SOURCE_FILE and %DESTINATION_DIR are filled in by vifm at runtime.
 " A sample line might look like this:
-" :filetype *.zip,*.jar,*.war,*.ear FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR
+" :filetype *.zip,*.jar,*.war,*.ear,*.rar FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR
 "
 " :filetype extensions FUSE_MOUNT2|some_mount_command using %PARAM and %DESTINATION_DIR variables
 " %PARAM and %DESTINATION_DIR are filled in by vifm at runtime.
@@ -319,7 +319,7 @@ filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
        \ zip -sf %c | less,
        \ {Extract here}
        \ tar -xf %c,
-fileviewer *.zip,*.jar,*.war,*.ear,*.oxt,*.gz 7z l %c -x'!*/*/*'
+fileviewer *.zip,*.jar,*.war,*.ear,*.oxt,*.gz,*.rar 7z l %c -x'!*/*/*'
 
 " ArchiveMount
 filetype {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz,*.tar.zst,*.tzst},
@@ -534,3 +534,6 @@ nnoremap ,f :find ./ -iname<space>
 "     vifm --server-name "$VIFM_SERVER_NAME" --remote +"cd '$PWD'"
 "
 " let $VIFM_SERVER_NAME = v:servername
+" ---------------------------------------------------------------------------------
+" icons
+source $XDG_CONFIG_HOME/vifm/icons.vifm

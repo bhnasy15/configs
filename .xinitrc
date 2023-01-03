@@ -3,7 +3,7 @@
 # xrandr --setprovideroutputsource NVIDIA-G0
 # xrandr --auto
 
-export PATH=$PATH:$HOME/.local/share/bin
+export PATH=$PATH:$HOME/.local/share/bin:$HOME/.cargo/bin/
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ZDOTDIR=$HOME/.config/zsh
 export EDITOR=nvim
@@ -13,8 +13,9 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 # polkit manager
 #exec dbus-update-activation-environment --all
-exec /usr/bin/lxqt-policykit-agent &
+exec /usr/bin/lxpolkit &
 exec xss-lock slock &
+exec xsetroot -cursor_name left_ptr &
 
 # merge in defaults and keymaps
 

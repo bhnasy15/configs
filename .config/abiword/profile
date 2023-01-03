@@ -28,65 +28,38 @@
 
 	<Scheme
 		name="_builtin_"
-		SpellCheckDirectory="dictionary"
-		ExtraBarVisible="0"
-		StatusBarVisible="1"
-		UseGlyphShapingForHebrew="0"
-		ColorSquiggle="ff0000"
-		DefaultDirectionRtl="0"
-		KeyBindings="default"
-		ZoomPercentage="100"
-		ColorRevision4="9eb345"
-		StringSet="en-US"
-		ColorRevision10="ff0000"
-		SaveContextGlyphs="0"
-		SpellCheckCaps="1"
-		layoutMode="1"
-		RulerUnits="inch"
-		ColorRevision5="0fb305"
-		OptionsTabNumber="0"
-		MenuLayouts="Main"
 		LockStyles="0"
-		TableBarVisible="0"
-		StandardBarVisible="1"
-		AutoSpellCheck="1"
-		SimpleBarVisible="0"
-		ColorShowPara="7f7f7f"
-		DirMarkerAfterClosingParenthesis="0"
-		ColorFieldOffset="0c0c0c"
-		ColorHdrFtr="000000"
+		ToolbarAppearance="icon"
 		DefaultGraphics="0"
 		ColorMargin="7f7f7f"
-		RemapGlyphsDefault="&#xb0;"
-		KeyBindingsCycle="0"
-		SpellCheckNumbers="1"
-		ColorRevision6="08b3f8"
-		ColorRevision7="04cec3"
-		CloseOnLastDoc="0"
-		AutoSaveFilePeriod="5"
+		ColorHdrFtr="000000"
 		UseSuffix="1"
-		ColorColumnLine="000000"
+		SpellCheckNumbers="1"
+		ColorFieldOffset="0c0c0c"
+		ColorRevision7="04cec3"
+		AutoSaveFilePeriod="5"
+		ColorShowPara="7f7f7f"
+		MenuLayouts="Main"
+		EnableSmoothScrolling="1"
+		CursorBlink="1"
 		ColorRevision8="0485c3"
 		AutoGrammarCheck="0"
 		ZoomType="Width"
 		AutoSaveFile="0"
 		SpellAutoReplace="0"
-		EnableSmoothScrolling="1"
-		CursorBlink="1"
+		InnerQuoteStyle="1"
 		NoMACinUUID="0"
 		AlwaysPromptEncoding="0"
-		ToolbarAppearance="icon"
-		StringSetDirectory="strings"
+		layoutMode="1"
+		HTML_Export_Options="?xml,xmlns:awml,+CSS"
+		ColorRevision1="ab04fe"
 		ColorRevision9="0712c3"
 		SpellCheckInternet="1"
 		OuterQuoteStyle="0"
 		LatinLigatures="0"
 		DefaultSaveFormat=".abw"
-		HTML_Export_Options="?xml,xmlns:awml,+CSS"
-		ColorRevision1="ab04fe"
-		AutoLoadPlugins="1"
-		InnerQuoteStyle="1"
-		InsertMode="1"
+		SmartQuotesEnable="1"
+		ColorRevision2="ab1477"
 		TransparentColor="ffffff"
 		FormatBarVisible="1"
 		ColorHyperLink="0000ff"
@@ -94,17 +67,17 @@
 
 	<Scheme
 		name="_custom_"
-		DefaultDirectionRtl="1"
-		TransparentColor="#f6f5f4"
-		ZoomType="192"
-		RulerUnits="cm"
 		ZoomPercentage="192"
+		RulerUnits="cm"
+		DefaultDirectionRtl="1"
+		ZoomType="192"
+		TransparentColor="#c0bfbc"
 		/>
 
 	<Plugin
 		name="_AbiPaint_"
-		szImageEditor="gimp"
 		bLeaveImageAsPNG="1"
+		szImageEditor="gimp"
 		/>
 
 	<Recent
@@ -112,111 +85,111 @@
 		/>
 
 	<Geometry
-		width="800"
-		height="600"
-		posx="0"
-		posy="0"
+		width="1918"
+		height="1057"
+		posx="33"
+		posy="149"
 		flags="2"
 		/>
 
 	<Log>
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/mif.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/mif.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/bmp.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/bmp.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/s5.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/s5.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/presentation.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/presentation.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/gimp.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L164): failed to register /usr/lib/abiword-3.0/plugins/gimp.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L170): error msg Unknown -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/xslfo.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/xslfo.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/goffice.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/goffice.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/kword.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/kword.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/aiksaurus.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/aiksaurus.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/wml.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/wml.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/iscii.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/iscii.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/command.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/command.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/paint.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/paint.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/loadbindings.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/loadbindings.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/opml.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/opml.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/clarisworks.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/clarisworks.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/ots.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/ots.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/mathview.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/mathview.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/sdw.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/sdw.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/collab.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/collab.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/wpg.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/wpg.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/docbook.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/docbook.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/openwriter.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/openwriter.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/google.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/google.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/wmf.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/wmf.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/wikipedia.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/wikipedia.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/urldict.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/urldict.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/pdf.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/pdf.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/grammar.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/grammar.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/psion.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/psion.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/babelfish.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/babelfish.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/gdict.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/gdict.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/passepartout.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/passepartout.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/eml.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/eml.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/mswrite.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/mswrite.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/opendocument.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/opendocument.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/garble.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/garble.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/hrtext.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/hrtext.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/applix.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/applix.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/latex.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/latex.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/hancom.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/hancom.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/mht.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/mht.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/freetranslation.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/freetranslation.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/wordperfect.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/wordperfect.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/openxml.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/openxml.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/epub.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/epub.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/t602.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/t602.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/pdb.so -->
-	<!-- [Fri 26 Aug 2022 09:22:07 PM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/pdb.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/collab.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/collab.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/paint.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/paint.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/garble.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/garble.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/loadbindings.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/loadbindings.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/hrtext.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/hrtext.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/clarisworks.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/clarisworks.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/passepartout.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/passepartout.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/t602.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/t602.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/gimp.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L164): failed to register /usr/lib/abiword-3.0/plugins/gimp.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L170): error msg Unknown -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/grammar.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/grammar.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/wpg.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/wpg.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/opml.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/opml.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/google.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/google.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/wml.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/wml.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/goffice.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/goffice.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/mathview.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/mathview.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/ots.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/ots.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/urldict.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/urldict.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/latex.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/latex.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/sdw.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/sdw.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/wikipedia.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/wikipedia.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/openxml.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/openxml.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/kword.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/kword.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/aiksaurus.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/aiksaurus.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/hancom.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/hancom.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/iscii.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/iscii.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/pdb.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/pdb.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/pdf.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/pdf.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/epub.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/epub.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/freetranslation.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/freetranslation.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/bmp.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/bmp.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/wmf.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/wmf.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/mht.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/mht.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/gdict.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/gdict.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/eml.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/eml.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/mif.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/mif.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/s5.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/s5.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/docbook.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/docbook.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/psion.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/psion.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/mswrite.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/mswrite.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/command.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/command.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/xslfo.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/xslfo.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/presentation.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/presentation.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/openwriter.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/openwriter.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/opendocument.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/opendocument.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/wordperfect.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/wordperfect.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/applix.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/applix.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L104): loading /usr/lib/abiword-3.0/plugins/babelfish.so -->
+	<!-- [Wed 21 Dec 2022 06:21:41 AM EET] message: XAP_ModuleManager::loadModule - (L189): success /usr/lib/abiword-3.0/plugins/babelfish.so -->
 	</Log>
 
 	<Fonts include="0">

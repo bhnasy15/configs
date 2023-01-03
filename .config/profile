@@ -10,5 +10,5 @@ pidof polybar || polybar bar1 2> /dev/null &
 
 pidof keynav || keynav daemonize 2> /dev/null &
 
-exec prime-run alacritty
+exec prime alacritty
 
