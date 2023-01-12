@@ -2,6 +2,8 @@
 text/plain=leafpad.desktop;
 application/pdf=org.pwmt.zathura.desktop;org.qutebrowser.qutebrowser.desktop;
 application/zip=org.qutebrowser.qutebrowser.desktop;
+application/vnd.adobe.flash.movie=ruffle.desktop;
+inode/directory=xarchiver.desktop;
 
 [Default Applications]
 x-scheme-handler/http=qutebrowser.desktop

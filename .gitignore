@@ -26,6 +26,7 @@ Documents/*
 .config/Microsoft
 .config/zsh
 .config/Code*
+.config/faplayer
 
 !.gnupg/
 !.gnupg/**

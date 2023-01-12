@@ -17,16 +17,25 @@ alias la='ls -A'
 alias vim='nvim'
 alias vi='nvim'
 alias nv='prime neovide'
+
 alias vfm='vifmrun'
+
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
 alias diff='diff --color=auto'
+
 alias ip='ip --color=auto'
+
 alias mount='sudo mount -o uid=$USER'
 alias umount='sudo umount'
+
 alias batc='cat /sys/class/power_supply/BAT0/capacity'
 alias bats='cat /sys/class/power_supply/BAT0/status'
+
+alias wine='wine64'
+alias wine32='wine'
 
 # binding
 bind -x '"\C-l": clear'

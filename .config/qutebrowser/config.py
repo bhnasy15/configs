@@ -358,7 +358,7 @@ c.url.start_pages = 'file:///home/yarob/.config/qutebrowser/home.html'
 #   - auto: Use the system-wide color scheme setting.
 #   - light: Force a light theme.
 #   - dark: Force a dark theme.
-c.colors.webpage.preferred_color_scheme = 'auto'
+c.colors.webpage.preferred_color_scheme = 'dark'
 
 # Render all web contents using a dark theme. Example configurations
 # from Chromium's `chrome://flags`:  - "With simple HSL/CIELAB/RGB-based
@@ -370,7 +370,7 @@ c.colors.webpage.preferred_color_scheme = 'auto'
 # `colors.webpage.darkmode.threshold.background` to 205.  - "With
 # selective inversion of everything": Combines the two variants   above.
 # Type: Bool
-c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.enabled = False
 
 # Which algorithm to use for modifying how colors are rendered with
 # darkmode. The `lightness-cielab` value was added with QtWebEngine 5.14
@@ -380,7 +380,7 @@ c.colors.webpage.darkmode.enabled = True
 #   - lightness-cielab: Modify colors by converting them to CIELAB color space and inverting the L value. Not available with Qt < 5.14.
 #   - lightness-hsl: Modify colors by converting them to the HSL color space and inverting the lightness (i.e. the "L" in HSL).
 #   - brightness-rgb: Modify colors by subtracting each of r, g, and b from their maximum value.
-c.colors.webpage.darkmode.algorithm = 'lightness-hsl'
+c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 
 # Which images to apply dark mode to. With QtWebEngine 5.15.0, this
 # setting can cause frequent renderer process crashes due to a
@@ -412,7 +412,7 @@ c.colors.webpage.darkmode.grayscale.all = True
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
 # Type: List of Font, or Font
-c.fonts.default_family = ['sans-serif', 'serif']
+c.fonts.default_family = ['Fira Mono medium', 'Noto Naskh Arabic Medium']
 
 # Font used in the completion widget.
 # Type: Font

@@ -4,7 +4,7 @@ env:
 window:
   dimensions:
     columns: 60
-    lines: 40
+    lines: 11
   decorations: none
   opacity: 0.6
   decorations_theme_variant: dark
