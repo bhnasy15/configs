@@ -412,7 +412,7 @@ c.colors.webpage.darkmode.grayscale.all = True
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
 # Type: List of Font, or Font
-c.fonts.default_family = ['Fira Mono medium', 'Noto Naskh Arabic Medium']
+c.fonts.default_family = ['serif', 'sans-serif']
 
 # Font used in the completion widget.
 # Type: Font

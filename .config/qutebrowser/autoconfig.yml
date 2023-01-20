@@ -8,5 +8,5 @@ config_version: 2
 settings:
   fonts.default_family:
     global:
-    - Fira Mono medium
-    - Noto Naskh Arabic Medium
+    - serif
+    - sans-serif
