@@ -59,6 +59,7 @@ Documents/*
 **/*log*
 **/*LOG*
 **/LOG*
+**/*.dat
 **/*recent*
 **/*err*
 **/*out*
@@ -72,5 +73,9 @@ Documents/*
 **/*cookeis*
 **/*url*
 **/*user*/**
+**/*user
 **/*User*/**
 **/*User*/**
+**/*state*/**
+**/*state*
+**/*quickmarks*

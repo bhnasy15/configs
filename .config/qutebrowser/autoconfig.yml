@@ -6,7 +6,5 @@
 
 config_version: 2
 settings:
-  fonts.default_family:
-    global:
-    - serif
-    - sans-serif
+  content.cookies.accept:
+    global: all

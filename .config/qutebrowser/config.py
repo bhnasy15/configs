@@ -18,6 +18,15 @@ config.load_autoconfig(False)
 # Type: Dict
 c.aliases = {'w': 'session-save', 'l': 'session-load', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save'}
 
+# Require a confirmation before quitting the application.
+# Type: ConfirmQuit
+# Valid values:
+#   - always: Always show a confirmation.
+#   - multiple-tabs: Show a confirmation if multiple tabs are opened.
+#   - downloads: Show a confirmation if downloads are running
+#   - never: Never show a confirmation.
+c.confirm_quit = ['never']
+
 # Backend to use to display websites. qutebrowser supports two different
 # web rendering engines / backends, QtWebEngine and QtWebKit (not
 # recommended). QtWebEngine is Qt's official successor to QtWebKit, and
@@ -39,6 +48,34 @@ c.aliases = {'w': 'session-save', 'l': 'session-load', 'q': 'close', 'qa': 'quit
 #   - webengine: Use QtWebEngine (based on Chromium - recommended).
 #   - webkit: Use QtWebKit (based on WebKit, similar to Safari - many known security issues!).
 c.backend = 'webengine'
+
+# Automatically start playing `<video>` elements.
+# Type: Bool
+c.content.autoplay = False
+
+# Which cookies to accept. With QtWebEngine, this setting also controls
+# other features with tracking capabilities similar to those of cookies;
+# including IndexedDB, DOM storage, filesystem API, service workers, and
+# AppCache. Note that with QtWebKit, only `all` and `never` are
+# supported as per-domain values. Setting `no-3rdparty` or `no-
+# unknown-3rdparty` per-domain on QtWebKit will have the same effect as
+# `all`. If this setting is used with URL patterns, the pattern gets
+# applied to the origin/first party URL of the page making the request,
+# not the request URL. With QtWebEngine 5.15.0+, paths will be stripped
+# from URLs, so URL patterns using paths will not match. With
+# QtWebEngine 5.15.2+, subdomains are additionally stripped as well, so
+# you will typically need to set this setting for `example.com` when the
+# cookie is set on `somesubdomain.example.com` for it to work properly.
+# To debug issues with this setting, start qutebrowser with `--debug
+# --logfilter network --debug-flag log-cookies` which will show all
+# cookies being set.
+# Type: String
+# Valid values:
+#   - all: Accept all cookies.
+#   - no-3rdparty: Accept cookies from the same origin only. This is known to break some sites, such as GMail.
+#   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
+#   - never: Don't accept cookies at all.
+c.content.cookies.accept = 'no-3rdparty'
 
 # Which cookies to accept. With QtWebEngine, this setting also controls
 # other features with tracking capabilities similar to those of cookies;
@@ -87,6 +124,19 @@ config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
 #   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
 #   - never: Don't accept cookies at all.
 config.set('content.cookies.accept', 'all', 'devtools://*')
+
+# Default encoding to use for websites. The encoding must be a string
+# describing an encoding such as _utf-8_, _iso-8859-1_, etc.
+# Type: String
+c.content.default_encoding = 'utf-8'
+
+# Request websites to minimize non-essentials animations and motion.
+# This results in the `prefers-reduced-motion` CSS media query to
+# evaluate to `reduce` (rather than `no-preference`). On Windows, if
+# this setting is set to False, the system-wide animation setting is
+# considered.
+# Type: Bool
+c.content.prefers_reduced_motion = True
 
 # Value to send in the `Accept-Language` header. Note that the value
 # read from JavaScript is always the global value.
@@ -237,6 +287,23 @@ config.set('content.notifications.enabled', False, 'https://www.reddit.com')
 #   - ask
 config.set('content.notifications.enabled', False, 'https://www.youtube.com')
 
+# Display PDF files via PDF.js in the browser without showing a download
+# prompt. Note that the files can still be downloaded by clicking the
+# download button in the pdf.js viewer. With this set to `false`, the
+# `:prompt-open-download --pdfjs` command (bound to `<Ctrl-p>` by
+# default) can be used in the download prompt.
+# Type: Bool
+c.content.pdfjs = True
+
+# List of user stylesheet filenames to use.
+# Type: List of File, or File
+# c.content.user_stylesheets = '/home/yarob/.config/qutebrowser/dark.css'
+
+# Number of URLs to show in the web history. 0: no history / -1:
+# unlimited
+# Type: Int
+c.completion.web_history.max_items = 10
+
 # Where to show the downloaded files.
 # Type: VerticalPosition
 # Valid values:
@@ -283,6 +350,18 @@ c.fileselect.multiple_files.command = ['alacritty', '-e', 'vfm', '--choosefiles=
 # Type: ShellCommand
 c.fileselect.folder.command = ['alacritty', '-e', 'vfm', '--choosedir={}']
 
+# Characters used for hint strings.
+# Type: UniqueCharString
+c.hints.chars = 'abcdefghijklmnopqrstuvwxyz'
+
+# Which unbound keys to forward to the webview in normal mode.
+# Type: String
+# Valid values:
+#   - all: Forward all unbound keys.
+#   - auto: Forward unbound non-alphanumeric keys.
+#   - none: Don't forward any keys.
+c.input.forward_unbound_keys = 'auto'
+
 # Duration (in milliseconds) to show messages in the statusbar for. Set
 # to 0 to never clear messages.
 # Type: Int
@@ -295,10 +374,6 @@ c.messages.timeout = 3000
 #   - never: Always hide the statusbar.
 #   - in-mode: Show the statusbar when in modes other than normal mode.
 c.statusbar.show = 'always'
-
-# Padding (in pixels) for the statusbar.
-# Type: Padding
-c.statusbar.padding = {'top': 1, 'bottom': 1, 'left': 2, 'right': 2}
 
 # Position of the tab bar.
 # Type: Position

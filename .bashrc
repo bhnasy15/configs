@@ -16,7 +16,6 @@ alias la='ls -A'
 
 alias vim='nvim'
 alias vi='nvim'
-alias nv='prime neovide'
 
 alias vfm='vifmrun'
 
