@@ -14,7 +14,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 # polkit manager
 #exec dbus-update-activation-environment --all
 exec /usr/bin/lxpolkit &
-exec xss-lock slock &
 exec xsetroot -cursor_name left_ptr &
 
 # merge in defaults and keymaps

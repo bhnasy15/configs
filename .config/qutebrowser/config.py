@@ -27,6 +27,13 @@ c.aliases = {'w': 'session-save', 'l': 'session-load', 'q': 'close', 'qa': 'quit
 #   - never: Never show a confirmation.
 c.confirm_quit = ['never']
 
+# Maximum time (in minutes) between two history items for them to be
+# considered being from the same browsing session. Items with less time
+# between them are grouped when being displayed in `:history`. Use -1 to
+# disable separation.
+# Type: Int
+c.history_gap_interval = 10
+
 # Backend to use to display websites. qutebrowser supports two different
 # web rendering engines / backends, QtWebEngine and QtWebKit (not
 # recommended). QtWebEngine is Qt's official successor to QtWebKit, and
@@ -293,16 +300,28 @@ config.set('content.notifications.enabled', False, 'https://www.youtube.com')
 # `:prompt-open-download --pdfjs` command (bound to `<Ctrl-p>` by
 # default) can be used in the download prompt.
 # Type: Bool
-c.content.pdfjs = True
+c.content.pdfjs = False
 
-# List of user stylesheet filenames to use.
-# Type: List of File, or File
-# c.content.user_stylesheets = '/home/yarob/.config/qutebrowser/dark.css'
+# Proxy to use. In addition to the listed values, you can use a
+# `socks://...` or `http://...` URL. Note that with QtWebEngine, it will
+# take a couple of seconds until the change is applied, if this value is
+# changed at runtime. Authentication for SOCKS proxies isn't supported
+# due to Chromium limitations.
+# Type: Proxy
+# Valid values:
+#   - system: Use the system wide proxy.
+#   - none: Don't use any proxy
+c.content.proxy = 'none'
+
+# Number of commands to save in the command history. 0: no history / -1:
+# unlimited
+# Type: Int
+c.completion.cmd_history_max_items = -1
 
 # Number of URLs to show in the web history. 0: no history / -1:
 # unlimited
 # Type: Int
-c.completion.web_history.max_items = 10
+c.completion.web_history.max_items = -1
 
 # Where to show the downloaded files.
 # Type: VerticalPosition
@@ -349,6 +368,10 @@ c.fileselect.multiple_files.command = ['alacritty', '-e', 'vfm', '--choosefiles=
 # argument, the   standard output of the command is read instead.
 # Type: ShellCommand
 c.fileselect.folder.command = ['alacritty', '-e', 'vfm', '--choosedir={}']
+
+# CSS border value for hints.
+# Type: String
+c.hints.border = '1px solid white'
 
 # Characters used for hint strings.
 # Type: UniqueCharString
@@ -423,6 +446,15 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'g': 'https://
 # Type: List of FuzzyUrl, or FuzzyUrl
 c.url.start_pages = 'file:///home/yarob/.config/qutebrowser/home.html'
 
+# Font color for hints.
+# Type: QssColor
+c.colors.hints.fg = 'white'
+
+# Background color for hints. Note that you can use a `rgba(...)` value
+# for transparency.
+# Type: QssColor
+c.colors.hints.bg = 'black'
+
 # Value to use for `prefers-color-scheme:` for websites. The "light"
 # value is only available with QtWebEngine 5.15.2+. On older versions,
 # it is the same as "auto". The "auto" value is broken on QtWebEngine
@@ -487,7 +519,7 @@ c.colors.webpage.darkmode.grayscale.all = True
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
 # Type: List of Font, or Font
-c.fonts.default_family = ['serif', 'sans-serif']
+c.fonts.default_family = ['Fira Mono', 'Amiri Regular']
 
 # Font used in the completion widget.
 # Type: Font

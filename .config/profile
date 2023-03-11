@@ -4,11 +4,13 @@ sh $HOME/.fehbg
 
 pidof xbanish || xbanish 2> /dev/null &
 
-#pidof picom || picom 2> /dev/null &
+pidof picom || picom 2> /dev/null &
 
 pidof polybar || polybar bar1 2> /dev/null &
 
 pidof keynav || keynav daemonize 2> /dev/null &
+
+pidof xautolock || xautolock -time 12 -locker xsecurelock -notify 20 -bell 50 &
 
 exec prime alacritty
 

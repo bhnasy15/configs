@@ -36,6 +36,8 @@ alias bats='cat /sys/class/power_supply/BAT0/status'
 alias wine='wine64'
 alias wine32='wine'
 
+alias py='python3'
+
 # binding
 bind -x '"\C-l": clear'
 

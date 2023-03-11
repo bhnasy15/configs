@@ -449,7 +449,7 @@ nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 
 " Open file in existing instance of nvim
-nnoremap o :!nvim --remote-tab-silent %f<cr>
+nnoremap o :!nvim --server /tmp/nvim.socket --remote-tab %d/%f<cr>
 " Open file in new instance of nvim
 nnoremap O :!nvim %f<cr>
 
@@ -509,6 +509,8 @@ nnoremap ,q :quit<cr>
 
 nnoremap ,g :grep -i -e<space>
 nnoremap ,f :find ./ -iname<space>
+
+nnoremap v :select<cr>
 
 " ------------------------------------------------------------------------------
 
