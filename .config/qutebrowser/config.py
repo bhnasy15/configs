@@ -519,7 +519,7 @@ c.colors.webpage.darkmode.grayscale.all = True
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
 # Type: List of Font, or Font
-c.fonts.default_family = ['Fira Mono', 'Amiri Regular']
+c.fonts.default_family = ['serif', 'sans-serif']
 
 # Font used in the completion widget.
 # Type: Font
@@ -621,7 +621,7 @@ config.bind('<Ctrl+q>', 'close')
 config.bind('<Ctrl+u>', 'undo')
 config.bind('J', 'tab-prev')
 config.bind('K', 'tab-next')
-config.bind('M', 'quickmark-save')
+config.bind('M', 'tab-mute')
 config.bind('X', 'undo')
 config.bind('d', 'scroll-page 0 0.5')
 config.bind('gJ', 'tab-move -')

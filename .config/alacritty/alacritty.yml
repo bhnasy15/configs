@@ -6,7 +6,7 @@ window:
     columns: 60
     lines: 11
   decorations: none
-  opacity: 0.6
+  opacity: 1.0
   decorations_theme_variant: dark
 
 scrolling:

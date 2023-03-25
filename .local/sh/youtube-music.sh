@@ -13,7 +13,7 @@ then
 	clip=$(xclip -selection clip -o 2> /dev/null)
 	link=$(echo -e "$clip" | dmenu -p "this link? ")
 	exitIfEscaped
-	$TERM -t SCRIPT -e youtube-dl -f 140 -o '$HOME/Downloads/%(title)s.%(ext)s' $link
+	$TERM -t SCRIPT -e yt-dlp -f 140 -o '$HOME/Downloads/%(title)s.%(ext)s' $link
 	exit 0
 fi
 src=$HOME/.local/src

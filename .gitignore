@@ -28,6 +28,9 @@ Documents/*
 .config/Code*
 .config/faplayer
 
+.config/composer/vendor
+.config/composer/composer.lock
+
 !.gnupg/
 !.gnupg/**
 .gnupg/*
