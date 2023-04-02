@@ -6,7 +6,7 @@
 ## Twitter : @adi1090x
 
 dir="$HOME/.config/rofi/"
-rofi_command="rofi -theme $dir/powermenu.rasi"
+rofi_command="rofi -theme $dir/themes/tokyonight.rasi"
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
