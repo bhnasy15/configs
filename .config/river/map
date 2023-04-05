@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# navigation mapping is in river/init
+
+riverctl map normal Alt Return spawn $TERM
+riverctl map normal Super Return spawn $TERM
+
+riverctl map normal Alt d spawn 'bemenu-run --fn monospace 13 --tb "#00695C" --tf "#E8F5E9" --ab "#37474F" --hb "#26A69A" --hf "#E0F2F1"'
+riverctl map normal Alt F3 spawn 'bemenu-run --fn monospace 13 --tb "#00695C" --tf "#E8F5E9" --ab "#37474F" --hb "#26A69A" --hf "#E0F2F1"'
+riverctl map normal Alt F1 spawn 'wofi -S drun'
+
+riverctl map normal Alt F2 spawn 'qutebrowser'
+riverctl map normal XF86HomePage spawn 'qutebrowser'
+
+riverctl map normal Alt F4 spawn 'pcmanfm'
+riverctl map normal XF86Explorer spawn 'pcmanfm'
+
+riverctl map normal Alt F8 spawn 'pavucontrol'
+# close window
+riverctl map normal Alt Q close
+
+riverctl map normal None XF86Eject spawn 'eject -T'
+
+# Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
+riverctl map normal None        XF86AudioRaiseVolume  spawn 'pamixer --sink @DEFAULT_SINK@ -i 1'
+riverctl map normal None        XF86AudioLowerVolume  spawn 'pamixer --sink @DEFAULT_SINK@ -d 1'
+riverctl map normal None        XF86AudioMute         spawn 'pamixer --sink @DEFAULT_SINK@ -t'
+riverctl map normal None        XF86AudioMicMute      spawn 'pamixer --source @DEFAULT_SOURCE@ -t'
+riverctl map normal Super       F2                    spawn 'pamixer --sink @DEFAULT_SINK@ -i 1'
+riverctl map normal Super       F1                    spawn 'pamixer --sink @DEFAULT_SINK@ -d 1'
+riverctl map normal Super+Shift F1                    spawn 'pamixer --sink @DEFAULT_SINK@ -t'
+riverctl map normal Super+Shift F2                    spawn 'pamixer --source @DEFAULT_SOURCE@ -t'
+
+# Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
+riverctl map normal None XF86AudioMedia spawn 'playerctl play-pause'
+riverctl map normal None XF86AudioPlay  spawn 'playerctl play-pause'
+riverctl map normal None XF86AudioPrev  spawn 'playerctl previous'
+riverctl map normal None XF86AudioNext  spawn 'playerctl next'
+
+# Control screen backlight brightness with light (https://github.com/haikarainen/light)
+riverctl map normal None XF86MonBrightnessUp   spawn 'light -A 5'
+riverctl map normal None XF86MonBrightnessDown spawn 'light -U 5'
+riverctl map normal Super  F3                  spawn 'light -A 5'
+riverctl map normal Super  F4                  spawn 'light -U 5'

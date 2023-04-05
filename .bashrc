@@ -17,8 +17,6 @@ alias la='ls -A'
 alias vim='nvim'
 alias vi='nvim'
 
-alias vfm='vifmrun'
-
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'

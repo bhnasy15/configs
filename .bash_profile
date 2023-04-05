@@ -9,4 +9,5 @@ export SCRIPT=$HOME/.local/sh
 export XDG_CONFIG_HOME=$HOME/.config
 export CPATH=/home/yarob/.local/include
 
-startx  
+#startx  
+river

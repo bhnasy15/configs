@@ -48,19 +48,19 @@ super + p
 # media keys
 # backlight control xbacklight
 {XF86MonBrightnessDown,XF86MonBrightnessUp}
-	xbacklight -{dec,inc} 5
+	light -{U,A} 5
 
 control + {XF86MonBrightnessDown,XF86MonBrightnessUp}
-	xbacklight -{dec,inc} 1
+	light -{U,A} 1
 
 control + {XF86AudioLowerVolume,XF86AudioRaiseVolume}
-	xbacklight -{dec,inc} 5
+	light -{U,A} 5
 
 super + {F3,F4}
-	xbacklight -{dec,inc} 5
+	light -{U,A} 5
 
 super + control + {F3,F4}
-	xbacklight -{dec,inc} 1
+	light -{U,A} 1
 
 # audio control
 # main keys

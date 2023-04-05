@@ -7,7 +7,7 @@ exitIfEscaped()
 	fi
 }
 path="$HOME/Documents/pdfs"
-file=$(ls "$path"/*.pdf | dmenu -l 10 -p "choose pdf: " )
+file=$(ls "$path"/*.pdf | bemenu -l 10 -p "choose pdf: " )
 exitIfEscaped
 zathura "$file"
 

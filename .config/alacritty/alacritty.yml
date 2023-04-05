@@ -7,7 +7,7 @@ window:
     lines: 11
   decorations: none
   opacity: 1.0
-  decorations_theme_variant: dark
+  decorations_theme_variant: Dark
 
 scrolling:
   history: 1000
