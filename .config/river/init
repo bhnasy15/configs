@@ -35,10 +35,10 @@ riverctl map normal Alt+Shift J move down 100
 #riverctl map normal Alt+Control L snap right
 
 # resize floating window
-riverctl map normal Super+Control h resize horizontal -100
-riverctl map normal Super+Control j resize vertical 100
-riverctl map normal Super+Control k resize vertical -100
-riverctl map normal Super+Control l resize horizontal 100
+#riverctl map normal Super+Control h resize horizontal -100
+#riverctl map normal Super+Control j resize vertical 100
+#riverctl map normal Super+Control k resize vertical -100
+#riverctl map normal Super+Control l resize horizontal 100
 
 # move window with mouse
 riverctl map-pointer normal Super BTN_LEFT move-view

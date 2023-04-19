@@ -2,15 +2,29 @@
     "layer": "top",
     "position": "top",
 	"fixed-center": true,
-    "height": 21,
+    //"height": 21,
     "spacing": 4,
     "modules-left": ["memory", "cpu", "network"],
-    "modules-center": ["clock", "river/tags"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "tray"],
+    "modules-center": ["wlr/workspaces"],
+    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray"],
 
+	"wlr/workspaces": {
+		"format": "{name}:{icon}",
+		"format-icons": {
+			 "1": "",
+			 "2": "",
+			 "3": "",
+			 "focused": "",
+			 "default": ""
+		},
+		 "on-click": "activate",
+		 "on-scroll-up": "hyprctl dispatch workspace e+1",
+		 "on-scroll-down": "hyprctl dispatch workspace e-1"
+	},
 	"river/tags":{
 		"num-tags": 9,
-		"disable-click": false
+		"disable-click": false,
+		"tag-labels" : [ "", ""]
 	},
     "tray": {
         "icon-size": 21,

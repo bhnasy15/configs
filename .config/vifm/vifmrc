@@ -539,3 +539,12 @@ nnoremap v :select<cr>
 " ---------------------------------------------------------------------------------
 " icons
 source $XDG_CONFIG_HOME/vifm/icons.vifm
+
+fileviewer *.pdf
+        \ vifm-sixel pdf %pw %ph %c %pd
+        \ %pc
+        \ vifm-sixel clear
+fileviewer <image/*>
+        \ vifm-sixel draw %pw %ph %c %pd
+        \ %pc
+        \ vifm-sixel clear

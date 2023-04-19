@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0px;
     font-family: monospace;
-    font-size: 13px;
+    font-size: 14px;
     min-height: 0;
 }
 
@@ -20,25 +20,11 @@ window#waybar.hidden {
 
 #workspaces button {
     background: transparent;
-    color: #ffffff;
-    border-radius: 20px;
+    color: gray;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-#workspaces button:hover {
-    background: lightblue;
-    color: black;
-    border-bottom: 3px solid #ffffff;
-}
-
-#workspaces button.focused {
-    background: #1f1f1f;
-}
-
-#workspaces button.focused:hover {
-    background: lightblue;
-    color: black;
-    border-bottom: 3px solid #ffffff;
+#workspaces button.active {
+    color: white;
 }
 
 #workspaces button.urgent {
@@ -96,13 +82,12 @@ window#waybar.hidden {
 }
 
 #battery {
-    background-color: #000000;
+    background-color: transparent;
     color: #ffffff;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+	color: #26A65B;
 }
 
 @keyframes blink {
@@ -112,9 +97,17 @@ window#waybar.hidden {
     }
 }
 
+#battery.warning:not(.charging) {
+	background-color: yellow;
+    animation-name: blink;
+    animation-duration: 2.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+	background-color: red;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -218,7 +211,7 @@ label:focus {
     font-size: 20px;
 }
 
-#tags{
+#tags button{
     background-color: transparent;
     color: transparent;
 }

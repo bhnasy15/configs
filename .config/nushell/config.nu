@@ -392,3 +392,5 @@ let-env config = {
     }
   ]
 }
+
+source /home/yarob/.config/broot/launcher/nushell/br

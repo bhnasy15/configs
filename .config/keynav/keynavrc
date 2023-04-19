@@ -1,54 +1,18 @@
-clear
-Alt_L+semicolon start,cursorzoom 100 100
-space warp
-
-Shift+h cut-left 0.75
-Shift+j cut-down 0.75
-Shift+k cut-up 0.75
-Shift+l cut-right 0.75
-
-h move-left 0.25
-j move-down 0.25
-k move-up 0.25
-l move-right 0.25
-ctrl+h move-left 2
-ctrl+j move-down 2
-ctrl+k move-up 2
-ctrl+l move-right 2
-
-c cursorzoom 100 100
-w windowzoom
-
-q record $HOME/.config/keynav/macros
-Shift+2 playback
-
-u warp,click 1
-Shift+u warp,click 1
-ctrl+u warp,click 1
-super+u warp,click 1
-
-i warp,click 2
-Shift+i warp,click 2
-ctrl+i warp,click 2
-super+i warp,click 2
-
-o warp,click 3
-Shift+o warp,click 3
-ctrl+o warp,click 3
-super+o warp,click 3
-
-m warp,click 4
-Shift+m warp,click 4
-ctrl+m warp,click 4
-super+m warp,click 4
-
-n warp,click 5
-Shift+n warp,click 5
-ctrl+n warp,click 5
-super+n warp,click 5
-
-g drag 1
-
-Return warp,click 1,end
 Escape end
 q end
+Control+bracketleft end
+Shift+h cut-left
+Shift+j cut-down
+Shift+k cut-up
+Shift+l cut-right
+h move-left
+j move-down
+k move-up
+l move-right
+space warp
+Return warp,click 1,end
+w warp
+c cursorzoom 300 300
+u click 1
+o click 2
+i click 3

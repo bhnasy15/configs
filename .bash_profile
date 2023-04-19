@@ -10,4 +10,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export CPATH=/home/yarob/.local/include
 
 #startx  
-river
+#river
+Hyprland
+
+source /home/yarob/.config/broot/launcher/bash/br

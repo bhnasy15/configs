@@ -1,4 +1,4 @@
-set mainfont {sans 9}
+set mainfont {monospace 9}
 set textfont {monospace 9}
 set uifont {sans 9 bold}
 set tabstop 8
