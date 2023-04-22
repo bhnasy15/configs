@@ -16,6 +16,7 @@ alias la='ls -A'
 
 alias vim='nvim'
 alias vi='nvim'
+alias vf='vifm'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -60,5 +61,4 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
-
-source /home/yarob/.config/broot/launcher/bash/br
+# source $HOME/.config/broot/launcher/bash/br

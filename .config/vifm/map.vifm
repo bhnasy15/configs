@@ -1,0 +1,27 @@
+map ,w <C-w>
+
+nnoremap s :shell<cr>
+
+nnoremap H :histprev<cr>
+nnoremap L :histnext<cr>
+
+nnoremap w :view<cr>
+vnoremap w :view<cr>gv
+
+nnoremap o :!nvim --server /tmp/nvim.socket --remote-tab %d/%f<cr>
+nnoremap O :!nvim %f<cr>
+
+nnoremap gb :file &<cr>l
+
+nnoremap yp :!echo %c:p | wl-copy<cr>
+
+nnoremap ,W :set wrap!<cr>
+
+nnoremap <c-s> :sync<cr>
+
+nnoremap ,q :quit<cr>
+
+nnoremap ,g :grep -i -e<space>
+nnoremap ,f :fd ./ -iname<space>
+
+nnoremap v :select<cr>
