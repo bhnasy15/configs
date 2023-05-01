@@ -10,18 +10,20 @@ exitIfEscaped()
 
 if [ $1 == "d" ]
 then
-	clip=$(xclip -selection clip -o 2> /dev/null)
+	#clip=$(xclip -selection clip -o 2> /dev/null)
+	clip=$(wl-paste)
 	link=$(echo -e "$clip" | bemenu -p "this link? ")
 	exitIfEscaped
 	$TERM -t SCRIPT -e yt-dlp -f 140 -o '$HOME/Downloads/%(title)s.%(ext)s' $link
 	exit 0
 fi
 src=$HOME/.local/src
-clip=$(xclip -selection clip -o 2> /dev/null)
+#clip=$(xclip -selection clip -o 2> /dev/null)
+clip=$(wl-paste)
 
 if [ $? != 0 ]
 then
-	clip=""
+	clip="null"
 	link="list"
 else
 	link=$(echo -e "$clip\nlist" | bemenu -p "link or list ? ")

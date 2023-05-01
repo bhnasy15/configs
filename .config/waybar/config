@@ -1,12 +1,24 @@
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
 	"fixed-center": true,
-    //"height": 21,
     "spacing": 4,
     "modules-left": ["memory", "cpu", "network"],
-    "modules-center": ["wlr/workspaces"],
+    "modules-center": ["sway/workspaces", "wlr/workspaces"],
     "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray"],
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"format": "{name}: {icon}",
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"urgent": "",
+			"focused": "",
+			"default": ""
+		}
+	},
 
 	"wlr/workspaces": {
 		"format": "{name}:{icon}",
@@ -21,11 +33,13 @@
 		 "on-scroll-up": "hyprctl dispatch workspace e+1",
 		 "on-scroll-down": "hyprctl dispatch workspace e-1"
 	},
+
 	"river/tags":{
 		"num-tags": 9,
 		"disable-click": false,
 		"tag-labels" : [ "", ""]
 	},
+
     "tray": {
         "icon-size": 21,
         "spacing": 10
@@ -84,6 +98,6 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
+    }
 }
 

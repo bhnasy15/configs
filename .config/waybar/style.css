@@ -23,6 +23,10 @@ window#waybar.hidden {
     color: gray;
 }
 
+#workspaces button.focused {
+    color: white;
+}
+
 #workspaces button.active {
     color: white;
 }
@@ -77,7 +81,7 @@ window#waybar.hidden {
 }
 
 #clock {
-    background-color: #171717;
+    background-color: transparent;
     color: #ffffff;
 }
 
@@ -120,93 +124,94 @@ label:focus {
 }
 
 #cpu {
-    background-color: #171717;
+    background-color: transparent;
     color: #ffffff;
 }
 
 #memory {
-    background-color: #171717;
+    background-color: transparent;
     color: #ffffff;
 }
 
 #disk {
-    background-color: #171717;
+    background-color: transparent;
     color: #ffffff;
 }
 
 #backlight {
-    background-color: #191919;
+    background-color: transparent;
 }
 
 #network {
-    background-color: #171717;
+    background-color: transparent;
     color: #ffffff;
 }
 
 #network.disconnected {
-    background-color: #171717;
+    background-color: transparent;
     color: red;
 }
 
 #pulseaudio {
-    background-color: #171717;
+    background-color: transparent;
     color: #ffffff;
 }
 
 #pulseaudio.muted {
-    background-color: #171717;
+    background-color: transparent;
     color: red;
 }
 
 #custom-media {
-    background-color: #171717;
+    background-color: transparent;
     color: white;
 }
 
 #custom-media.custom-spotify {
-    background-color: #171717;
+    background-color: transparent;
     color: white;
 
 }
 
 #custom-media.custom-vlc {
-    background-color: #171717;
+    background-color: transparent;
     color: white;
 }
 
 #custom-power{
-    background-color: #171717;
+    background-color: transparent;
     font-size: 18px;
     margin-right: 5px;
 
 }
 
 #custom-launcher{
-    background-color: #171717;
+    background-color: transparent;
     font-size: 20px;
     margin-left: 5px;
 
 }
 
 #custom-layout{
-    background-color: #171717;
+    background-color: transparent;
     color: white;
     font-size:20px;
 }
 
 #custom-updater {
-    background-color: #171717;
+    background-color: transparent;
     color: white;
 }
 
 #custom-snip {
-    background-color: #171717;
+    background-color: transparent;
+    color: white;
     color: skyblue;
     font-size: 20px;
 }
 
 #custom-wallpaper {
-    background-color: #171717;
+    background-color: transparent;
     color: pink;
     font-size: 20px;
 }
@@ -243,7 +248,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #171717;
+    background-color: transparent;
     color: #ffffff;
 }
 
@@ -273,13 +278,13 @@ label:focus {
 }
 
 #language {
-    background-color: #171717;
+    background-color: transparent;
     color: #ffffff;
     min-width: 16px;
 }
 
 #keyboard-state {
-    background: #97e1ad;
+    background: transparent;
     color: #000000;
     min-width: 16px;
 }

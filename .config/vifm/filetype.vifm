@@ -1,6 +1,9 @@
 " Pdf
 filextype {*.pdf},<application/pdf> zathura %c %i &, apvlv %c, xpdf %c
-fileviewer *.pdf file %c && pdftoppm -singlefile -jpeg %c | chafa
+fileviewer *.pdf 
+		\ sh $VIFM/sixel.sh pdf %pw %ph %c %pd || chava %c
+        \ %pc
+        \ sh $VIFM/sixel.sh clear
 
 " PostScript
 filextype {*.ps,*.eps,*.ps.gz},<application/postscript>
@@ -23,7 +26,10 @@ filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
        \ mpv --no-video %c,
        \ {Play using MPlayer}
        \ mplayer %f,
-fileviewer <audio/*> file %c
+fileviewer <audio/*> 
+		\ sh $VIFM/sixel.sh audio %pw %ph %c %pd
+        \ %pc
+        \ sh $VIFM/sixel.sh clear
 
 " Video
 filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
@@ -40,7 +46,9 @@ fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
            \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
            \*.as[fx]},
           \<video/*>
-         \ ffprobe -pretty %c 2>&1
+		\ sh $VIFM/sixel.sh audio %pw %ph %c %pd || ffprobe -pretty %c 2>&1
+        \ %pc
+        \ sh $VIFM/sixel.sh clear
 
 " Web
 filextype {*.html,*.htm},<text/html>
@@ -53,8 +61,8 @@ filextype {*.html,*.htm},<text/html>
 filetype {*.html,*.htm},<text/html> links, lynx, w3m
 
 " Object
-filetype {*.o},<application/x-object> nm %f | bat
-fileviewer {*.o},<application/x-object> nm %c | bat
+filetype {*.o},<application/x-object> nm %f | bat -n --terminal-width %pw --color always
+fileviewer {*.o},<application/x-object> nm %c | bat -n --terminal-width %pw --color always
 
 " Man page
 filetype {*.[1-8]},<text/troff> nvim ./%c
@@ -69,7 +77,9 @@ fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
          \ {View in shotwell}
          \ shotwell,
 fileviewer <image/*>
-        \ file %c && chafa %c
+        \ sh $VIFM/sixel.sh draw %pw %ph %c %pd || chava %c
+        \ %pc
+        \ sh $VIFM/sixel.sh clear
 
 " Directory
 fileviewer */ tree -L 2 %f
@@ -124,7 +134,10 @@ filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
        \ {Extract here}
        \ tar -xf %c
 
-fileviewer {*.iso,*.7z,*.zip,*.jar,*.war,*.ear,*.oxt,*.gz,*.rar},
+fileviewer <font/*>
+			\ file %c
+
+fileviewer {*.iso,*.7z,*.zip,*.jar,*.war,*.ear,*.oxt,*.gz,*.rar},<archive/*>
 			\ 7z l %c -x'!*/*/*'
 
 " ArchiveMount
@@ -177,4 +190,4 @@ filextype */
         \ {View in ls}
         \ ls %f &,
 
-fileviewer *[^/] bat --color always
+fileviewer <text/*> bat --terminal-width %pw --color always %c

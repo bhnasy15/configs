@@ -28,6 +28,8 @@ settings:
         <Ctrl+l>: :session-load
         <Ctrl+q>: close
         <Ctrl+u>: undo
+        <button: 4> scroll-page 0 0.5
+        <button\: 4> scroll-page 0 0.5
         J: tab-prev
         K: tab-next
         M: tab-mute
@@ -38,3 +40,5 @@ settings:
         q: null
         u: scroll-page 0 -0.5
         x: tab-close
+  tabs.show:
+    global: multiple

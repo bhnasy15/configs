@@ -22,6 +22,6 @@ nnoremap <c-s> :sync<cr>
 nnoremap ,q :quit<cr>
 
 nnoremap ,g :grep -i -e<space>
-nnoremap ,f :fd ./ -iname<space>
+nnoremap ,f :find ./ -iname<space>
 
 nnoremap v :select<cr>
