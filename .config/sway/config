@@ -20,18 +20,28 @@ seat seat0 {
 }
 
 bar {
-	swaybar_command waybar
+	swaybar_command ''
 	workspace_buttons yes
 }
-
-default_border none
-smart_borders on
 
 focus_follows_mouse yes
 
 xwayland enable
 gaps inner 0
 gaps outer 0
+focus_wrapping no
+hide_edge_borders vertical
+popup_during_fullscreen smart
+
+default_border none
+smart_borders on
+titlebar_border_thickness 0
+
+# class			           border	    background	text        indicator   child_border
+client.focused             #80a0ff      #80a0a0     #080808     #80a0ff     #80a0a0
+client.focused_inactive    #80a0ff      #204040     #c6c6c6     #80a0ff     #080808
+client.unfocused           #80a0ff      #080808     #c6c6c6     #80a0ff     #080808
+client.urgent              #80a0ff      #80a0ff     #080808     #80a0ff     #ffa080
 
 include $HOME/.config/sway/map
 include $HOME/.config/sway/rules

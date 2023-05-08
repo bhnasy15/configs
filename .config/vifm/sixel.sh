@@ -23,7 +23,7 @@ cleanup() {
 # recieves image with height
 image() {
     #montage "$1" -background "$background" -geometry "${2}x${3}" sixel:-
-	img2sixel "$1" -w "$2px" -h auto -q low
+	img2sixel "$1" -w auto -h "$3" -q low
   }
 
 

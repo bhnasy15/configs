@@ -12,6 +12,9 @@ filextype {*.ps,*.eps,*.ps.gz},<application/postscript>
         \ {View in gv}
         \ gv %c %i &,
 
+" md
+fileviewer *.md mdcat -c %c | bat --terminal-width %pw --file-name %c
+
 " Djvu
 filextype {*.djvu},<image/vnd.djvu>
         \ {View in zathura}
@@ -61,9 +64,7 @@ filextype {*.html,*.htm},<text/html>
 filetype {*.html,*.htm},<text/html> links, lynx, w3m
 
 " Object
-filetype {*.o},<application/x-object> nm %f | bat -n --terminal-width %pw --color always
-fileviewer {*.o},<application/x-object> nm %c | bat -n --terminal-width %pw --color always
-
+filetype {*.o},<application/x-object> nm %f | bat -n --terminal-width %pw fileviewer {*.o},<application/x-object> nm %c | bat -n --terminal-width %pw 
 " Man page
 filetype {*.[1-8]},<text/troff> nvim ./%c
 fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
@@ -190,4 +191,4 @@ filextype */
         \ {View in ls}
         \ ls %f &,
 
-fileviewer <text/*> bat --terminal-width %pw --color always %c
+fileviewer <text/*> bat --terminal-width %pw %c

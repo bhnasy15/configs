@@ -1,0 +1,29 @@
+scale =  fit
+fullscreen = no
+background = none
+window = none
+antialiasing = no
+info = no
+order = alpha
+loop = no
+recursive = yes
+sway = yes
+font-color = #ff00ff
+
+[keys]
+equal = zoom_in
+minus = zoom_out
+0 = zoom_reset
+g = first_file
+G = last_file
+N = none
+P = none
+n = next_file
+p = prev_file
+a = animation
+F5 = slideshow
+F11 = fullscreen
+r = reload
+i = info
+q = quit
+Escape = quit
