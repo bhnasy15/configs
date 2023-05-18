@@ -27,6 +27,9 @@ Documents/*
 .config/zsh
 .config/Code*
 .config/faplayer
+.config/light
+.config/uGet
+.config/Google
 
 .config/composer/vendor
 .config/composer/composer.lock

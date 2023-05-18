@@ -8,11 +8,18 @@
 <VirtualBox xmlns="http://www.virtualbox.org/" version="1.12-linux">
   <Global>
     <ExtraData>
+      <ExtraDataItem name="GUI/FontScaleFactor" value="100"/>
       <ExtraDataItem name="GUI/LastItemSelected" value="n=GLOBAL"/>
-      <ExtraDataItem name="GUI/LastWindowPosition" value="1154,23,806,487"/>
+      <ExtraDataItem name="GUI/LastWindowPosition" value="960,30,960,1050,max"/>
       <ExtraDataItem name="GUI/Tools/LastItemsSelected" value="Media,Details"/>
+      <ExtraDataItem name="GUI/VirtualMediaManager/Details/Expanded" value="true"/>
     </ExtraData>
     <MachineRegistry/>
+    <MediaRegistry>
+      <HardDisks>
+        <HardDisk uuid="{8ff6d262-c85a-475a-83b8-4b0fff563c59}" location="/home/yarob/VirtualBox VMs/NewVirtualDisk.vdi" format="VDI" type="Normal"/>
+      </HardDisks>
+    </MediaRegistry>
     <NetserviceRegistry>
       <DHCPServers>
         <DHCPServer networkName="HostInterfaceNetworking-vboxnet0" IPAddress="192.168.56.100" networkMask="255.255.255.0" lowerIP="192.168.56.101" upperIP="192.168.56.254" enabled="1"/>

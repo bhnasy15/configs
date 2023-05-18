@@ -3,9 +3,9 @@
     "position": "top",
 	"fixed-center": true,
     "spacing": 4,
-    "modules-left": ["memory", "cpu", "network"],
+    "modules-left": ["cpu", "memory", "network"],
     "modules-center": ["sway/workspaces", "wlr/workspaces"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray"],
+    "modules-right": ["pulseaudio", "backlight","battery", "sway/language", "clock", "tray"],
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": true,
@@ -98,6 +98,9 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    }
+    },
+	"sway/language": {
+	   "format": "{short} ",
+   },
 }
 

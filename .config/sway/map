@@ -145,6 +145,7 @@ bindsym --to-code $mod+r mode "resize"
 # }
 
 # misc {
+	bindsym --to-code --no-repeat F1 exec wofi --show drun
 	bindsym --to-code --no-repeat XF86HomePage exec qutebrowser
 	bindsym --to-code --no-repeat $mod+F2 exec qutebrowser
 	bindsym --to-code --no-repeat XF86Explorer exec pcmanfm

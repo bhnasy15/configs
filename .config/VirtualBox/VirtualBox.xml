@@ -8,9 +8,11 @@
 <VirtualBox xmlns="http://www.virtualbox.org/" version="1.12-linux">
   <Global>
     <ExtraData>
+      <ExtraDataItem name="GUI/FontScaleFactor" value="100"/>
       <ExtraDataItem name="GUI/LastItemSelected" value="n=GLOBAL"/>
-      <ExtraDataItem name="GUI/LastWindowPosition" value="1324,293,806,487"/>
+      <ExtraDataItem name="GUI/LastWindowPosition" value="960,30,960,1050,max"/>
       <ExtraDataItem name="GUI/Tools/LastItemsSelected" value="Media,Details"/>
+      <ExtraDataItem name="GUI/VirtualMediaManager/Details/Expanded" value="true"/>
     </ExtraData>
     <MachineRegistry/>
     <NetserviceRegistry>

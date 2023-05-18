@@ -13,5 +13,3 @@ export CPATH=/home/yarob/.local/include
 #river
 #Hyprland
 sway --unsupported-gpu
-
-source /home/yarob/.config/broot/launcher/bash/br
