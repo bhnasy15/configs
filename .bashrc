@@ -4,6 +4,8 @@
 
 [[ $DISPLAY ]] && shopt -s checkwinsize
 
+HISTFILESIZE=1000
+
 set -o vi
 bind "set keymap vi"
 bind "set editing-mode vi"
@@ -14,7 +16,6 @@ alias ls='ls -h --color=auto'
 alias ll='ls -gol'
 alias la='ls -A'
 
-alias vim='nvim'
 alias vi='nvim'
 alias vf='vifm'
 
@@ -60,5 +61,21 @@ export LESS_TERMCAP_so=$'\E[01;33m'    # begin reverse video
 export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+
+osc7_cwd() {
+    local strlen=${#PWD}
+    local encoded=""
+    local pos c o
+    for (( pos=0; pos<strlen; pos++ )); do
+        c=${PWD:$pos:1}
+        case "$c" in
+            [-/:_.!\'\(\)~[:alnum:]] ) o="${c}" ;;
+            * ) printf -v o '%%%02X' "'${c}" ;;
+        esac
+        encoded+="${o}"
+    done
+    printf '\e]7;file://%s%s\e\\' "${HOSTNAME}" "${encoded}"
+}
+PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }osc7_cwd
 
 # source $HOME/.config/broot/launcher/bash/br

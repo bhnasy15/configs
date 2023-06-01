@@ -1,3 +1,3 @@
 # configs
 
-backup for easier rebuild.
+Backup for easier rebuild.

@@ -4,6 +4,7 @@ application/pdf=org.pwmt.zathura.desktop;org.qutebrowser.qutebrowser.desktop;
 application/zip=org.qutebrowser.qutebrowser.desktop;
 application/vnd.adobe.flash.movie=ruffle.desktop;
 inode/directory=xarchiver.desktop;
+video/mp4=mpv.desktop;
 
 [Default Applications]
 x-scheme-handler/http=qutebrowser.desktop
@@ -22,3 +23,4 @@ text/x-processing=processing-pde.desktop
 application/pdf=org.pwmt.zathura.desktop
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
 x-scheme-handler/eclipse+mpc=_home_yarob_.opt_eclipse_.desktop
+video/mp4=mpv.desktop

@@ -398,6 +398,16 @@ c.messages.timeout = 3000
 #   - in-mode: Show the statusbar when in modes other than normal mode.
 c.statusbar.show = 'always'
 
+# When to show favicons in the tab bar. When switching this from never
+# to always/pinned, note that favicons might not be loaded yet, thus
+# tabs might require a reload to display them.
+# Type: String
+# Valid values:
+#   - always: Always show favicons.
+#   - never: Always hide favicons.
+#   - pinned: Show favicons only on pinned tabs.
+c.tabs.favicons.show = 'never'
+
 # Position of the tab bar.
 # Type: Position
 # Valid values:

@@ -30,6 +30,15 @@ Documents/*
 .config/light
 .config/uGet
 .config/Google
+.config/TIPP10/
+.config/ardour7/
+.config/configstore/
+.config/gtk-2.0/
+.config/klavaro/
+.config/nextjs-nodejs/
+.config/nvim-gtk/
+.config/pitivi/
+.config/vidcutter/
 
 .config/composer/vendor
 .config/composer/composer.lock
@@ -85,3 +94,4 @@ Documents/*
 **/*state*/**
 **/*state*
 **/*quickmarks*
+

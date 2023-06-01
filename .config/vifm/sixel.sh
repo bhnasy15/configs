@@ -23,7 +23,7 @@ cleanup() {
 # recieves image with height
 image() {
     #montage "$1" -background "$background" -geometry "${2}x${3}" sixel:-
-		img2sixel "$1" -w auto -h $height -q low
+		[ $height -le $width ] && img2sixel "$1" -w auto -h $height -q low || img2sixel "$1" -w $width -h auto -q low
   }
 
 
@@ -44,11 +44,6 @@ case "$action" in
   "pdf")
     [ ! -f "${PCACHE}.jpg" ] && \
     pdftoppm -jpeg -f 1 -singlefile "$image_file" "$PCACHE"
-    image "${PCACHE}.jpg" "$width" "$height"
-    ;;
-  "audio")
-    [ ! -f "${PCACHE}.jpg" ] && \
-    ffmpeg -i "$image_file" "${PCACHE}.jpg" -y >/dev/null
     image "${PCACHE}.jpg" "$width" "$height"
     ;;
   *)
