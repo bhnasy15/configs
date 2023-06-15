@@ -20,6 +20,9 @@ Documents/*
 !.config/
 !.config/**
 .config/nvim
+.config/emacs
+.config/nvim-qt
+.config/fontforge
 .config/libreoffice
 .config/pulse
 .config/JetBrains
@@ -42,6 +45,7 @@ Documents/*
 
 .config/composer/vendor
 .config/composer/composer.lock
+.config/window-geometry.conf
 
 !.gnupg/
 !.gnupg/**

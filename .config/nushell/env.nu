@@ -1,71 +1,75 @@
-# Nushell Environment Config File
-
 def create_left_prompt [] {
-    let path_segment = if (is-admin) {
-        $"(ansi red_bold)($env.PWD)"
-    } else {
-        $"(ansi green_bold)($env.PWD)"
-    }
+    let home = $env.HOME
+    let dir = $env.PWD
 
-    $path_segment
-}
+    let path_color = (if (is-admin) { ansi red_bold } else { ansi green_bold })
+    let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi green_bold })
+    let path_segment = $"($path_color)($dir)"
 
-def create_right_prompt [] {
-    let time_segment = ([
-        #(date now | date format '%m/%d/%Y %r')
-        (date now | date format '%r')
+    let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
+        (ansi rb)
+        ($env.LAST_EXIT_CODE)
     ] | str join)
+    } else { "" }
 
-    $time_segment
+	$"(ansi reset)($last_exit_code) ($path_segment)"
 }
 
 # Use nushell functions to define your right and left prompt
 let-env PROMPT_COMMAND = { create_left_prompt }
-let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
+let-env PROMPT_COMMAND_RIGHT = { $"(ansi reset)(date now | date format '%Y/%m/%d %r')" }
 
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
-let-env PROMPT_INDICATOR = { " >> " }
-let-env PROMPT_INDICATOR_VI_INSERT = { " :> " }
-let-env PROMPT_INDICATOR_VI_NORMAL = { " : " }
-let-env PROMPT_MULTILINE_INDICATOR = { " :: " }
-
-# Specifies how environment variables are:
-# - converted from a string to a value on Nushell startup (from_string)
-# - converted from a value back to a string when running external commands (to_string)
-# Note: The conversions happen *after* config.nu is loaded
-let-env ENV_CONVERSIONS = {
-  "PATH": {
-    from_string: { |s| $s | split row (char esep) | path expand -n }
-    to_string: { |v| $v | path expand -n | str join (char esep) }
-  }
-  "Path": {
-    from_string: { |s| $s | split row (char esep) | path expand -n }
-    to_string: { |v| $v | path expand -n | str join (char esep) }
-  }
-}
+let-env PROMPT_INDICATOR = {|| " > " }
+let-env PROMPT_INDICATOR_VI_INSERT = {|| " :> " }
+let-env PROMPT_INDICATOR_VI_NORMAL = {|| " : " }
+let-env PROMPT_MULTILINE_INDICATOR = {|| " >> " }
 
 # Directories to search for scripts when calling source or use
 #
 # By default, <nushell-config-dir>/scripts is added
 let-env NU_LIB_DIRS = [
-    ($nu.config-path | path dirname | path join 'scripts')
+    ($nu.default-config-dir | path join 'scripts')
 ]
 
 # Directories to search for plugin binaries when calling register
 #
 # By default, <nushell-config-dir>/plugins is added
 let-env NU_PLUGIN_DIRS = [
-    ($nu.config-path | path dirname | path join 'plugins')
+    ($nu.default-config-dir | path join 'plugins')
 ]
 
-alias ll = ls -gol
-alias la = ls -A
-
-alias vfm = vifmrun
-alias vim = nvim
-alias nv = neovide
-alias grep = grep --color=auto
-
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
-# let-env PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
+let local_bin = $":( $env.HOME | append '/.local/bin') | str join"
+let share_bin = $":( $env.HOME | append '/.local/share/bin') | str join"
+let cargo_bin = $":( $env.HOME | append '/.cargo/bin/') | str join"
+let-env PATH = ($env.PATH | append [$local_bin, $share_bin, cargo_bin] | str join)
+
+let-env _JAVA_AWT_WM_NONREPARENTING = 1
+let-env EDITOR = nvim
+let-env TERM = foot
+let-env SCRIPT = ($env.HOME | append '/.local/sh' | str join )
+let-env XDG_CONFIG_HOME = ( $env.HOME | append '/.config' | str join )
+let-env CPATH = ( $env.HOME | append '/.local/include' | str join )
+
+alias vi = nvim
+alias vf = vifm
+
+alias mount = sudo mount -o uid=$USER
+alias umount = sudo umount
+
+alias batc = cat /sys/class/power_supply/BAT0/capacity
+alias bats = cat /sys/class/power_supply/BAT0/status
+
+alias wine = wine64
+alias wine32 = wine
+
+alias py = python3
+
+let-env LESS_TERMCAP_md = (ansi gb) # begin bold
+let-env LESS_TERMCAP_me = (ansi reset) # reset bold/blink
+let-env LESS_TERMCAP_so = (ansi r) # begin reverse video
+let-env LESS_TERMCAP_se = (ansi reset) # reset reverse video
+let-env LESS_TERMCAP_us = (ansi yu) # begin underline
+let-env LESS_TERMCAP_ue = (ansi reset) # reset underline

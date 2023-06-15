@@ -39,7 +39,7 @@ filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
           \*.as[fx]},
          \<video/*>
         \ {View using mpv}
-        \ mpv --no-terminal %f > /dev/null & disown,
+        \ mpv --no-terminal --loop=inf %f > /dev/null & disown,
         \ {View using Dragon}
         \ dragon %f:p,
         \ {View using mplayer}
@@ -53,7 +53,7 @@ fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 " Web
 filextype {*.html,*.htm},<text/html>
         \ {Open with dwb}
-        \ dwb %f %i &,
+        \ qutebrowser %f &,
         \ {Open with firefox}
         \ firefox %f &,
         \ {Open with uzbl}
