@@ -19,33 +19,42 @@ Documents/*
 
 !.config/
 !.config/**
-.config/nvim
-.config/emacs
-.config/nvim-qt
-.config/fontforge
-.config/libreoffice
-.config/pulse
-.config/JetBrains
-.config/Microsoft
-.config/zsh
-.config/Code*
-.config/faplayer
-.config/light
-.config/uGet
+'.config/Android Open Source Project'
+.config/Electron
+.config/FreeCAD
 .config/Google
-.config/TIPP10/
-.config/ardour7/
-.config/configstore/
-.config/gtk-2.0/
-.config/klavaro/
-.config/nextjs-nodejs/
-.config/nvim-gtk/
-.config/pitivi/
-.config/vidcutter/
-
-.config/composer/vendor
-.config/composer/composer.lock
+.config/JetBrains
+.config/QtProject.conf
+.config/VirtualBox
+.config/composer
+.config/emacs
+.config/environment.d
+.config/font-manager
+.config/fontforge
+.config/gnome-session
+.config/godot
+.config/ibus
+.config/klavaro
+.config/libreoffice
+.config/l3afpad
+.config/nvim
+.config/nvtop
+.config/pavucontrol.ini
+.config/pulse
+.config/uGet
+.config/user-dirs.dirs
+.config/user-dirs.locale
 .config/window-geometry.conf
+.config/xarchiver
+.config/zoomus.conf
+'.config/Code - OSS'
+.config/light
+        deleted:    .config/QtProject/Designer.conf
+        deleted:    .config/OpenSCAD/OpenSCAD.conf
+        deleted:    .config/LibreCAD/LibreCAD.conf
+        deleted:    .config/LibrePCB/LibrePCB.ini
+        deleted:    .config/Meltytech/Shotcut.conf
+        deleted:    .config/Notepadqq/Notepadqq.ini
 
 !.gnupg/
 !.gnupg/**

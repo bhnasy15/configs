@@ -1,22 +1,22 @@
 " Pdf
-filextype {*.pdf},<application/pdf> zathura %c %i &, apvlv %c, xpdf %c
+filextype {*.pdf},<application/pdf> zathura '%c' %i &, apvlv %c, xpdf '%c'
 fileviewer *.pdf 
-		\ sh $VIFM/sixel.sh pdf %pw %ph %c %pd || chava %c
+		\ sh $"($env.VIFM | append '/sixel.sh' | str join)" pdf %pw %ph '%c' %pd
         \ %pc
-        \ sh $VIFM/sixel.sh clear
+		\ sh $"($env.VIFM | append '/sixel.sh' | str join)" clear
 
 " PostScript
 filextype {*.ps,*.eps,*.ps.gz},<application/postscript>
         \ {View in zathura}
         \ zathura %f,
         \ {View in gv}
-        \ gv %c %i &,
+        \ gv '%c' %i &,
 
 " json
-fileviewer *.json jless %c | bat --paging=never --terminal-width %pw --file-name %c
+fileviewer *.json jless '%c' | bat --paging=never --terminal-width %pw --file-name '%c'
 
 " md
-fileviewer *.md bat --paging=never --terminal-width %pw --file-name %c %c
+fileviewer *.md bat --paging=never --terminal-width %pw --file-name '%c' '%c'
 
 " Djvu
 filextype {*.djvu},<image/vnd.djvu>
@@ -29,7 +29,7 @@ filextype {*.djvu},<image/vnd.djvu>
 filetype {*.wav,*.m4a,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
         \<audio/*>
        \ {Play using ffplay}
-       \ mpv --no-video %c,
+       \ mpv --no-video '%c',
        \ {Play using MPlayer}
        \ mplayer %f,
 
@@ -39,7 +39,7 @@ filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
           \*.as[fx]},
          \<video/*>
         \ {View using mpv}
-        \ mpv --no-terminal --loop=inf %f > /dev/null & disown,
+        \ pueue add -- mpv --no-terminal --loop=inf %f,
         \ {View using Dragon}
         \ dragon %f:p,
         \ {View using mplayer}
@@ -61,23 +61,23 @@ filextype {*.html,*.htm},<text/html>
 filetype {*.html,*.htm},<text/html> links, lynx, w3m
 
 " Object
-filetype {*.o},<application/x-object> nm %f | bat --paging=never -n --terminal-width %pw fileviewer {*.o},<application/x-object> nm %c | bat --paging=never -n --terminal-width %pw 
+filetype {*.o},<application/x-object> nm %f | bat --paging=never -n --terminal-width %pw fileviewer {*.o},<application/x-object> nm '%c' | bat --paging=never -n --terminal-width %pw 
 " Man page
-filetype {*.[1-8]},<text/troff> nvim ./%c
-fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
+filetype {*.[1-8]},<text/troff> nvim ./'%c'
+fileviewer {*.[1-8]},<text/troff> man ./'%c' | col -b
 
 " Images
  filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
          \ swayimg %f &,
          \ feh %f &,
          \ {View in gpicview}
-         \ gpicview %c,
+         \ gpicview '%c',
          \ {View in shotwell}
          \ shotwell,
 fileviewer <image/*>
-        \ sh $VIFM/sixel.sh draw %pw %ph %c %pd || chava %c
+		\ sh $"($env.VIFM | append '/sixel.sh' | str join)" draw %pw %ph '%c' %pd
         \ %pc
-        \ sh $VIFM/sixel.sh clear
+		\ sh $"($env.VIFM | append '/sixel.sh' | str join)" clear
 
 " Directory
 fileviewer */ tree -L 2 %f
@@ -116,7 +116,7 @@ filetype *.sha512
 " GPG signature
 filetype {*.asc},<application/pgp-signature>
        \ {Check signature}
-       \ !!gpg --verify %c,
+       \ !!gpg --verify '%c',
 
 " Torrent
 filetype {*.torrent},<application/x-bittorrent> ktorrent %f &
@@ -167,26 +167,21 @@ filetype *.ftp
 
 " Office files
 filextype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt},
-         \<application/vnd.openxmlformats-officedocument.*,
-          \application/msword,
-          \application/vnd.ms-excel>
-        \ libreoffice %f &
+        \<application/vnd.openxmlformats-officedocument.*,
+        \ application/msword,
+        \ application/vnd.ms-excel>
+    	\ libreoffice %f
 fileviewer {*.doc},<application/msword> catdoc %c
 fileviewer {*.docx},
-          \<application/
-           \vnd.openxmlformats-officedocument.wordprocessingml.document>
-         \ docx2txt %f -
+        \ <application/
+        \ vnd.openxmlformats-officedocument.wordprocessingml.document>
+        \ docx2txt %f -
 
 " TuDu files
 filetype *.tudu tudu -f %c
 
 " Qt projects
 filextype *.pro qtcreator %f &
-
-" Directories
-filextype */
-        \ {View in ls}
-        \ ls %f &,
 
 fileviewer <text/*> bat --paging=never --terminal-width %pw %c
 

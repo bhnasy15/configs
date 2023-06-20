@@ -3,17 +3,17 @@ let dark_theme = {
     separator: white
     leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
     header: green_bold
-    empty: blue
+    empty: light_blue
     # Closures can be used to choose colors for specific values.
     # The value (in this case, a bool) is piped into the closure.
-    bool: {|| if $in { 'light_cyan' } else { 'light_gray' } }
+    bool: {|| if $in { 'light_cyan' } else { '#666666' } }
     int: white
     filesize: {|e|
       if $e == 0b {
         'white'
       } else if $e < 1mb {
         'cyan'
-      } else { 'blue' }
+      } else { 'light_blue' }
     }
     duration: white
     date: {|| (date now) - $in |
@@ -30,8 +30,8 @@ let dark_theme = {
       } else if $in < 6wk {
         'cyan'
       } else if $in < 52wk {
-        'blue'
-      } else { 'dark_gray' }
+        'light_blue'
+      } else { '#666666' }
     }
     range: white
     float: white
@@ -43,12 +43,12 @@ let dark_theme = {
     record: white
     list: white
     block: white
-    hints: dark_gray
+    hints: '#666666'
     search_result: {bg: red fg: white}
 
     shape_and: purple_bold
     shape_binary: purple_bold
-    shape_block: blue_bold
+    shape_block: light_blue_bold
     shape_bool: light_cyan
     shape_closure: green_bold
     shape_custom: green
@@ -57,7 +57,7 @@ let dark_theme = {
     shape_external: cyan
     shape_externalarg: green_bold
     shape_filepath: cyan
-    shape_flag: blue_bold
+    shape_flag: light_blue_bold
     shape_float: purple_bold
     # shapes are used to change the cli syntax highlighting
     shape_garbage: { fg: white bg: red attr: b}
@@ -65,7 +65,7 @@ let dark_theme = {
     shape_int: purple_bold
     shape_internalcall: cyan_bold
     shape_list: cyan_bold
-    shape_literal: blue
+    shape_literal: light_blue
     shape_match_pattern: green
     shape_matching_brackets: { attr: u }
     shape_nothing: light_cyan
@@ -78,7 +78,7 @@ let dark_theme = {
     shape_signature: green_bold
     shape_string: green
     shape_string_interpolation: cyan_bold
-    shape_table: blue_bold
+    shape_table: light_blue_bold
     shape_variable: purple
     shape_vardecl: purple
 }
@@ -121,14 +121,14 @@ let-env config = {
     highlight: {bg: 'yellow' fg: 'black' }
 
     status: {
-      # warn: {bg: 'yellow', fg: 'blue'}
-      # error: {bg: 'yellow', fg: 'blue'}
-      # info: {bg: 'yellow', fg: 'blue'}
+      # warn: {bg: 'yellow', fg: 'light_blue'}
+      # error: {bg: 'yellow', fg: 'light_blue'}
+      # info: {bg: 'yellow', fg: 'light_blue'}
     }
 
     try: {
       # border_color: 'red'
-      # highlighted_color: 'blue'
+      # highlighted_color: 'light_blue'
 
       # reactive: false
     }
@@ -148,7 +148,7 @@ let-env config = {
 
       # selected_cell: {fg: 'white', bg: '#777777'}
       # selected_row: {fg: 'yellow', bg: '#C1C2A3'}
-      # selected_column: blue
+      # selected_column: light_blue
 
       # padding_column_right: 2
       # padding_column_left: 2
@@ -158,7 +158,7 @@ let-env config = {
     }
 
     config: {
-      cursor_color: {bg: 'yellow' fg: 'black' }
+      cursor_color: {bg: 'black' fg: 'white' }
 
       # border_color: white
       # list_color: green
@@ -376,3 +376,19 @@ let-env config = {
     }
   ]
 }
+
+alias la = ls -a
+
+alias vi = nvim
+alias vf = vifm
+
+alias mount = sudo mount -o uid=$USER
+alias umount = sudo umount
+
+alias batc = cat /sys/class/power_supply/BAT0/capacity
+alias bats = cat /sys/class/power_supply/BAT0/status
+
+alias wine = wine64
+alias wine32 = wine
+
+alias py = python3

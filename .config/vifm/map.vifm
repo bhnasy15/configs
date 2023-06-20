@@ -1,6 +1,7 @@
 map ,w <C-w>
 
-nnoremap s :!foot -D %d -T SCRIPT & disown<cr>
+nnoremap s :!pueue add -- foot -D %d -T SCRIPT | ignore<cr>
+"nnoremap s :!foot -D %d -T SCRIPT & disown<cr>
 
 nnoremap H :histprev<cr>
 nnoremap L :histnext<cr>
@@ -8,7 +9,7 @@ nnoremap L :histnext<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 
-nnoremap o :!nv %f <cr>
+nnoremap o :!nv_s %f <cr>
 nnoremap O :!nvim %f<cr>
 
 nnoremap gb :file &<cr>l
