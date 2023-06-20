@@ -49,12 +49,6 @@ Documents/*
 .config/zoomus.conf
 '.config/Code - OSS'
 .config/light
-        deleted:    .config/QtProject/Designer.conf
-        deleted:    .config/OpenSCAD/OpenSCAD.conf
-        deleted:    .config/LibreCAD/LibreCAD.conf
-        deleted:    .config/LibrePCB/LibrePCB.ini
-        deleted:    .config/Meltytech/Shotcut.conf
-        deleted:    .config/Notepadqq/Notepadqq.ini
 
 !.gnupg/
 !.gnupg/**
