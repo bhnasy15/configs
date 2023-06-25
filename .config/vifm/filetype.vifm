@@ -5,41 +5,39 @@ fileviewer *.pdf
         \ %pc
 		\ sh $"($env.VIFM | append '/sixel.sh' | str join)" clear
 
+fileviewer <image/*>
+		\ sh $"($env.VIFM | append '/sixel.sh' | str join)" draw %pw %ph '%c' %pd
+        \ %pc
+		\ sh $"($env.VIFM | append '/sixel.sh' | str join)" clear
+
 " PostScript
-filextype {*.ps,*.eps,*.ps.gz},<application/postscript>
+filetype {*.ps,*.eps,*.ps.gz},<application/postscript>,{*.djvu},<image/vnd.djvu>
         \ {View in zathura}
-        \ zathura %f,
+        \ pueue add -- sh -c 'zathura %f',
         \ {View in gv}
         \ gv '%c' %i &,
 
 " json
-fileviewer *.json jless '%c' | bat --paging=never --terminal-width %pw --file-name '%c'
+fileviewer *.json sh -c 'jless %c' | sh -c 'bat --paging=never --terminal-width %pw --file-name %c'
 
 " md
-fileviewer *.md bat --paging=never --terminal-width %pw --file-name '%c' '%c'
-
-" Djvu
-filextype {*.djvu},<image/vnd.djvu>
-        \ {View in zathura}
-        \ zathura %f,
-        \ {View in apvlv}
-        \ apvlv %f,
+fileviewer *.md sh -c 'bat --paging=never --terminal-width %pw --file-name %c %c'
 
 " Audio
 filetype {*.wav,*.m4a,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
         \<audio/*>
        \ {Play using ffplay}
-       \ mpv --no-video '%c',
+       \ pueue add -- sh -c 'foot -T SCRIPT mpv --no-video %c',
        \ {Play using MPlayer}
        \ mplayer %f,
 
 " Video
-filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
+filetype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
           \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
           \*.as[fx]},
          \<video/*>
         \ {View using mpv}
-        \ pueue add -- mpv --no-terminal --loop=inf %f,
+        \ pueue add -- sh -c 'mpv --no-terminal --loop=inf %f',
         \ {View using Dragon}
         \ dragon %f:p,
         \ {View using mplayer}
@@ -48,79 +46,48 @@ fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
            \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
            \*.as[fx]},
           \<video/*>
-		\ file %f 
+		\ sh -c 'file %f'
 
 " Web
-filextype {*.html,*.htm},<text/html>
+filetype {*.mhtml,*.html,*.htm},<text/html>
         \ {Open with dwb}
-        \ qutebrowser %f &,
-        \ {Open with firefox}
-        \ firefox %f &,
-        \ {Open with uzbl}
-        \ uzbl-browser %f %i &,
-filetype {*.html,*.htm},<text/html> links, lynx, w3m
+        \ pueue add -- sh -c 'qutebrowser %f',
 
 " Object
-filetype {*.o},<application/x-object> nm %f | bat --paging=never -n --terminal-width %pw fileviewer {*.o},<application/x-object> nm '%c' | bat --paging=never -n --terminal-width %pw 
+fileviewer {*.o},<application/x-object> sh -c 'nm %c' | sh -c 'bat --paging=never -n --terminal-width %pw'
+
 " Man page
-filetype {*.[1-8]},<text/troff> nvim ./'%c'
-fileviewer {*.[1-8]},<text/troff> man ./'%c' | col -b
+filetype {*.[1-8]},<text/troff> sh -c 'nvim %c'
+fileviewer {*.[1-8]},<text/troff> sh -c 'bat --paging=never -n --terminal-width %pw %c'
 
 " Images
- filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-         \ swayimg %f &,
-         \ feh %f &,
-         \ {View in gpicview}
-         \ gpicview '%c',
-         \ {View in shotwell}
-         \ shotwell,
-fileviewer <image/*>
-		\ sh $"($env.VIFM | append '/sixel.sh' | str join)" draw %pw %ph '%c' %pd
-        \ %pc
-		\ sh $"($env.VIFM | append '/sixel.sh' | str join)" clear
+filetype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
+         \ pueue add -- sh -c 'swayimg %f',
+         \ pueue add -- sh -c 'feh %f',
 
 " Directory
-fileviewer */ tree -L 2 %f
-fileviewer .*/ tree -L 2 %f
-
-" OpenRaster
-filextype *.ora
-        \ {Edit in MyPaint}
-        \ mypaint %f,
-
-" Mindmap
-filextype *.vym
-        \ {Open with VYM}
-        \ vym %f &,
+fileviewer */ sh -c 'tree -L 2 %f'
+filetype .*/ sh -c 'tree -L 2 %f'
 
 " MD5
 filetype *.md5
        \ {Check MD5 hash sum}
-       \ md5sum -c %f %S,
+       \ sh -c 'md5sum -c %f %S',
 
 " SHA1
 filetype *.sha1
        \ {Check SHA1 hash sum}
-       \ sha1sum -c %f %S,
+       \ sh -c 'sha1sum -c %f %S',
 
 " SHA256
 filetype *.sha256
        \ {Check SHA256 hash sum}
-       \ sha256sum -c %f %S,
+       \ sh -c 'sha256sum -c %f %S',
 
 " SHA512
 filetype *.sha512
        \ {Check SHA512 hash sum}
-       \ sha512sum -c %f %S,
-
-" GPG signature
-filetype {*.asc},<application/pgp-signature>
-       \ {Check signature}
-       \ !!gpg --verify '%c',
-
-" Torrent
-filetype {*.torrent},<application/x-bittorrent> ktorrent %f &
-fileviewer {*.torrent},<application/x-bittorrent> dumptorrent -v %c
+       \ sh -c 'sha512sum -c %f %S',
 
 " FuseZipMount
 filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
@@ -133,21 +100,16 @@ filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
        \ tar -xf %c
 
 fileviewer <font/*>
-			\ file %c
+			\ sh -c 'file %c'
 
 fileviewer {*.iso,*.7z,*.zip,*.jar,*.war,*.ear,*.oxt,*.gz,*.rar},<archive/*>
-			\ 7z l %c -x'!*/*/*'
+			\ sh -c '7z l %c -x"!*/*/*"'
 
 " ArchiveMount
 filetype {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz,*.tar.zst,*.tzst},
         \<application/x-tar>
        \ {Mount with archivemount}
        \ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR,
-" fileviewer *.tgz,*.tar.gz tar -tzf %c
-" fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
-" fileviewer *.tar.xz,*.txz tar -tJf %c
-" fileviewer *.tar.zst,*.tzst tar -t --zstd -f %c
-" fileviewer {*.tar},<application/x-tar> tar -tf %c
 
 " IsoMount
 filetype {*.iso},<application/x-iso9660-image>
@@ -166,23 +128,8 @@ filetype *.ftp
 
 
 " Office files
-filextype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt},
-        \<application/vnd.openxmlformats-officedocument.*,
-        \ application/msword,
-        \ application/vnd.ms-excel>
-    	\ libreoffice %f
-fileviewer {*.doc},<application/msword> catdoc %c
-fileviewer {*.docx},
-        \ <application/
-        \ vnd.openxmlformats-officedocument.wordprocessingml.document>
-        \ docx2txt %f -
-
-" TuDu files
-filetype *.tudu tudu -f %c
-
-" Qt projects
-filextype *.pro qtcreator %f &
+filetype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt}
+        \ pueue add -- sh -c 'loffice %c'
 
 fileviewer <text/*> bat --paging=never --terminal-width %pw %c
 
-fileviewer *.* file %c

@@ -9,7 +9,7 @@ bindsym --to-code --no-repeat $mod+Return exec foot
 
 bindsym --to-code --no-repeat Mod4+q kill
 
-bindsym --no-repeat $mod+d exec  ~/.local/share/bin/bemenu_run
+bindsym --no-repeat $mod+d exec bemenu_run
 
 floating_modifier Mod4 normal
 

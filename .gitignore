@@ -29,6 +29,7 @@ Documents/*
 .config/composer
 .config/emacs
 .config/environment.d
+.config/qutebrowser/qsettings/
 .config/font-manager
 .config/fontforge
 .config/gnome-session

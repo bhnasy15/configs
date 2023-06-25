@@ -5,6 +5,7 @@ application/zip=org.qutebrowser.qutebrowser.desktop;
 application/vnd.adobe.flash.movie=ruffle.desktop;
 inode/directory=xarchiver.desktop;
 video/mp4=mpv.desktop;
+application/x-pak=xarchiver.desktop;
 
 [Default Applications]
 x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
@@ -15,12 +16,9 @@ text/html=org.qutebrowser.qutebrowser.desktop
 application/x-extension-htm=org.qutebrowser.qutebrowser.desktop
 application/x-extension-html=org.qutebrowser.qutebrowser.desktop
 application/x-extension-shtml=org.qutebrowser.qutebrowser.desktop
-application/xhtml+xml=org.qutebrowser.qutebrowser.desktop
 application/x-extension-xhtml=org.qutebrowser.qutebrowser.desktop
 application/x-extension-xht=org.qutebrowser.qutebrowser.desktop
 text/plain=l3afpad.desktop
 text/x-processing=processing-pde.desktop
 application/pdf=org.pwmt.zathura.desktop
-x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
-x-scheme-handler/eclipse+mpc=_home_yarob_.opt_eclipse_.desktop
 video/mp4=mpv.desktop

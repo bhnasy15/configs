@@ -40,22 +40,3 @@ let-env NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins')
 ]
 
-# To add entries to PATH (on Windows you might use Path), you can use the following pattern:
-let local_bin = $":( $env.HOME | append '/.local/bin' | str join)"
-let share_bin = $":( $env.HOME | append '/.local/share/bin' | str join)"
-let cargo_bin = $":( $env.HOME | append '/.cargo/bin/' | str join)"
-let-env PATH = ($env.PATH | append [$local_bin, $share_bin, $cargo_bin] | str join)
-
-let-env _JAVA_AWT_WM_NONREPARENTING = 1
-let-env EDITOR = nvim
-let-env TERM = foot
-let-env SCRIPT = ($env.HOME | append '/.local/sh' | str join )
-let-env XDG_CONFIG_HOME = ( $env.HOME | append '/.config' | str join )
-let-env CPATH = ( $env.HOME | append '/.local/include' | str join )
-
-let-env LESS_TERMCAP_md = (ansi gb) # begin bold
-let-env LESS_TERMCAP_me = (ansi reset) # reset bold/blink
-let-env LESS_TERMCAP_so = (ansi r) # begin reverse video
-let-env LESS_TERMCAP_se = (ansi reset) # reset reverse video
-let-env LESS_TERMCAP_us = (ansi yu) # begin underline
-let-env LESS_TERMCAP_ue = (ansi reset) # reset underline

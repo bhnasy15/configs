@@ -1,0 +1,232 @@
+#
+# wm independent hotkeys
+#
+
+# applications
+alt + Return
+	prime $TERM &
+
+alt + F5
+	prime neovide
+
+super + Return
+	prime $TERM &
+
+alt + F1
+	rofi -show drun &
+
+alt + F2
+	qutebrowser &
+
+XF86HomePage
+	qutebrowser &
+
+alt + F4
+	pcmanfm &
+
+XF86Explorer
+	pcmanfm &
+
+alt + d
+	dmenu_run -fn 'monospace'-13
+
+alt + F3
+	dmenu_run -fn 'monospace'-13
+
+alt + s
+	sh-menu
+
+super + Escape
+	xkill
+
+alt + F8
+	pavucontrol &
+
+super + p
+	maim -s "$(date +%y-%m-%d_%H:%M:%S).png"
+
+# media keys
+# backlight control xbacklight
+{XF86MonBrightnessDown,XF86MonBrightnessUp}
+	light -{U,A} 5
+
+control + {XF86MonBrightnessDown,XF86MonBrightnessUp}
+	light -{U,A} 1
+
+control + {XF86AudioLowerVolume,XF86AudioRaiseVolume}
+	light -{U,A} 5
+
+super + {F3,F4}
+	light -{U,A} 5
+
+super + control + {F3,F4}
+	light -{U,A} 1
+
+# audio control
+# main keys
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}1%
+
+shift + {XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86AudioMicMute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPrev
+	playerctl previous
+
+XF86AudioStop
+	playerctl stop
+# backup keys
+super + {F1,F2}
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+
+super + control + {F1,F2}
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}1%
+
+super + shift + F1
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+super + shift + F2
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+#
+# bspwm hotkeys
+#
+alt + shift + q
+	bspc node -c
+
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window.local
+
+#
+# state/flags
+#
+
+# set the window state
+
+alt + {F9,F11,F12}
+	bspc node focused -t {tiled,!fullscreen,!floating}
+
+alt + shift + F9
+	bspc node focused -t !pseudo_tiled
+
+alt + F10
+	bspc desktop focused -l next
+
+# set the node flags
+# alt + control + {m,x,y,z}
+	# bspc node focused -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+# alt + {_,shift + }{h,j,k,l}
+	# bspc node -{f,s} {west,south,north,east}
+alt + {j,k}
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the node for the given path jump
+# alt + {p,b,comma,period}
+	# bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous window in the current desktop
+# alt + {_,shift + }c
+alt + F12
+	bspc node -f next.local.!hidden.window.floating
+
+# focus the next/previous desktop in the current monitor
+super + {j,k}
+	bspc desktop -f {prev,next}.local
+
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {desktop,node} -f last
+
+# focus or send to the given desktop
+alt + {1-9}
+	bspc desktop focused -f '^{1-9}'
+
+alt + shift + {1-9}
+	bspc node focused -d '^{1-9}' --follow
+
+super + shift + bracket{left,right}
+	bspc node focused -m {prev,next}
+
+super + alt + bracket{left,right}
+	bspc monitor -f {next,prev}
+
+super + shift + m
+	sh $SCRIPT/move.sh
+
+super + shift + g 
+	echo "0" | dmenu -p "How big?" | xargs bspc config window_gap
+#
+# preselect
+#
+
+# preselect the direction
+# alt + ctrl + {h,j,k,l}
+	# bspc node -p {west,south,north,east}
+
+# preselect the ratio
+# alt + ctrl + {1-9}
+	# bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+# alt + ctrl + space
+	# bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+# alt + ctrl + shift + space
+	# bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+super + control + {h,j,k,l}
+	{bspc node focused -z right -10 0 || bspc node focused -z left -10 0,\
+	bspc node focused -z bottom 0 10 || bspc node focused -z top 0 10,\
+	bspc node focused -z bottom 0 -10 || bspc node focused -z top 0 -10,\
+	bspc node focused -z right 10 0 || bspc node focused -z left 10 0}
+
+# move window
+super + shift + {h,j,k,l} 
+	{bspc node focused -n west,\
+	bspc node focused -n south,\
+	bspc node focused -n north,\
+	bspc node focused -n east}
+
+alt + shift + {h,j,k,l} 
+	{bspc node focused -v -10 0 || bspc node focused -s west,\
+	bspc node focused -v 0 10 || bspc node focused -s south,\
+	bspc node focused -v 0 -10 || bspc node focused -s north,\
+	bspc node focused -v 10 0 || bspc node focused -s east}
+
+super + o
+	bspc node focused -y next
+
+super + h
+	bspc node focused -g hidden
+
+super + alt + h
+	bspc node any.hidden -g hidden -f
