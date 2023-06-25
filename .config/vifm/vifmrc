@@ -41,8 +41,8 @@ set statusline="   %= %A %10u:%-7g %15s %20d  "
 
 mark h ~/
 
-command! df run-external "df" "-h" "%m"
-command! du run-external "du" "-h" "-d" "1" "--time" "%a" "%f" "%m"
+command! df sh -c 'df -h %m'
+command! du sh -c 'du -h -d 1 --time %a %f %m'
 command! diff nvim -d %f %F
 command! zip zip -r %c.zip %f
 command! run !! ./%f

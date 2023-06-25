@@ -1,7 +1,6 @@
 map ,w <C-w>
 
-nnoremap s :!pueue add -- foot -D %d -T SCRIPT | ignore<cr>
-"nnoremap s :!foot -D %d -T SCRIPT & disown<cr>
+nnoremap s :!sh -c 'foot -D %d -T SCRIPT' &<cr>
 
 nnoremap H :histprev<cr>
 nnoremap L :histnext<cr>
@@ -23,8 +22,8 @@ nnoremap <c-s> :sync<cr>
 nnoremap ,q :quit<cr>
 nnoremap qq :quit<cr>
 
-nnoremap ,g :grep -i -e<space>
-nnoremap ,f :find ./ -iname<space>
+nnoremap ,g :rg -i -e<space>
+nnoremap ,f :fd ./ -iname<space>
 
 nnoremap ,t :tabnew<cr>
 
