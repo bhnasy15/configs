@@ -21,6 +21,7 @@ Documents/*
 !.config/**
 '.config/Android Open Source Project'
 .config/Electron
+.config/falkon
 .config/FreeCAD
 .config/Google
 .config/JetBrains
@@ -50,6 +51,15 @@ Documents/*
 .config/zoomus.conf
 '.config/Code - OSS'
 .config/light
+.config/LosslessCut/
+.config/Meltytech/
+.config/doom/
+.config/figaro-gui/
+.config/flowblade/
+.config/lapce-stable/
+.config/netsurf/
+.config/pitivi/
+.config/vifm/scripts/
 
 !.gnupg/
 !.gnupg/**

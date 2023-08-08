@@ -1,22 +1,25 @@
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 [[ $DISPLAY ]] && shopt -s checkwinsize
 
 HISTFILESIZE=1000
+HISTFILE=$HOME/.config/bash_history
 
 set -o vi
 bind "set keymap vi"
 bind "set editing-mode vi"
 bind "set bell-style visible"
 bind "set completion-ignore-case on"
+bind -x '"\C-l": clear'
+
 # alias
 alias ls='ls -h --color=auto'
 alias ll='ls -gol'
 alias la='ls -A'
 
 alias vi='nvim'
+alias em='emacsclient -c'
 alias vf='vifm'
 
 alias grep='grep --color=auto'
@@ -33,13 +36,8 @@ alias umount='sudo umount'
 alias batc='cat /sys/class/power_supply/BAT0/capacity'
 alias bats='cat /sys/class/power_supply/BAT0/status'
 
-alias wine='wine64'
-alias wine32='wine'
-
 alias py='python3'
-
-# binding
-bind -x '"\C-l": clear'
+alias info='info --vi-keys'
 
 # prompt
 function nonzero_return() {
@@ -52,15 +50,6 @@ export PS1="\[\e[91m\]\`nonzero_return\`\[\e[m\] \W \[\e[1;32m\]>>\[\e[m\] "
 
 # completion
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
-
-# color code
-export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
-export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
-export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
-export LESS_TERMCAP_so=$'\E[01;33m'    # begin reverse video
-export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
-export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
-export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
 osc7_cwd() {
     local strlen=${#PWD}
@@ -77,5 +66,3 @@ osc7_cwd() {
     printf '\e]7;file://%s%s\e\\' "${HOSTNAME}" "${encoded}"
 }
 PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }osc7_cwd
-
-# source $HOME/.config/broot/launcher/bash/br

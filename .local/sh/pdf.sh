@@ -1,13 +1,11 @@
-#!/usr/bin/sh
-exitIfEscaped()
-{
-	if [ $? != 0 ]
-	then
-		exit 1
-	fi
-}
+#!/bin/bash
 path="$HOME/Documents/pdfs"
-file=$(ls "$path"/*.pdf | bemenu -l 10 -p "choose pdf: " )
-exitIfEscaped
+file=$(ls "$path"/*.pdf | dmenu -l 10 -p "choose pdf: " )
+
+if [ $? != 0 ]
+then
+  exit 1
+fi
+
 zathura "$file"
 

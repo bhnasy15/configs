@@ -4,25 +4,25 @@
 
 # applications
 alt + Return
-	prime $TERM &
+	sh -c 'prime $TERM '
 
 alt + F5
 	prime neovide
 
 super + Return
-	prime $TERM &
+	prime $TERM 
 
 alt + F1
-	rofi -show drun &
+	rofi -show drun 
 
 alt + F2
-	qutebrowser &
+	qutebrowser 
 
 XF86HomePage
-	qutebrowser &
+	qutebrowser 
 
 alt + F4
-	pcmanfm &
+	pcmanfm 
 
 XF86Explorer
 	pcmanfm &
@@ -40,7 +40,7 @@ super + Escape
 	xkill
 
 alt + F8
-	pavucontrol &
+	pavucontrol
 
 super + p
 	maim -s "$(date +%y-%m-%d_%H:%M:%S).png"
@@ -118,10 +118,10 @@ super + g
 # set the window state
 
 alt + {F9,F11,F12}
-	bspc node focused -t {tiled,!fullscreen,!floating}
+	sh -c 'bspc node focused -t {tiled,~fullscreen,~floating}'
 
 alt + shift + F9
-	bspc node focused -t !pseudo_tiled
+	sh -c 'bspc node focused -t ~pseudo_tiled'
 
 alt + F10
 	bspc desktop focused -l next
@@ -138,7 +138,7 @@ alt + F10
 # alt + {_,shift + }{h,j,k,l}
 	# bspc node -{f,s} {west,south,north,east}
 alt + {j,k}
-	bspc node -f {next,prev}.local.!hidden.window
+	sh -c 'bspc node -f {next,prev}.local.!hidden.window'
 
 # focus the node for the given path jump
 # alt + {p,b,comma,period}
@@ -146,10 +146,6 @@ alt + {j,k}
 
 # focus the next/previous window in the current desktop
 # alt + {_,shift + }c
-alt + F12
-	bspc node -f next.local.!hidden.window.floating
-
-# focus the next/previous desktop in the current monitor
 super + {j,k}
 	bspc desktop -f {prev,next}.local
 
@@ -204,10 +200,10 @@ super + shift + g
 
 # expand a window by moving one of its side outward
 super + control + {h,j,k,l}
-	{bspc node focused -z right -10 0 || bspc node focused -z left -10 0,\
-	bspc node focused -z bottom 0 10 || bspc node focused -z top 0 10,\
-	bspc node focused -z bottom 0 -10 || bspc node focused -z top 0 -10,\
-	bspc node focused -z right 10 0 || bspc node focused -z left 10 0}
+	{sh -c 'bspc node focused -z right -10 0 || bspc node focused -z left -10 0',\
+	sh -c 'bspc node focused -z bottom 0 10 || bspc node focused -z top 0 10',\
+	sh -c 'bspc node focused -z bottom 0 -10 || bspc node focused -z top 0 -10',\
+	sh -c 'bspc node focused -z right 10 0 || bspc node focused -z left 10 0'}
 
 # move window
 super + shift + {h,j,k,l} 
@@ -217,10 +213,10 @@ super + shift + {h,j,k,l}
 	bspc node focused -n east}
 
 alt + shift + {h,j,k,l} 
-	{bspc node focused -v -10 0 || bspc node focused -s west,\
-	bspc node focused -v 0 10 || bspc node focused -s south,\
-	bspc node focused -v 0 -10 || bspc node focused -s north,\
-	bspc node focused -v 10 0 || bspc node focused -s east}
+	{sh -c 'bspc node focused -v -10 0 || bspc node focused -s west',\
+	sh -c 'bspc node focused -v 0 10 || bspc node focused -s south',\
+	sh -c 'bspc node focused -v 0 -10 || bspc node focused -s north',\
+	sh -c 'bspc node focused -v 10 0 || bspc node focused -s east'}
 
 super + o
 	bspc node focused -y next

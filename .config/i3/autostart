@@ -1,0 +1,9 @@
+exec sh $HOME/.fehbg
+
+exec pidof polybar || polybar &
+
+exec pidof picom || picom &
+
+exec pidof xbanish || xbanish &
+
+exec prime alacritty

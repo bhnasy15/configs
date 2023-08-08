@@ -1,4 +1,3 @@
-
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
@@ -7,10 +6,7 @@ Xft.autohint: true
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcdfilter
 
-*font: semimono
-
-st.alpha: 0.6
-st.font: monospace-13
+*font: monospace
 
 emacs.title: "Emacs"
 emacs.background: #000000
@@ -19,38 +15,7 @@ emacs.font: monospace
 emacs.borderColor: #333333
 emacs.menuBar: off
 
-XTerm*renderFont: true
-xterm*faceName: monospace
-XTerm*faceSize: 13
-XTerm*geometry: 53x40
-
-XTerm*utf8: 2
-XTerm*locale: true
-Xterm*selectToClipboard: true
-
-XTerm.VT100.translations: #override \n\
-  Ctrl <Key>+: larger-vt-font() \n\
-  Ctrl <Key>-: smaller-vt-font() \n\
-  Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
-  Ctrl Shift <Key>C:    copy-selection(CLIPBOARD) \n\
-  Ctrl Shift <Key>K: scroll-back(1,halfpage,m) \n\
-  Ctrl Shift <Key>J: scroll-forw(1,halfpage,m) \n\
-  Ctrl <Key>k: scroll-back() \n\
-  Ctrl <Key>j: scroll-forw() \n\
-
-
-! Every shell is a login shell by default (for inclusion of all necessary environment variables)
-! XTerm*loginshell: true
-
-! I like a LOT of scrollback...
-XTerm*savelines: 1111
-
-! double-click to select whole URLs :D
-XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-
-
-! *background: #202829
-*background: #000000
+*background: #202829
 *foreground: #F5F5F5
 st.cursorColor: #cccccc
 *color0: #000000  

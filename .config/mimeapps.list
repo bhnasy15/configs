@@ -6,6 +6,9 @@ application/vnd.adobe.flash.movie=ruffle.desktop;
 inode/directory=xarchiver.desktop;
 video/mp4=mpv.desktop;
 application/x-pak=xarchiver.desktop;
+application/x-spss-sav=l3afpad.desktop;winetricks.desktop;
+application/octet-stream=l3afpad.desktop;
+application/x-ms-dos-executable=xarchiver.desktop;
 
 [Default Applications]
 x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop

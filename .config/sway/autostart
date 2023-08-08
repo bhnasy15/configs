@@ -4,7 +4,7 @@ exec pidof dunst || dunst &
 
 exec pidof waybar || waybar &
 
-exec pidof nu && pidof pueued || pueued -d &
+#exec pidof nu && pidof pueued || pueued -d &
 
 exec pidof swayidle || swayidle -w \
 		 timeout 350 'light -O; light -S 5' \

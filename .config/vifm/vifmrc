@@ -56,4 +56,3 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 source $XDG_CONFIG_HOME/vifm/filetype.vifm
 source $XDG_CONFIG_HOME/vifm/map.vifm
 source $XDG_CONFIG_HOME/vifm/icons.vifm
-

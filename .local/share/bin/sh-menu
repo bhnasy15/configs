@@ -1,9 +1,0 @@
-#!/usr/bin/sh
-
-menu="$(ls $SCRIPT | bemenu -l 10 )";
-script="$SCRIPT/$(echo $menu | grep -o -e "^[a-zA-Z0-9\-]\+\.\?[a-zA-Z\-]\?\+\?")";
-args="$(echo $menu | grep -o -e " .\+")";
-
-echo $script$args
-[ -x $script ] && . $script$args
-

@@ -1,0 +1,26 @@
+focus_follows_mouse yes
+
+gaps inner 0
+gaps outer 0
+focus_wrapping no
+popup_during_fullscreen smart
+
+title_align left
+
+font pango:monospace 10
+default_border none
+smart_borders on
+hide_edge_borders vertical
+
+
+# class			               border	      background	text        indicator   child_border
+client.focused             #90b0b0      #90b0b0     #080808     #80a0ff     #80a0a0
+client.focused_inactive    #204040      #204040     #c6c6c6     #80a0ff     #080808
+client.unfocused           #080808      #080808     #c6c6c6     #80a0ff     #080808
+client.urgent              #80a0ff      #80a0ff     #080808     #80a0ff     #ffa080
+
+include $HOME/.config/i3/map
+include $HOME/.config/i3/rules
+include $HOME/.config/i3/autostart
+
+# include /etc/sway/config.d/*

@@ -1,0 +1,35 @@
+exit: q esc
+normal_system_cursor: 1
+drag: v
+cursor_color: #11ff11
+copy_and_exit: c
+accelerator: a
+decelerator: d
+buttons: u i o
+print: p
+grid: g
+screen: S
+left: h KP_Left
+down: j KP_Down
+up: k KP_Up
+right: l KP_Right
+top: K
+middle: space
+bottom: J
+end: L
+start: H
+scroll_down: n
+scroll_up: m
+hist_back: C-b
+hist_forward: C-f
+grid_up: k
+grid_left: h
+grid_down: j
+grid_right: l
+grid_cut_up: K
+grid_cut_left: H
+grid_cut_down: J
+grid_cut_right: L
+grid_exit: g
+grid_size: 2
+grid_color: #11ff11

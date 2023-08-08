@@ -1,12 +1,14 @@
 fileviewer *.pdf 
-		\ sh -c '. $VIFM/sixel.sh pdf %pw %ph %c %pd'
-        \ %pc
-		\ sh '. $VIFM/sixel.sh clear'
+      \ file %c
+" 		\ sh -c '. $VIFM/sixel.sh pdf %pw %ph %c %pd'
+"         \ %pc
+" 		\ sh '. $VIFM/sixel.sh clear'
 
 fileviewer <image/*>
-		\ sh -c '. $VIFM/sixel.sh draw %pw %ph %c %pd'
-        \ %pc
-		\ sh '. $VIFM/sixel.sh clear'
+      \ file %c
+" 		\ sh -c '. $VIFM/sixel.sh draw %pw %ph %c %pd'
+"         \ %pc
+" 		\ sh '. $VIFM/sixel.sh clear'
 
 filetype {*.ps,*.eps,*.ps.gz,*.pdf,*.djvu},<application/postscript>,<image/vnd.djvu>,<application/pdf>
         \ sh -c 'zathura %f' &,
@@ -18,24 +20,25 @@ fileviewer *.json sh -c 'jless %c' | sh -c 'bat --paging=never --terminal-width 
 fileviewer *.md sh -c 'bat --paging=never --terminal-width %pw --file-name %c %c'
 
 " Audio
-filetype {*.wav,*.m4a,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
+filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
         \<audio/*>
        \ {Play using ffplay}
-       \ sh -c 'foot -T SCRIPT mpv --no-video %c' &
+       \ sh -c 'mpv --player-operation-mode=pseudo-gui --loop=inf %f' &
+fileviewer {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},<audio/*>
+       \ sh -c 'file %c'
 
 " Video
 filetype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
           \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
           \*.as[fx]},
          \<video/*>
-        \ {View using mpv}
-        \ sh -c 'mpv --no-terminal --loop=inf %f' &
+        \ sh -c 'mpv --player-operation-mode=pseudo-gui --loop=inf %f' &
 
 fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-          \ *.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-          \ *.as[fx]},
-          \ <video/*>
-          \ sh -c 'file %f'
+          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+          \*.as[fx]},
+         \<video/*>
+        \ sh -c 'file %f'
 
 " Web
 filetype {*.mhtml,*.html,*.htm},<text/html>
@@ -51,8 +54,7 @@ fileviewer {*.[1-8]},<text/troff> sh -c 'bat --paging=never -n --terminal-width 
 
 " Images
 filetype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-         \ sh -c 'swayimg %f' &
-         \ sh -c 'feh %f' &
+         \ sh -c '[ -v WAYLAND_DISPLAY ] && swayimg %f || feh -B black %f' &
 
 " Directory
 fileviewer */ sh -c 'tree -L 2 %f'
@@ -119,6 +121,8 @@ filetype *.ftp
 " Office files
 filetype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt}
         \ sh -c 'loffice %c' &
+fileviewer {*.docx} sh -c 'docx2txt %c -' &
+
 
 fileviewer <text/*> sh -c 'bat --paging=never --terminal-width %pw %c'
 

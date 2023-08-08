@@ -1,6 +1,6 @@
 map ,w <C-w>
 
-nnoremap s :!sh -c 'foot -D %d -T SCRIPT' &<cr>
+nnoremap s :!sh -c '[ -v WAYLAND_DISPLAY ] && foot -D %d -T SCRIPT || alacritty --working-directory %d -T SCRIPT' &<cr>
 
 nnoremap H :histprev<cr>
 nnoremap L :histnext<cr>
@@ -13,7 +13,7 @@ nnoremap O :!nvim %f<cr>
 
 nnoremap gb :file &<cr>l
 
-nnoremap yp :!echo %c:p | wl-copy<cr>
+nnoremap yp :![ -v WAYLAND_DISPLAY ] && echo %c:p | wl-copy || echo %c:p | xclip -sel clip -i <cr>
 
 nnoremap ,W :set wrap!<cr>
 
@@ -22,8 +22,8 @@ nnoremap <c-s> :sync<cr>
 nnoremap ,q :quit<cr>
 nnoremap qq :quit<cr>
 
-nnoremap ,g :rg -i -e<space>
-nnoremap ,f :fd ./ -iname<space>
+nnoremap ,g :grep -i -e<space>
+nnoremap ,f :find ./ -iname<space>
 
 nnoremap ,t :tabnew<cr>
 
