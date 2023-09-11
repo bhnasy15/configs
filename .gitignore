@@ -59,6 +59,7 @@ Documents/*
 .config/lapce-stable/
 .config/netsurf/
 .config/pitivi/
+.config/kicad/
 .config/vifm/scripts/
 
 !.gnupg/
@@ -93,6 +94,7 @@ Documents/*
 **/*LOG*
 **/LOG*
 **/*.dat
+**/*.sh
 **/*recent*
 **/*err*
 **/*out*

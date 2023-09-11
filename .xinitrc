@@ -5,7 +5,7 @@
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 # export ZDOTDIR=$HOME/.config/zsh
-export TERM=alacritty
+export TERM=kitty
 export SCRIPT=$HOME/.local/sh
 export XDG_CONFIG_HOME=$HOME/.config
 
@@ -20,4 +20,4 @@ pidof xss-lock || xss-lock \
   -n "bash -c 'light -O; light -S 5; trap \"light -I\" EXIT; sleep 9999;'" \
   -- i3lock -c#000000 &
 
-/usr/bin/i3
+pidof i3 || i3

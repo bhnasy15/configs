@@ -11,3 +11,4 @@ for_window [ window_type="popup_menu" ] floating enable
 for_window [ class="Pcmanfm" ] floating enable
 for_window [ class="mpv" ] floating enable
 for_window [ class="Pavucontrol" ] floating enable
+for_window [ class="Blueberry.py" ] floating enable

@@ -121,8 +121,9 @@ filetype *.ftp
 " Office files
 filetype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt}
         \ sh -c 'loffice %c' &
-fileviewer {*.docx} sh -c 'docx2txt %c -' &
-
+fileviewer *.docx sh -c 'docx2txt %f -' &
 
 fileviewer <text/*> sh -c 'bat --paging=never --terminal-width %pw %c'
+
+fileviewer * sh -c 'file %c'
 
