@@ -16,27 +16,27 @@ def create_left_prompt [] {
 }
 
 # Use nushell functions to define your right and left prompt
-let-env PROMPT_COMMAND = { create_left_prompt }
-let-env PROMPT_COMMAND_RIGHT = { $"(ansi reset)(ansi {fg: '#666666'})(date now | date format '%r')" }
+$env.PROMPT_COMMAND = { create_left_prompt }
+$env.PROMPT_COMMAND_RIGHT = { $"(ansi reset)(ansi {fg: '#666666'})(date now | format date '%r')" }
 
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
-let-env PROMPT_INDICATOR = {|| " > " }
-let-env PROMPT_INDICATOR_VI_INSERT = {|| " > " }
-let-env PROMPT_INDICATOR_VI_NORMAL = {|| " : " }
-let-env PROMPT_MULTILINE_INDICATOR = {|| " >> " }
+$env.PROMPT_INDICATOR = {|| " > " }
+$env.PROMPT_INDICATOR_VI_INSERT = {|| " > " }
+$env.PROMPT_INDICATOR_VI_NORMAL = {|| " : " }
+$env.PROMPT_MULTILINE_INDICATOR = {|| " >> " }
 
 # Directories to search for scripts when calling source or use
 #
 # By default, <nushell-config-dir>/scripts is added
-let-env NU_LIB_DIRS = [
+$env.NU_LIB_DIRS = [
     ($nu.default-config-dir | path join 'scripts')
 ]
 
 # Directories to search for plugin binaries when calling register
 #
 # By default, <nushell-config-dir>/plugins is added
-let-env NU_PLUGIN_DIRS = [
+$env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins')
 ]
 

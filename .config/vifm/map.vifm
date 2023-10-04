@@ -1,6 +1,6 @@
 map ,w <C-w>
 
-nnoremap s :!sh -c '[ -v WAYLAND_DISPLAY ] && foot -D %d -T SCRIPT || kitty -d %d -T SCRIPT' &<cr>
+nnoremap s :!sh -c '[ -v WAYLAND_DISPLAY ] && foot -D %d -T SCRIPT || $TERM --working-directory %d -T SCRIPT' &<cr>
 
 nnoremap H :histprev<cr>
 nnoremap L :histnext<cr>
@@ -8,8 +8,8 @@ nnoremap L :histnext<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 
-nnoremap o :!nv_s %f <cr>
-nnoremap O :!nvim %f<cr>
+nnoremap O :!nv_s %f <cr>
+nnoremap o :!$EDITOR %f<cr>
 
 nnoremap gb :file &<cr>l
 

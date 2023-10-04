@@ -21,6 +21,8 @@ Documents/*
 !.config/**
 '.config/Android Open Source Project'
 .config/Electron
+.config/lazygit
+.config/btop
 .config/falkon
 .config/FreeCAD
 .config/Google

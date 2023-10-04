@@ -7,20 +7,18 @@ window:
     lines: 11
   decorations: none
   opacity: 1.0
-  decorations_theme_variant: Dark
 
 scrolling:
-  history: 1000
+  history: 2000
 
 font:
-  size: 13.0
+  size: 17.0
   normal:
     family: monospace
 
-
 colors:
   primary:
-    background: '#2B2B35'
+    background: '#12121A'
     foreground: '#C4C4C9'
   normal:
     black:   '#000000'
@@ -37,12 +35,12 @@ key_bindings:
    - { key: N,         mods: Control | Alt,                          action: SpawnNewInstance   }
    - { key: V,         mods: Control | Shift,                        action: Paste              }
    - { key: C,         mods: Control | Shift,                        action: Copy               }
-   - { key: K,         mods: Control,           mode: ~Alt|~vi,      action: ScrollLineUp       }
-   - { key: J,         mods: Control,           mode: ~Alt|~vi,      action: ScrollLineDown     }
-   - { key: K,         mods: Control | Shift,   mode: ~Alt|~vi,      action: ScrollHalfPageUp   }
-   - { key: J,         mods: Control | Shift,   mode: ~Alt|~vi,      action: ScrollHalfPageDown }
    - { key: Plus,      mods: Control | Shift,                        action: IncreaseFontSize   }
    - { key: Minus,     mods: Control,                                action: DecreaseFontSize   }
    - { key: Equals,    mods: Control,                                action: ResetFontSize      }
    - { key: Slash,     mods: Control,                                action: ToggleViMode       }
+   - { key: K,         mods: Control,           mode: ~Alt|~vi,      action: ScrollLineUp       }
+   - { key: J,         mods: Control,           mode: ~Alt|~vi,      action: ScrollLineDown     }
+   - { key: K,         mods: Control | Shift,   mode: ~Alt|~vi,      action: ScrollHalfPageUp   }
+   - { key: J,         mods: Control | Shift,   mode: ~Alt|~vi,      action: ScrollHalfPageDown }
 

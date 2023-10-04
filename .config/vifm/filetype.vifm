@@ -49,7 +49,7 @@ filetype {*.mhtml,*.html,*.htm},<text/html>
 fileviewer {*.o},<application/x-object> sh -c 'nm %c' | sh -c 'bat --paging=never -n --terminal-width %pw'
 
 " Man page
-filetype {*.[1-8]},<text/troff> sh -c 'nvim %c'
+filetype {*.[1-8]},<text/troff> sh -c '$EDITOR %c'
 fileviewer {*.[1-8]},<text/troff> sh -c 'bat --paging=never -n --terminal-width %pw %c'
 
 " Images
@@ -124,6 +124,8 @@ filetype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt}
 fileviewer *.docx sh -c 'docx2txt %f -' &
 
 fileviewer <text/*> sh -c 'bat --paging=never --terminal-width %pw %c'
+
+filetype *.razor sh -c '$EDITOR %c'
 
 fileviewer * sh -c 'file %c'
 
