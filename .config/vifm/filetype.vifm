@@ -16,8 +16,7 @@ filetype {*.ps,*.eps,*.ps.gz,*.pdf,*.djvu},<application/postscript>,<image/vnd.d
 " json
 fileviewer *.json sh -c 'jless %c' | sh -c 'bat --paging=never --terminal-width %pw --file-name %c'
 
-" md
-fileviewer *.md sh -c 'bat --paging=never --terminal-width %pw --file-name %c %c'
+fileviewer *.md,*.vim,*.vifm sh -c 'bat --paging=never --terminal-width %pw --file-name %c %c'
 
 " Audio
 filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},

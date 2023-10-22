@@ -109,6 +109,14 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+mode "Ins" {
+	bindsym Mod4+Shift+Escape mode "default"
+	bindsym Mod4+Escape mode "default"
+	bindsym Mod1+Shift+Escape mode "default"
+	bindsym Mod1+Escape mode "default"
+}
+bindsym Mod4+i mode "Ins"
+
 # audio control{
 	bindsym XF86AudioRaiseVolume exec pamixer --sink @DEFAULT_SINK@ -i 1
 	bindsym XF86AudioLowerVolume exec pamixer --sink @DEFAULT_SINK@ -d 1

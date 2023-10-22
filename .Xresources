@@ -9,11 +9,31 @@ Xft.lcdfilter: lcdfilter
 *font: monospace
 
 emacs.title: "Emacs"
-emacs.background: #000000
+emacs.font: monospace-20
+emacs.background: #12121A
 emacs.bitmapIcon: on
-emacs.font: monospace
 emacs.borderColor: #333333
 emacs.menuBar: off
+
+XTerm.termName: xterm
+XTerm.vt100.faceName: mono
+XTerm.vt100.saveLines: 2048
+XTerm.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
+XTerm.vt100.bellIsUrgent: true
+XTerm.vt100.translations: #override \n\
+    Ctrl <Key>M: maximize() \n\
+    Ctrl <Key>R: restore() \n\
+    Ctrl <Key>Y: copy-selection(CLIPBOARD) \n\
+    Ctrl <Key>P: insert-selection(CLIPBOARD) \n\
+    Ctrl <Key>L: clear-saved-lines() \n\
+    Ctrl Shift <Key>L: hard-reset() \n\
+    Ctrl <Key>K: scroll-back(1, line) \n\
+    Ctrl <Key>Prior: scroll-back(1, halfpage) \n\
+    Ctrl <Key>J: scroll-forw(1, line) \n\
+    Ctrl <Key>Next: scroll-forw(1, halfpage) \n\
+    Ctrl <Key>plus: larger-vt-font() \n\
+    Ctrl <Key>minus: smaller-vt-font()
 
 *background: #202829
 *foreground: #F5F5F5

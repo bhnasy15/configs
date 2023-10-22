@@ -9,6 +9,7 @@ title_align left
 
 font pango:monospace 10
 default_border none
+default_floating_border normal
 smart_borders on
 hide_edge_borders vertical
 
