@@ -49,7 +49,7 @@ fileviewer {*.o},<application/x-object> sh -c 'nm %c' | sh -c 'bat --paging=neve
 
 " Man page
 filetype {*.[1-8]},<text/troff> sh -c '$EDITOR %c'
-fileviewer {*.[1-8]},<text/troff> sh -c 'bat --paging=never -n --terminal-width %pw %c'
+fileviewer {*.[1-8]},*.lua,<text/troff> sh -c 'bat --paging=never -n --terminal-width %pw %c'
 
 " Images
 filetype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>

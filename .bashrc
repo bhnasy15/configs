@@ -39,6 +39,8 @@ alias bats='cat /sys/class/power_supply/BAT0/status'
 alias py='python3'
 alias info='info --vi-keys'
 
+alias ghci='LD_PRELOAD="" ghci'
+
 # prompt
 function nonzero_return() {
 	RETVAL=$?
