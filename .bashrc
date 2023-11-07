@@ -18,7 +18,7 @@ alias ls='ls -h --color=auto'
 alias ll='ls -gol'
 alias la='ls -A'
 
-alias vi='nvim'
+alias v='nvim'
 alias em='emacsclient -c'
 alias vf='vifm'
 

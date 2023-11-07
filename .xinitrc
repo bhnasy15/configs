@@ -5,7 +5,7 @@
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 # export ZDOTDIR=$HOME/.config/zsh
-export TERM=alacritty
+export TERM=kitty
 export EDITOR=nvim
 export SCRIPT=$HOME/.local/sh
 export XDG_CONFIG_HOME=$HOME/.config
