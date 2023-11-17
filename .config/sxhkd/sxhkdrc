@@ -4,7 +4,7 @@
 
 # applications
 alt + Return
-	sh -c 'prime $TERM '
+	sh -c 'prime kitty'
 
 alt + F5
 	prime neovide

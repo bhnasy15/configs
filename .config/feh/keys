@@ -1,92 +1,159 @@
 toggle_actions
+
 toggle_aliasing
+
 toggle_caption
 toggle_caption c
+
 toggle_filenames
+
 toggle_exif
+
 toggle_fullscreen
 toggle_fullscreen F11
+
 toggle_fixed_geometry
+
 toggle_pause space
+
 toggle_info
 toggle_info I
+
 toggle_keep_vp
+
 save_filelist
+
 toggle_menu
+
 next_img
 next_img n
+
 toggle_pointer
+
 prev_img
 prev_img p
+
 quit
 quit q
+
 reload_image
 reload_image r
+
 save_image
+
 size_to_image
+
 close
 close C
+
 jump_random
+
 toggle_auto_zoom
+
 prev_dir
 prev_dir P
+
 next_dir
 next_dir N
+
 orient_3
+
 orient_1
+
 flip
 flip f
+
 mirror
 mirror m
+
 action_0
+
 action_1
+
 action_2
+
 action_3
+
 action_4
+
 action_5
+
 action_6
+
 action_7
+
 action_8
+
 action_9
+
 jump_first
 jump_first Home
+
 jump_last
 jump_last End
+
 jump_fwd
+
 jump_back
+
 reload_plus
+
 reload_minus
+
 remove
 remove d
+
 delete
+
 scroll_left
 scroll_left h
+
 scroll_right
 scroll_right l
+
 scroll_up
 scroll_up k
+
 scroll_down
 scroll_down j
+
 scroll_left_page
 scroll_left_page H
+
 scroll_right_page
 scroll_right_page L
+
 scroll_up_page
 scroll_up_page K Prior
+
 scroll_down_page
 scroll_down_page J Next
+
 render
+
 zoom_in
 zoom_in Up equal
+
 zoom_out
 zoom_out Down minus
-zoom_default 0
-zoom_fit s
-zoom_fill a
-menu_close
-menu_up
-menu_down
-menu_parent
-menu_child
-menu_select
 
+zoom_default
+zoom_default 0
+
+zoom_fit
+zoom_fit s
+
+zoom_fill
+zoom_fill a
+
+menu_close
+
+menu_up
+
+menu_down
+
+menu_parent
+
+menu_child
+
+menu_select

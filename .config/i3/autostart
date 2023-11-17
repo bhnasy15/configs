@@ -6,4 +6,4 @@ exec pidof picom || picom &
 
 exec pidof xbanish || xbanish &
 
-exec prime $TERM
+exec prime kitty

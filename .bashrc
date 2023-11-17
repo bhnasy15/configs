@@ -40,6 +40,7 @@ alias py='python3'
 alias info='info --vi-keys'
 
 alias ghci='LD_PRELOAD="" ghci'
+alias feh='feh -Tdef'
 
 # prompt
 function nonzero_return() {
@@ -68,3 +69,4 @@ osc7_cwd() {
     printf '\e]7;file://%s%s\e\\' "${HOSTNAME}" "${encoded}"
 }
 PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }osc7_cwd
+export LD_PRELOAD="$HOME/.local/lib/stderred/libstderred.so"

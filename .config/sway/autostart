@@ -6,12 +6,11 @@ exec pidof waybar || waybar &
 
 #exec pidof nu && pidof pueued || pueued -d &
 
-exec pidof swayidle || swayidle -w \
-		 timeout 350 'light -O; light -S 5' \
-		 resume 'light -I' \
-         timeout 585 'swaymsg "output * power off"' \
-		 resume 'swaymsg "output * power on"; light -I' \
-		 timeout 600 'swaylock -f -c 000000 -i $HOME/.local/share/backgrounds/black-hole.jpg' \
-		 before-sleep 'swaylock -f -c 000000 -i $HOME/.local/share/backgrounds/black-hole.jpg' &
+#exec pidof swayidle || swayidle -w \
+		 #timeout 350 'light -O; light -S 5' \
+		 #resume 'light -I' \
+         #timeout 585 'swaymsg "output * power off"' \
+		 #resume 'swaymsg "output * power on"; light -I' \
+		 #before-sleep 'swaylock -f -c 000000 -i $HOME/.local/share/backgrounds/black-hole.jpg' &
 
 exec foot

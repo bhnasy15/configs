@@ -1,14 +1,11 @@
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/yarob/.local/share/backgrounds/saturn.jpg fill
 
 input type:keyboard {
-	repeat_rate 35
+	repeat_rate 50
 	repeat_delay 200
 	xkb_layout us,ara
-	xkb_variant ,qwerty
 	xkb_options grp_led:scroll,grp:win_space_toggle,caps:swapescape,keypad:pointerkeys
 }
-
 input type:touchpad {
     dwt enabled
     tap enabled
@@ -18,7 +15,6 @@ input type:touchpad {
 seat seat0 {
 	hide_cursor when-typing enable
 }
-
 bar {
 	swaybar_command ''
 	workspace_buttons yes
@@ -35,13 +31,6 @@ popup_during_fullscreen smart
 
 default_border none
 smart_borders on
-titlebar_border_thickness 0
-
-# class			           border	    background	text        indicator   child_border
-client.focused             #80a0ff      #80a0a0     #080808     #80a0ff     #80a0a0
-client.focused_inactive    #80a0ff      #204040     #c6c6c6     #80a0ff     #080808
-client.unfocused           #80a0ff      #080808     #c6c6c6     #80a0ff     #080808
-client.urgent              #80a0ff      #80a0ff     #080808     #80a0ff     #ffa080
 
 include $HOME/.config/sway/map
 include $HOME/.config/sway/rules

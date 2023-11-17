@@ -53,6 +53,6 @@ command! reload :write | restart full
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
-source $XDG_CONFIG_HOME/vifm/filetype.vifm
-source $XDG_CONFIG_HOME/vifm/map.vifm
-source $XDG_CONFIG_HOME/vifm/icons.vifm
+source "$HOME/.config/vifm/filetype.vifm"
+source "$HOME/.config/vifm/map.vifm"
+source "$HOME/.config/vifm/icons.vifm"
