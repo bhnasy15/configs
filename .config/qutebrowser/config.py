@@ -164,6 +164,22 @@ config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
+config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
+
+# User agent to send.  The following placeholders are defined:  *
+# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
+# The underlying WebKit version (set to a fixed value   with
+# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
+# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
+# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
+# QtWebEngine. * `{upstream_browser_version}`: The corresponding
+# Safari/Chrome version. * `{qutebrowser_version}`: The currently
+# running qutebrowser version.  The default value is equal to the
+# unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
+# read from JavaScript is always the global value. With QtWebEngine
+# between 5.12 and 5.14 (inclusive), changing the value exposed to
+# JavaScript requires a restart.
+# Type: FormatString
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
 
 # User agent to send.  The following placeholders are defined:  *
@@ -181,22 +197,6 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{w
 # JavaScript requires a restart.
 # Type: FormatString
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101 Firefox/90.0', 'https://accounts.google.com/*')
-
-# User agent to send.  The following placeholders are defined:  *
-# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
-# The underlying WebKit version (set to a fixed value   with
-# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
-# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
-# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
-# QtWebEngine. * `{upstream_browser_version}`: The corresponding
-# Safari/Chrome version. * `{qutebrowser_version}`: The currently
-# running qutebrowser version.  The default value is equal to the
-# unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
-# read from JavaScript is always the global value. With QtWebEngine
-# between 5.12 and 5.14 (inclusive), changing the value exposed to
-# JavaScript requires a restart.
-# Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
 
 # Which method of blocking ads should be used.  Support for Adblock Plus
 # (ABP) syntax blocklists using Brave's Rust library requires the
@@ -486,18 +486,12 @@ c.colors.hints.bg = 'black'
 c.colors.webpage.preferred_color_scheme = 'dark'
 
 # Render all web contents using a dark theme. Example configurations
-# from Chromium's `chrome://flags`:  - "With simple HSL/CIELAB/RGB-based
-# inversion": Set   `colors.webpage.darkmode.algorithm` accordingly.  -
-# "With selective image inversion": Set
-# `colors.webpage.darkmode.policy.images` to `smart`.  - "With selective
-# inversion of non-image elements": Set
-# `colors.webpage.darkmode.threshold.text` to 150 and
-# `colors.webpage.darkmode.threshold.background` to 205.  - "With
-# selective inversion of everything": Combines the two variants   above.
-# - "With increased text contrast": Set
-# `colors.webpage.darkmode.increase_text_contrast` (QtWebEngine 6.3+)
+# from Chromium's `chrome://flags`: - "With simple HSL/CIELAB/RGB-based
+# inversion": Set   `colors.webpage.darkmode.algorithm` accordingly, and
+# set `colors.webpage.darkmode.policy.images` to `never`.  - "With
+# selective image inversion": qutebrowser default settings.
 # Type: Bool
-c.colors.webpage.darkmode.enabled = False
+c.colors.webpage.darkmode.enabled = True
 
 # Which algorithm to use for modifying how colors are rendered with
 # darkmode. The `lightness-cielab` value was added with QtWebEngine 5.14
@@ -509,15 +503,13 @@ c.colors.webpage.darkmode.enabled = False
 #   - brightness-rgb: Modify colors by subtracting each of r, g, and b from their maximum value.
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 
-# Which images to apply dark mode to. With QtWebEngine 5.15.0, this
-# setting can cause frequent renderer process crashes due to a
-# https://codereview.qt-project.org/c/qt/qtwebengine-
-# chromium/+/304211[bug in Qt].
+# Which images to apply dark mode to.
 # Type: String
 # Valid values:
 #   - always: Apply dark mode filter to all images.
 #   - never: Never apply dark mode filter to any images.
 #   - smart: Apply dark mode based on image content. Not available with Qt 5.15.0.
+#   - smart-simple: On QtWebEngine 6.6, use a simpler algorithm for smart mode (based on numbers of colors and transparency), rather than an ML-based model. Same as 'smart' on older QtWebEnigne versions.
 c.colors.webpage.darkmode.policy.images = 'never'
 
 # Which pages to apply dark mode to. The underlying Chromium setting has
@@ -527,13 +519,23 @@ c.colors.webpage.darkmode.policy.images = 'never'
 # Valid values:
 #   - always: Apply dark mode filter to all frames, regardless of content.
 #   - smart: Apply dark mode filter to frames based on background color.
-c.colors.webpage.darkmode.policy.page = 'smart'
+c.colors.webpage.darkmode.policy.page = 'always'
 
-# Render all colors as grayscale. This only has an effect when
-# `colors.webpage.darkmode.algorithm` is set to `lightness-hsl` or
-# `brightness-rgb`.
-# Type: Bool
-c.colors.webpage.darkmode.grayscale.all = True
+# Threshold for inverting text with dark mode. Text colors with
+# brightness below this threshold will be inverted, and above it will be
+# left as in the original, non-dark-mode page. Set to 256 to always
+# invert text color or to 0 to never invert text color.
+# Type: Int
+c.colors.webpage.darkmode.threshold.foreground = 200
+
+# Threshold for inverting background elements with dark mode. Background
+# elements with brightness above this threshold will be inverted, and
+# below it will be left as in the original, non-dark-mode page. Set to
+# 256 to never invert the color or to 0 to always invert it. Note: This
+# behavior is the opposite of
+# `colors.webpage.darkmode.threshold.foreground`!
+# Type: Int
+c.colors.webpage.darkmode.threshold.background = 77
 
 # Default font families to use. Whenever "default_family" is used in a
 # font setting, it's replaced with the fonts listed here. If set to an
@@ -639,6 +641,7 @@ config.bind('<Ctrl+9>', 'tab-focus -1')
 config.bind('<Ctrl+l>', ':session-load')
 config.bind('<Ctrl+q>', 'close')
 config.bind('<Ctrl+u>', 'undo')
+config.bind('<ه>', 'mode-enter insert')
 config.bind('J', 'tab-prev')
 config.bind('K', 'tab-next')
 config.bind('M', 'tab-mute')

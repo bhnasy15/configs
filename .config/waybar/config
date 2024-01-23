@@ -99,7 +99,8 @@
 				"car": "",
 				"default": ["", "", ""]
 			},
-			"on-click": "pavucontrol"
+			"on-click": "pamixer --sink @DEFAULT_SINK@ -t",
+			"on-click-right": "pavucontrol"
 		},
 		"sway/language": {
 			"format": "{short} ",

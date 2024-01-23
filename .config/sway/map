@@ -5,7 +5,7 @@ set $down j
 set $up k
 set $right l
 
-bindsym --to-code --no-repeat $mod+Return exec alacritty
+bindsym --to-code --no-repeat $mod+Return exec kitty
 
 bindsym --to-code --no-repeat Mod4+q kill
 
@@ -119,7 +119,7 @@ mode "insert" {
 	bindsym --no-repeat $mod+Escape mode "default"
 	bindsym --no-repeat $mod+Return mode "default"
 }
-bindsym --to-code --no-repeat $mod+i mode "insert"
+bindsym --to-code --no-repeat Mod4+i mode "insert"
 
 # audio control{
 	bindsym --to-code XF86AudioRaiseVolume exec 'pamixer --sink @DEFAULT_SINK@ -i 1'

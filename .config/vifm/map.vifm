@@ -1,6 +1,6 @@
 map ,w <C-w>
 
-nnoremap s :!sh -c '[ -v WAYLAND_DISPLAY ] && foot -D %d -T SCRIPT || $TERM --working-directory %d -T SCRIPT' 2> /dev/null &<cr>
+nnoremap s :!sh -c 'alacritty --working-directory %d -T SCRIPT ' 2> /dev/null &<cr>
 
 nnoremap H :histprev<cr>
 nnoremap L :histnext<cr>

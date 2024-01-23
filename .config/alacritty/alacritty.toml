@@ -1,0 +1,92 @@
+[colors.normal]
+black = "#000000"
+blue = "#00B0FF"
+cyan = "#18FFFF"
+green = "#00C853"
+magenta = "#AA00FF"
+red = "#FF1744"
+white = "#E5E1D8"
+yellow = "#FFEA00"
+
+[colors.primary]
+background = "#12121A"
+foreground = "#C4C4C9"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "monospace"
+
+[[keyboard.bindings]]
+action = "CreateNewWindow"
+key = "N"
+mods = "Control | shift"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Control | Alt"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control | Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control | Shift"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Control | Shift"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "K"
+mode = "~Alt|~vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "J"
+mode = "~Alt|~vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollHalfPageUp"
+key = "K"
+mode = "~Alt|~vi"
+mods = "Control | Shift"
+
+[[keyboard.bindings]]
+action = "ScrollHalfPageDown"
+key = "J"
+mode = "~Alt|~vi"
+mods = "Control | Shift"
+
+[scrolling]
+history = 2000
+
+[window]
+decorations = "none"
+opacity = 1.0
+
+[window.dimensions]
+columns = 60
+lines = 11

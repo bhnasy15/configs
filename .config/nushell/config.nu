@@ -391,3 +391,5 @@ alias wine = wine64
 alias wine32 = wine
 
 alias py = python3
+
+source /home/yarob/.config/broot/launcher/nushell/br

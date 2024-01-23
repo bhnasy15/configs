@@ -1,12 +1,12 @@
 fileviewer *.pdf 
-      \ file %c
-" 		\ sh -c '. $VIFM/sixel.sh pdf %pw %ph %c %pd'
+      \ file "%c"
+" 		\ sh -c '. $VIFM/sixel.sh pdf %pw %ph "%c" %pd'
 "         \ %pc
 " 		\ sh '. $VIFM/sixel.sh clear'
 
 fileviewer <image/*>
-      \ file %c
-" 		\ sh -c '. $VIFM/sixel.sh draw %pw %ph %c %pd'
+      \ file "%c"
+" 		\ sh -c '. $VIFM/sixel.sh draw %pw %ph "%c" %pd'
 "         \ %pc
 " 		\ sh '. $VIFM/sixel.sh clear'
 
@@ -14,9 +14,10 @@ filetype {*.ps,*.eps,*.ps.gz,*.pdf,*.djvu},<application/postscript>,<image/vnd.d
         \ sh -c 'zathura %f' &,
 
 " json
-fileviewer *.json sh -c 'jless %c' | sh -c 'bat --paging=never --terminal-width %pw --file-name %c'
+fileviewer *.json sh -c 'jq -C < "%c"' || sh -c 'bat -pp --terminal-width %pw --file-name "%c"'
 
-fileviewer *.md,*.vim,*.vifm sh -c 'bat --paging=never --terminal-width %pw --file-name %c %c'
+fileviewer *.vim,*.vifm sh -c 'bat -pp --terminal-width %pw --file-name "%c"'
+fileviewer *.md sh -c 'glow "%c"'
 
 " Audio
 filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
@@ -24,7 +25,7 @@ filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
        \ {Play using ffplay}
        \ sh -c 'mpv --player-operation-mode=pseudo-gui --loop=inf %f' &
 fileviewer {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},<audio/*>
-       \ sh -c 'file %c'
+       \ sh -c 'ffprobe -hide_banner "%c"'
 
 " Video
 filetype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
@@ -45,15 +46,15 @@ filetype {*.mhtml,*.html,*.htm},<text/html>
         \ sh -c 'qutebrowser %f' &
 
 " Object
-fileviewer {*.o},<application/x-object> sh -c 'nm %c' | sh -c 'bat --paging=never -n --terminal-width %pw'
+fileviewer {*.o},<application/x-object> sh -c 'nm "%c"' || sh -c 'bat -pp -n --terminal-width %pw'
 
 " Man page
-filetype {*.[1-8]},<text/troff> sh -c '$EDITOR %c'
-fileviewer {*.[1-8]},*.lua,<text/troff> sh -c 'bat --paging=never -n --terminal-width %pw %c'
+filetype {*.[1-8]},<text/troff> sh -c '$EDITOR "%c"'
+fileviewer {*.[1-8]},*.lua,<text/troff> sh -c 'bat -pp -n --terminal-width %pw "%c"'
 
 " Images
 filetype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-         \ sh -c '[ -v WAYLAND_DISPLAY ] && swayimg %f || feh -B black %f' &
+         \ sh -c 'feh -Tdef %f' &
 
 " Directory
 fileviewer */ sh -c 'tree -L 2 %f'
@@ -80,20 +81,22 @@ filetype *.sha512
        \ sh -c 'sha512sum -c %f %S'
 
 " FuseZipMount
+fileviewer {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz,*.tar.zst,*.tzst},
+		\ sh -c 'tar --exclude="*/*/*" -t -f "%c"'
 filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
         \<application/zip,application/java-archive>
        \ {Mount with fuse-zip}
        \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
        \ {View contents}
-       \ zip -sf %c | less,
+       \ zip -sf "%c" | less,
        \ {Extract here}
-       \ tar -xf %c
+       \ tar -xf "%c"
 
 fileviewer <font/*>
-			\ sh -c 'file %c'
+			\ sh -c 'file "%c"'
 
 fileviewer {*.iso,*.7z,*.zip,*.jar,*.war,*.ear,*.oxt,*.gz,*.rar},<archive/*>
-			\ sh -c '7z l %c -x"!*/*/*"'
+			\ sh -c '7z l "%c" -x"!*/*/*"'
 
 " ArchiveMount
 filetype {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz,*.tar.zst,*.tzst},
@@ -119,12 +122,9 @@ filetype *.ftp
 
 " Office files
 filetype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt}
-        \ sh -c 'loffice %c' &
+        \ sh -c 'loffice "%c"' &
 fileviewer *.docx sh -c 'docx2txt %f -' &
 
-fileviewer <text/*> sh -c 'bat --paging=never --terminal-width %pw %c'
+fileviewer {*.vifm},<text/*> sh -c 'bat -pp --terminal-width %pw "%c"'
 
-filetype *.razor sh -c '$EDITOR %c'
-
-fileviewer * sh -c 'file %c'
-
+filetype *.razor sh -c '$EDITOR "%c"'

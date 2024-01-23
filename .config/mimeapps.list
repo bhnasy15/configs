@@ -1,7 +1,7 @@
 [Added Associations]
 text/plain=leafpad.desktop;
 application/pdf=org.pwmt.zathura.desktop;org.qutebrowser.qutebrowser.desktop;
-application/zip=xarchiver.desktop;org.qutebrowser.qutebrowser.desktop;
+application/zip=sqlitebrowser.desktop;xarchiver.desktop;org.qutebrowser.qutebrowser.desktop;
 application/vnd.adobe.flash.movie=ruffle.desktop;
 inode/directory=xarchiver.desktop;
 video/mp4=mpv.desktop;
@@ -10,6 +10,7 @@ application/x-spss-sav=l3afpad.desktop;winetricks.desktop;
 application/octet-stream=l3afpad.desktop;
 application/x-ms-dos-executable=xarchiver.desktop;
 application/vnd.rar=xarchiver.desktop;
+image/jpeg=userapp-feh-4XRPF2.desktop;
 
 [Default Applications]
 x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
@@ -28,3 +29,7 @@ application/pdf=org.pwmt.zathura.desktop
 video/mp4=mpv.desktop
 application/vnd.rar=xarchiver.desktop
 application/zip=xarchiver.desktop
+image/jpeg=userapp-feh-4XRPF2.desktop
+x-scheme-handler/discord-696343075731144724=discord-696343075731144724.desktop
+
+[Removed Associations]

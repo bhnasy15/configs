@@ -5,7 +5,7 @@ set $down j
 set $up k
 set $right l
 
-bindsym $mod+Return exec prime kitty
+bindsym $mod+Return exec alacritty
 
 bindsym Mod4+q kill
 
