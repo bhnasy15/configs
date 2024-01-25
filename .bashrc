@@ -44,7 +44,8 @@ alias bats='cat /sys/class/power_supply/BAT0/status'
 alias py='python3'
 alias info='info --vi-keys'
 
-alias ghci='LD_PRELOAD="" ghci'
+alias ghc='ghc -dynamic'
+alias ghci='LD_PRELOAD="" ghci -dynamic'
 alias feh='feh -Tdef'
 
 # prompt

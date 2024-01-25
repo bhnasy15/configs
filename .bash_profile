@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH="$PATH:$HOME/.local/bin:$HOME/.local/share/bin:$HOME/.cargo/bin/:$HOME/.ghcup/bin/"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.local/share/bin:$HOME/.cargo/bin/"
 export EDITOR="nvim"
 export CPATH="$HOME/.local/include"
 export _JAVA_AWT_WM_NONREPARENTING=1
