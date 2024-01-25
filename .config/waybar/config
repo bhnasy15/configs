@@ -103,7 +103,7 @@
 			"on-click-right": "pavucontrol"
 		},
 		"sway/language": {
-			"format": "({shortDescription} {variant} )"
+			"format": "({shortDescription} )"
 		},
 }
 
