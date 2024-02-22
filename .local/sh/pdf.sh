@@ -1,6 +1,6 @@
 #!/bin/bash
 path="$HOME/Documents/pdfs"
-file=$(ls "$path"/*.pdf | dmenu -l 10 -p "choose pdf: " )
+file=$(ls -1 "$path"/*.pdf | dmenu -i -l 10 -p "choose pdf: " )
 
 if [ $? != 0 ]
 then

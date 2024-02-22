@@ -49,7 +49,7 @@ filetype {*.mhtml,*.html,*.htm},<text/html>
 fileviewer {*.o},<application/x-object> sh -c 'nm "%c"' || sh -c 'bat -pp -n --terminal-width %pw'
 
 " Man page
-filetype {*.[1-8]},<text/troff> sh -c '$EDITOR "%c"'
+filetype {*.[1-8]},*.md,<text/troff> sh -c '$EDITOR "%c"'
 fileviewer {*.[1-8]},*.lua,<text/troff> sh -c 'bat -pp -n --terminal-width %pw "%c"'
 
 " Images

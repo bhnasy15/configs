@@ -8,6 +8,16 @@ red = "#FF1744"
 white = "#E5E1D8"
 yellow = "#FFEA00"
 
+[colors.bright]
+black = "#78909C"
+blue = "#42A5F5"
+cyan = "#18FFFF"
+green = "#00D863"
+magenta = "#E040FB"
+red = "#FF1744"
+white = "#F5F5F5"
+yellow = "#FFFF00"
+
 [colors.primary]
 background = "#12121A"
 foreground = "#C4C4C9"

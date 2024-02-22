@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export TERM="xterm-color"
 export PATH="$PATH:$HOME/.local/bin:$HOME/.local/share/bin:$HOME/.cargo/bin/"
 export EDITOR="nvim"
 export CPATH="$HOME/.local/include"

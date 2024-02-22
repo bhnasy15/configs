@@ -10,12 +10,11 @@ set -o vi
 bind "set keymap vi"
 bind "set editing-mode vi"
 bind "set show-mode-in-prompt on"
-bind "set vi-cmd-mode-string \"\e[2 q\""
-bind "set vi-ins-mode-string \"\e[6 q\""
+bind "set vi-cmd-mode-string \"\1\e[2 q\2\""
+bind "set vi-ins-mode-string \"\1\e[6 q\2\""
 bind "set bell-style visible"
 bind "set completion-ignore-case on"
 bind -x '"\C-l": clear'
-
 
 # alias
 alias ls='ls -h --color=auto'
@@ -53,8 +52,7 @@ function nonzero_return() {
 	RETVAL=$?
 	[ $RETVAL -ne 0 ] && echo "$RETVAL"
 }
-#export PS1="\[\e[1m\]\`nonzero_return\`\[\e[32m\][\[\e[m\]\W\[\e[1m\]\[\e[32m\]]\[\e[m\] \\$  "
-export PS1="\[\e[91m\]\`nonzero_return\`\[\e[m\] \W \[\e[1;36m\]>>\[\e[m\] "
+PS1="\[\e[1;31m\]\`nonzero_return\`\[\e[0m\] \W \[\e[1;32m\]>>\[\e[0m\] "
 
 # completion
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
@@ -71,9 +69,8 @@ osc7_cwd() {
         esac
         encoded+="${o}"
     done
-    printf '\e]7;file://%s%s\e\\' "${HOSTNAME}" "${encoded}"
+    printf '\e7;file://%s%s\e\\' "${HOSTNAME}" "${encoded}"
 }
-PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }osc7_cwd
 export LD_PRELOAD="$HOME/.local/lib/stderred/libstderred.so"
 
 source /home/yarob/.config/broot/launcher/bash/br
